@@ -43,9 +43,14 @@
                     </button>
                     @if(auth()->user()->user_type === 'admin' || auth()->user()->user_type === 'moderator')
                     <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('dashboard') }}'">
+<<<<<<< HEAD
                       <i class="fa-solid fa-user"></i> Dashboard
                   </button>
                   
+=======
+                        <i class="fa-solid fa-user"></i> Dashboard
+                      </button>
+>>>>>>> cac260722c5c6009f8565af8c03f45cd16e21067
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                       Logout
