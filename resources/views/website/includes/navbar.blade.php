@@ -43,7 +43,6 @@
                     </button>
                     @if(auth()->user()->user_type === 'admin' || auth()->user()->user_type === 'moderator')
                     <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('dashboard') }}'">
-<<<<<<< HEAD
                       <i class="fa-solid fa-user"></i> Dashboard
                   </button>
                   
