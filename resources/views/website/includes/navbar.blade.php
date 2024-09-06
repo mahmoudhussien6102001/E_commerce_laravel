@@ -37,12 +37,12 @@
                   <span class="icon icon-person"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                  @auth
+                  @if(auth()->user())
                     <button class="dropdown-item" type="button">
                       <i class="fa-solid fa-user"></i> Profile Management
                     </button>
                     @if(auth()->user()->user_type === 'admin' || auth()->user()->user_type === 'moderator')
-                      <button class="dropdown-item" type="button">
+                      <button class="dropdown-item" type="button" onclick="window.location.href='{{route('dashboard')}}">
                         <i class="fa-solid fa-user"></i> Dashboard
                       </button>
                     @endif

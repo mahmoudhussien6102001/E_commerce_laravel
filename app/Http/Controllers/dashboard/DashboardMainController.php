@@ -9,6 +9,7 @@ class DashboardMainController extends Controller
 {
     //
     public function index() {
+        
         return view('dashboard.pages.home');
     }
 }

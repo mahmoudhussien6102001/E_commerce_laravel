@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// website controller
 use App\Http\Controllers\website\{MainController, ProductController};
+// Dashboard controller
 use App\Http\Controllers\dashboard\DashboardMainController ;
+// Auth controller
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -33,7 +36,7 @@ Route::group([
     'middleware' => ['auth', 'dashboard']
 ], function () {
     Route::prefix('dashboard')->group(function () {
-        Route::get('/dashboard', [DashboardMainController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardMainController::class, 'index'])->name('dashboard');
     });
 });
 
@@ -42,4 +45,8 @@ Route::group([
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home_auth');
+
+
+//Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
