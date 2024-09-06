@@ -21,22 +21,22 @@
               <img src="{{asset('assets/images/cloth_1.jpg')}}" alt="Image" class="img-fluid">
             </div>
             <div class="col-md-6">
-              <h2 class="text-black">Tank Top T-Shirt</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.</p>
-              <p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>
-              <p><strong class="text-primary h4">$50.00</strong></p>
+              <h2 class="text-black">{{__('singleShop.product_title')}}</h2>
+              <p>{{__('singleShop.product_description')}}</p>
+              <p class="mb-4">{{__('singleShop.additional_info')}}</p>
+              <p><strong class="text-primary h4">{{__('singleShop.price')}}</strong></p>
               <div class="mb-1 d-flex">
                 <label for="option-sm" class="d-flex mr-3 mb-3">
-                  <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
+                  <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">{{__('singleShop.small')}}</span>
                 </label>
                 <label for="option-md" class="d-flex mr-3 mb-3">
-                  <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-md" name="shop-sizes"></span> <span class="d-inline-block text-black">Medium</span>
+                  <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-md" name="shop-sizes"></span> <span class="d-inline-block text-black">{{__('singleShop.medium')}}</span>
                 </label>
                 <label for="option-lg" class="d-flex mr-3 mb-3">
-                  <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-lg" name="shop-sizes"></span> <span class="d-inline-block text-black">Large</span>
+                  <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-lg" name="shop-sizes"></span> <span class="d-inline-block text-black">{{__('singleShop.large')}}</span>
                 </label>
                 <label for="option-xl" class="d-flex mr-3 mb-3">
-                  <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xl" name="shop-sizes"></span> <span class="d-inline-block text-black"> Extra Large</span>
+                  <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xl" name="shop-sizes"></span> <span class="d-inline-block text-black">{{__('singleShop.extra_large')}}</span>
                 </label>
               </div>
               <div class="mb-5">
@@ -51,7 +51,7 @@
               </div>
   
               </div>
-              <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+              <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">{{__('singleShop.add_to_cart')}}</a></p>
   
             </div>
           </div>
@@ -62,7 +62,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-7 site-section-heading text-center pt-4">
-              <h2>Featured Products</h2>
+              <h2>{{__('singleShop.featured_products')}}</h2>
             </div>
           </div>
           <div class="row">
@@ -74,9 +74,9 @@
                       <img src="{{asset('assets/images/cloth_1.jpg')}}" alt="Image placeholder" class="img-fluid">
                     </figure>
                     <div class="block-4-text p-4">
-                      <h3><a href="#">Tank Top</a></h3>
-                      <p class="mb-0">Finding perfect t-shirt</p>
-                      <p class="text-primary font-weight-bold">$50</p>
+                      <h3><a href="#">{{__('singleShop.product_1_title')}}</a></h3>
+                      <p class="mb-0">{{__('singleShop.product_1_description')}}</p>
+                      <p class="text-primary font-weight-bold">{{__('singleShop.product_1_price')}}</p>
                     </div>
                   </div>
                 </div>
@@ -86,9 +86,9 @@
                       <img src="{{asset('assets/images/shoe_1.jpg')}}" alt="Image placeholder" class="img-fluid">
                     </figure>
                     <div class="block-4-text p-4">
-                      <h3><a href="#">Corater</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
+                      <h3><a href="#">{{__('singleShop.product_2_title')}}</a></h3>
+                      <p class="mb-0">{{__('singleShop.product_2_description')}}</p>
+                      <p class="text-primary font-weight-bold">{{__('singleShop.product_2_price')}}</p>
                     </div>
                   </div>
                 </div>
@@ -98,9 +98,9 @@
                       <img src="{{asset('assets/images/cloth_2.jpg')}}" alt="Image placeholder" class="img-fluid">
                     </figure>
                     <div class="block-4-text p-4">
-                      <h3><a href="#">Polo Shirt</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
+                      <h3><a href="#">{{__('singleShop.product_3_title')}}</a></h3>
+                      <p class="mb-0">{{__('singleShop.product_3_description')}}</p>
+                      <p class="text-primary font-weight-bold">{{__('singleShop.product_3_price')}}</p>
                     </div>
                   </div>
                 </div>
@@ -110,9 +110,9 @@
                       <img src="{{asset('assets/images/cloth_3.jpg')}}" alt="Image placeholder" class="img-fluid">
                     </figure>
                     <div class="block-4-text p-4">
-                      <h3><a href="#">T-Shirt Mockup</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
+                      <h3><a href="#">{{__('singleShop.product_4_title')}}</a></h3>
+                      <p class="mb-0">{{__('singleShop.product_4_description')}}</p>
+                      <p class="text-primary font-weight-bold">{{__('singleShop.product_4_price')}}</p>
                     </div>
                   </div>
                 </div>
@@ -122,9 +122,9 @@
                       <img src="{{asset('assets/images/shoe_1.jpg')}}" alt="Image placeholder" class="img-fluid">
                     </figure>
                     <div class="block-4-text p-4">
-                      <h3><a href="#">Corater</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
+                      <h3><a href="#">{{__('singleShop.product_1_title')}}</a></h3>
+                      <p class="mb-0">{{__('singleShop.product_1_description')}}</p>
+                      <p class="text-primary font-weight-bold">{{__('singleShop.product_1_price')}}</p>
                     </div>
                   </div>
                 </div>
