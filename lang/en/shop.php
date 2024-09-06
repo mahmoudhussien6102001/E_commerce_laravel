@@ -2,6 +2,7 @@
 return [
     "Home" => "Home",
     "Shop" =>"Shop",
+    'title' =>'shop',
     "shop_all" => "Shop All",
     "latest" => "Latest",
     "men" => "Men",

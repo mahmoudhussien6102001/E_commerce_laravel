@@ -1,6 +1,6 @@
 @extends('website.layouts.master')
 
-@section('title' ,'Shop page')  
+@section('title' ,__('shop.title'))  
 
 @section('main-content') 
 
@@ -8,7 +8,7 @@
     <div class="bg-light py-3">
         <div class="container">
           <div class="row">
-            <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Shop</strong></div>
+            <div class="col-md-12 mb-0"><a href="index.html">{{ __('shop.Home') }}</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{ __('shop.title') }}</strong></div>
           </div>
         </div>
       </div>
@@ -252,7 +252,7 @@
                     <span class="bg-success color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.green_color')}}</span>
                   </a>
                   <a href="#" class="d-flex color-item align-items-center" >
-                    <span class="bg-info color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.blue_color"')}}</span>
+                    <span class="bg-info color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.blue_color')}}</span>
                   </a>
                   <a href="#" class="d-flex color-item align-items-center" >
                     <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.purple_color')}}</span>
