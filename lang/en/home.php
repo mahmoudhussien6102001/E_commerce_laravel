@@ -38,4 +38,16 @@ return [
     "free"=>"Enjoy free shipping on all orders with no minimum! Get new clothes quickly and at no extra cost now.",
     "returns"=>"Take advantage of our free return policy! If you are not satisfied with your purchase, you can easily return it at no additional cost.",
     "customer"=>"Our customer support team is always available to help you. Contact us for any questions or support you may need and we will be happy to assist.",
+    'category' =>'category',
+    'newArrivals' =>'new arrivals',
+    'Contact' => 'Contact',
+    'collections' =>'collections',
+    'Menu one' =>'Menu One',
+    'Menu two' =>'Menu Two',
+    'Menu three' =>'Menu Three',
+    'Sub Menu' =>'Sub Menu',
+    'guest' =>'guest',
+    'Profile Management' =>'Profile Management',
+    'Dashboard' =>'Dashboard',
+    'Logout' =>'Logout'
 ];
