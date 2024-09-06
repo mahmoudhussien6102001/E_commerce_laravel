@@ -1,23 +1,32 @@
 @extends('website.layouts.master')
+@section('title' , __('shop.title'))
 
+<<<<<<< HEAD
 @section('title' ,__('shop.title'))  
+=======
+@section('title' ,'Shop page')
+>>>>>>> 1c8944ee5c27d2581e636626dec8070a60584001
 
-@section('main-content') 
+@section('main-content')
 
 <div class="site-wrap">
     <div class="bg-light py-3">
         <div class="container">
           <div class="row">
+<<<<<<< HEAD
             <div class="col-md-12 mb-0"><a href="index.html">{{ __('shop.Home') }}</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{ __('shop.title') }}</strong></div>
+=======
+            <div class="col-md-12 mb-0"><a href="index.html">{{ __('shop.Home') }}</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{ __('shop.Shop') }}</strong></div>
+>>>>>>> 1c8944ee5c27d2581e636626dec8070a60584001
           </div>
         </div>
       </div>
       <div class="site-section">
         <div class="container">
-  
+
           <div class="row mb-5">
             <div class="col-md-9 order-2">
-  
+
               <div class="row">
                 <div class="col-md-12 mb-5">
                   <div class="float-md-left mb-4"><h2 class="text-black h5">{{__('shop.shop_all')}}</h2></div>
@@ -47,7 +56,7 @@
                 </div>
               </div>
               <div class="row mb-5">
-  
+
                 <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                   <div class="block-4 text-center border">
                     <figure class="block-4-image">
@@ -84,7 +93,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                   <div class="block-4 text-center border">
                     <figure class="block-4-image">
@@ -143,7 +152,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                   <div class="block-4 text-center border">
                     <figure class="block-4-image">
@@ -180,7 +189,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                   <div class="block-4 text-center border">
                     <figure class="block-4-image">
@@ -193,8 +202,8 @@
                     </div>
                   </div>
                 </div>
-  
-  
+
+
               </div>
               <div class="row" data-aos="fade-up">
                 <div class="col-md-12 text-center">
@@ -212,7 +221,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="col-md-3 order-1 mb-5 mb-md-0">
               <div class="border p-4 rounded mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">{{__('shop.categories')}}</h3>
@@ -222,14 +231,14 @@
                   <li class="mb-1"><a href="#" class="d-flex"><span>{{__('shop.children_count')}}</span> <span class="text-black ml-auto">(2,124)</span></a></li>
                 </ul>
               </div>
-  
+
               <div class="border p-4 rounded mb-4">
                 <div class="mb-4">
                   <h3 class="mb-3 h6 text-uppercase text-black d-block">{{__('shop.filter_by_price')}}</h3>
                   <div id="slider-range" class="border-primary"></div>
                   <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
                 </div>
-  
+
                 <div class="mb-4">
                   <h3 class="mb-3 h6 text-uppercase text-black d-block">{{__('shop.size')}}</h3>
                   <label for="s_sm" class="d-flex">
@@ -242,7 +251,7 @@
                     <input type="checkbox" id="s_lg" class="mr-2 mt-1"> <span class="text-black">{{__('shop.large_size')}}</span>
                   </label>
                 </div>
-  
+
                 <div class="mb-4">
                   <h3 class="mb-3 h6 text-uppercase text-black d-block">{{__('shop.color')}}</h3>
                   <a href="#" class="d-flex color-item align-items-center" >
@@ -258,11 +267,11 @@
                     <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.purple_color')}}</span>
                   </a>
                 </div>
-  
+
               </div>
             </div>
           </div>
-  
+
           <div class="row">
             <div class="col-md-12">
               <div class="site-section site-blocks-2">
@@ -306,11 +315,11 @@
                       </a>
                     </div>
                   </div>
-                
+
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
 </div>

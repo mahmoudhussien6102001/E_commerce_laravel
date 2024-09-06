@@ -36,5 +36,5 @@ return [
     "blue_color" => "Blue (1,075)",
     "purple_color" => "Purple (1,075)",
     "collections" => "Collections"
-    
+
 ];

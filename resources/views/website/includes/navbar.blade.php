@@ -5,12 +5,12 @@
         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
           <form action="" class="site-block-top-search">
             <span class="icon icon-search2"></span>
-            <input type="text" class="form-control border-0" placeholder="Search">
+            <input type="text" class="form-control border-0" placeholder="{{__("home.Search")}}">
           </form>
         </div>
         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
           <div class="site-logo">
-            <a href="{{ route('home') }}" class="js-logo-clone">Shoppers</a>
+            <a href="{{ route('home') }}" class="js-logo-clone">{{__("home.Shoppers")}}</a>
           </div>
         </div>
         <div class="col-6 col-md-4 order-3 order-md-3 text-right">
@@ -49,7 +49,7 @@
 =======
                         <i class="fa-solid fa-user"></i> Dashboard
                       </button>
->>>>>>> cac260722c5c6009f8565af8c03f45cd16e21067
+
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                       Logout
@@ -58,8 +58,8 @@
                       @csrf
                     </form>
                   @else
-                    <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('login') }}'">Login</button>
-                    <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('register') }}'">Register</button>
+                    <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('login') }}'">{{__("home.login")}}</button>
+                    <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('register') }}'">{{__("home.register")}}</button>
                   @endif
                 </div>
               </li>
@@ -73,7 +73,7 @@
     <div class="container">
       <ul class="site-menu js-clone-nav d-none d-md-block">
         <li class="has-children">
-          <a href="{{ route('home') }}">Home</a>
+          <a href="{{ route('home') }}">{{__('home.home')}}</a>
           <ul class="dropdown">
             <li><a href="#">Menu One</a></li>
             <li><a href="#">Menu Two</a></li>
@@ -89,14 +89,14 @@
           </ul>
         </li>
         <li class="has-children">
-          <a href="{{ route('about') }}">About</a>
+          <a href="{{ route('about') }}">{{__('home.about')}}</a>
           <ul class="dropdown">
             <li><a href="#">Menu One</a></li>
             <li><a href="#">Menu Two</a></li>
             <li><a href="#">Menu Three</a></li>
           </ul>
         </li>
-        <li><a href="{{ route('shop') }}">Shop</a></li>
+        <li><a href="{{ route('shop') }}">{{__('home.shop')}}</a></li>
         <li><a href="#">Catalogue</a></li>
         <li><a href="#">New Arrivals</a></li>
         <li><a href="{{ route('contactUs') }}">Contact</a></li>
