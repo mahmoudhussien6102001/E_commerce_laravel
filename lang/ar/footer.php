@@ -25,5 +25,5 @@ return [
     'template_made_with' => 'هذا القالب مصنوع بـ',
     'all_rights_reserved' => 'جميع الحقوق محفوظة',
     'by' => 'بواسطة',
-    'team_member' => 'عضو الفريق',
+    'team_member' => 'اعضاء الفريق',
 ];

@@ -25,5 +25,5 @@ return [
     'all_rights_reserved' => 'All_rights_reserved',
     'template_made_with' => 'This template is made with',
     'by' => 'by',
-    'team_member' => 'Team Member',
+    'team_member' => 'Teams Members',
 ];

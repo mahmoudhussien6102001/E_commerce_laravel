@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 // website controller
 use App\Http\Controllers\website\{MainController, ProductController};
 // Dashboard controller
-use App\Http\Controllers\dashboard\DashboardMainController ;
+use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController};
 // Auth controller
 use Illuminate\Support\Facades\Auth;
 
@@ -37,6 +37,8 @@ Route::group([
 ], function () {
     Route::prefix('dashboard')->group(function () {
     Route::get('/dashboard', [DashboardMainController::class, 'index'])->name('dashboard');
+    // routing to CategryController 
+    Route::resource('/categories', CategoryController::class);
     });
 });
 
