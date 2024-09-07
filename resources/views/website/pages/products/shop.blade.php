@@ -1,6 +1,5 @@
 @extends('website.layouts.master')
-@section('title' , __('shop.title'))
-
+php artisan serve
 
 
 @section('main-content')
