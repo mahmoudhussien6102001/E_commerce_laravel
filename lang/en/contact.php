@@ -14,4 +14,5 @@ return [
         'canada' => 'Canada',
     ],
     'address_detail' => '203 Fake St. Mountain View, San Francisco, California, USA',
+    'get_in_touch' => 'Get In Touch',
 ];
