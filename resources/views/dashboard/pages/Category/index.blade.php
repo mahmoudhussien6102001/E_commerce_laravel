@@ -6,7 +6,7 @@
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
             <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="{{route('category.create')}}" class="btn btn-succes text-light font-weight-bold" >
+                <a href="{{route('categories.create')}}" class="btn btn-succes text-light font-weight-bold" >
                     <span>Add Category</span>
                 </a>
             </div>

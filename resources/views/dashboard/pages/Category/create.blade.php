@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                           <form action="{{route('category.store')}}">
+                           <form action="{{route('categories.store')}}">
                             @csrf 
                                @include('dashboard.pages.category.form')
                                <button type="Submit" class="btn btn-success btn-md py-1 font-weight-bold fs-5 border-2 border-dark rounded">Sumbit</button>
