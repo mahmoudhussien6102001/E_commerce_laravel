@@ -6,7 +6,7 @@
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
             <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="{{ route('categories.create') }}" class="btn btn-danger my-3 ml-3 text-light font-weight-bold">
+                <a href="{{ route('categories.create') }}" class="btn btn-danger my-3 mr-5 text-light font-weight-bold">
                     <span>Add Category</span>
                 </a>
             </div>
@@ -41,10 +41,20 @@
         <td>{{$category->created_at}}</td>
         <td>{{$category->update_at ?? 'N/A'}}</td>
         <td>
-            <form method="POST" class="d-flex justify-content-between align-items-center"></form>
+            <form method="POST" class="d-flex justify-content-between align-items-center">
+                @csrf
+                @method('DELETE')
+                <a href="{{ route('categories.show',$category->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6">Show</a>
+                @if(auth()->user_type == "admin")
+                <a href="{{ route('categories.edit',$category->id) }}" class="btn btn-danger btn-sm font-weight-bold fs-6">Edit</a>
+                <button type="submit" class="btn btn-success btn-sm font-weight-bold fs-6"> Delete</button>
+                @endif
+            </form>
         </td>
         @empty
-        
+         <div class="alert alert-danger text-center my-5 w-50 mx-auto">
+                 <span>There are No Categories Yet! <a href="{{route('categories.create')}}" class="fw-blod text-danger">Add Categories From Here</a></span>
+         </div>
         @endforelse
       </tr>
     </tbody>
