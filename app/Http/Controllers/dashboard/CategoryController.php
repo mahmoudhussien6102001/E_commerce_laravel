@@ -45,7 +45,7 @@ class CategoryController extends Controller
         $category->create_user_id = auth()->user()->id;
         $category->update_user_id = null;
         $category->save();
-        return redirect('dashboard.pages.category.index')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
+        return redirect('dashboard/categories')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
         
 
     }
