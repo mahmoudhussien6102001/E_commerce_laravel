@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -12,8 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
-        return view('dashboard.pages.category.index');
+        $categories = category::orderBy('id','desc')->simplePaginate(5);
+        return view('dashboard.pages.category.index', compact('categories'));
     }
 
     /**
@@ -21,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.pages.category.create');
     }
 
     /**
@@ -29,7 +30,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate category
+        $request->validate([
+          'title'          => 'required|string|unique:categories,title|max:255',
+          'description'    => 'nullable|string|max:1020',
+          'create_user_id' => 'nullable|exists:users,id',
+          'update_user_id' => 'nullable|exists:users,id'
+        ]);
+
+        // create category
+        $category    = new category();
+        $category->title        = $request->title;
+        $category->description  = $request->description;
+        $category->create_user_id = $request->create_user_id;
+        $category->update_user_id = $request->update_user_id;
+        $category->save();
+        return redirect('category.index')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
+        
+
     }
 
     /**

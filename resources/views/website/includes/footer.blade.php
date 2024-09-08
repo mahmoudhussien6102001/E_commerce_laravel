@@ -52,12 +52,10 @@
             <div class="block-7">
               <form action="#" method="post">
                 <label for="email_subscribe" class="footer-heading">{{ __('footer.subscribe') }}</label>
-                {{-- input send--}}
-                <div class="form-group>
+                <div class="form-group">
                   <input type="text" class="form-control py-4" id="email_subscribe" placeholder="{{ __('footer.email_placeholder') }}">
                   <input type="submit" class="btn btn-sm btn-primary" value="{{ __('footer.send') }}">
-              </div>
-              
+                </div>
               </form>
             </div>
           </div>
