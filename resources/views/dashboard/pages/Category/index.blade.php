@@ -6,7 +6,7 @@
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
             <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="{{route('categories.create')}}" class="btn btn-succes text-light font-weight-bold" >
+                <a href="{{ route('categories.create') }}" class="btn btn-success my-5 text-light font-weight-bold">
                     <span>Add Category</span>
                 </a>
             </div>
@@ -17,7 +17,7 @@
 </div>
 
  <!-- Table with stripped rows -->
- <table class="table table-striped">
+ <table class="table table-striped w-50 m-auto">
     <thead>
       <tr>
         <th scope="text-center">#</th>
