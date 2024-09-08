@@ -2,7 +2,7 @@
 @section('title' ,'Create category')
 @inject('category','App\Models\category')
 @section('main-content')
-    <div class="container">
+    <div class="container w-50  my-5">
        <div class="row justify-content-center">
         <div class="col-12">
             <div class="card shadow-lg mb-4">
@@ -16,7 +16,7 @@
                             @csrf
                                @include('dashboard.pages.category.form')
                                <button type="Submit" class="btn btn-success btn-md py-1 font-weight-bold fs-5 border-2 border-dark rounded">Submit</button>
-                               <button type="Reset" class="btn btn-secondary btn-md py-1 font-weight-bold fs-5 border-2 border-dark rounded">Reset</button>
+                               <button type="Reset" class="btn btn-warning btn-md py-1 font-weight-bold fs-5 border-2 border-dark rounded">Reset</button>
                            </form>
                         </div>
                     </div>

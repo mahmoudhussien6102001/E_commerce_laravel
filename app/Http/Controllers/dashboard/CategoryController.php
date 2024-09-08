@@ -42,8 +42,8 @@ class CategoryController extends Controller
         $category    = new category();
         $category->title        = $request->title;
         $category->description  = $request->description;
-        $category->create_user_id = $request->create_user_id;
-        $category->update_user_id = $request->update_user_id;
+        $category->create_user_id = auth()->user()->id;
+        $category->update_user_id = null;
         $category->save();
         return redirect('category.index')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
         
