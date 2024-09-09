@@ -19,7 +19,7 @@
               @auth
                 <li><a href="javascript:void(0)" class="text-decoration-none">{{ auth()->user()->name }}</a></li>
               @else
-                <li><a class="text-decoration-none">{{ 'guest_'.uniqid() }}</a></li>
+              <li><a class="text-decoration-none">{{ __('home.guest') . '_' . uniqid() }}</a></li>
               @endauth
               @auth
                 @if(auth()->user()->user_type === 'customer')
@@ -39,11 +39,11 @@
                 <div class="dropdown-menu dropdown-menu-right">
                   @if(auth()->user())
                     <button class="dropdown-item" type="button">
-                      <i class="fa-solid fa-user"></i> Profile Management
+                      <i class="fa-solid fa-user"></i> {{ __('home.Profile Management') }}
                     </button>
                     @if(auth()->user()->user_type === 'admin' || auth()->user()->user_type === 'moderator')
                     <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('dashboard') }}'">
-                      <i class="fa-solid fa-user"></i> Dashboard
+                      <i class="fa-solid fa-user"></i> {{ __('home.Dashboard') }}
                   </button>
                   
 
@@ -52,7 +52,7 @@
 
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                      Logout
+                      {{ __('home.Logout') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
@@ -75,15 +75,15 @@
         <li class="has-children">
           <a href="{{ route('home') }}">{{__('home.home')}}</a>
           <ul class="dropdown">
-            <li><a href="#">Menu One</a></li>
-            <li><a href="#">Menu Two</a></li>
-            <li><a href="#">Menu Three</a></li>
+            <li><a href="#">{{ __('home.Menu one') }}</a></li>
+            <li><a href="#">{{ __('home.Menu two') }}</a></li>
+            <li><a href="#">{{ __('home.Menu three') }}</a></li>
             <li class="has-children">
-              <a href="#">Sub Menu</a>
+              <a href="#">{{ __('home.Sub Menu') }}</a>
               <ul class="dropdown">
-                <li><a href="#">Menu One</a></li>
-                <li><a href="#">Menu Two</a></li>
-                <li><a href="#">Menu Three</a></li>
+                <li><a href="#">{{ __('home.Menu one') }}</a></li>
+                <li><a href="#">{{ __('home.Menu two') }}</a></li>
+                <li><a href="#">{{ __('home.Menu three') }}</a></li>
               </ul>
             </li>
           </ul>
@@ -91,15 +91,15 @@
         <li class="has-children">
           <a href="{{ route('about') }}">{{__('home.about')}}</a>
           <ul class="dropdown">
-            <li><a href="#">Menu One</a></li>
-            <li><a href="#">Menu Two</a></li>
-            <li><a href="#">Menu Three</a></li>
+            <li><a href="#">{{ __('home.Menu one') }}</a></li>
+            <li><a href="#">{{ __('home.Menu two') }}</a></li>
+            <li><a href="#">{{ __('home.Menu three') }}</a></li>
           </ul>
         </li>
         <li><a href="{{ route('shop') }}">{{__('home.shop')}}</a></li>
-        <li><a href="#">Catalogue</a></li>
-        <li><a href="#">New Arrivals</a></li>
-        <li><a href="{{ route('contactUs') }}">Contact</a></li>
+        <li><a href="#">{{ __('home.category') }}</a></li>
+        <li><a href="#">{{ __('home.newArrivals') }}</a></li>
+        <li><a href="{{ route('contactUs') }}">{{ __('home.Contact') }}</a></li>
       </ul>
     </div>
   </nav>

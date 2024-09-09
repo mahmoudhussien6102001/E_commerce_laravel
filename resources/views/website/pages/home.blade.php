@@ -1,6 +1,6 @@
 @extends('website.layouts.master')
 
-@section('title' ,'Home page')  
+@section('title' ,__('home.home'))  
 
 @section('main-content') 
 
@@ -71,7 +71,7 @@
                     <img src="{{asset('assets/images/women.jpg')}}" alt="" class="img-fluid">
                 </figure>
                 <div class="text">
-                    <span class="text-uppercase">Collections</span>
+                    <span class="text-uppercase">{{ __('home.collections') }}</span>
                     <h3>{{__('home.Women')}}</h3>
                 </div>
                 </a>
@@ -82,7 +82,7 @@
                     <img src="{{asset('assets/images/children.jpg')}}" alt="" class="img-fluid">
                 </figure>
                 <div class="text">
-                    <span class="text-uppercase">Collections</span>
+                    <span class="text-uppercase">{{ __('home.collections') }}</span>
                     <h3> {{__('home.Children')}} </h3>
                 </div>
                 </a>
@@ -93,7 +93,7 @@
                     <img src="{{asset('assets/images/men.jpg')}}" alt="" class="img-fluid">
                 </figure>
                 <div class="text">
-                    <span class="text-uppercase">Collections</span>
+                    <span class="text-uppercase">{{ __('home.collections') }}</span>
                     <h3>{{__('home.Men')}} </h3>
                 </div>
                 </a>
@@ -120,7 +120,7 @@
                                 <img src="{{asset('assets/images/cloth_1.jpg')}}" alt="{{ __('home.tank_top') }}" class="img-fluid">
                             </figure>
                             <div class="block-4-text p-4">
-                                <h3><a href="#">{{ __('home.tank_top') }}</a></h3>
+                                <h3><a href="#">{{ __('home.TankTop') }}</a></h3>
                                 <p class="mb-0">{{ __('home.finding_perfect_tshirt') }}</p>
                                 <p class="text-primary font-weight-bold">${{ __('home.price') }}</p>
                             </div>

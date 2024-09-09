@@ -27,7 +27,11 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('dashboard/assets/css/style.css')}}" rel="stylesheet">
-
+<style>
+  .cutom-marign{
+    margin-right: 3rem;
+  }
+  </style>
     <title>@yield('title')</title>
 </head>
 <body>
