@@ -32,7 +32,7 @@
                 </li>
                 @endif
               @endauth
-              <li class="dropdown">
+          <li class="dropdown">
                 <a class="dropdown-toggle p-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="User Menu">
                   <span class="icon icon-person"></span>
                 </a>
@@ -46,7 +46,7 @@
                       <i class="fa-solid fa-user"></i> Dashboard
                   </button>
                   
-=======
+
                         <i class="fa-solid fa-user"></i> Dashboard
                       </button>
 
