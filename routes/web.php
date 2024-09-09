@@ -32,13 +32,16 @@ Route::group([
 });
 
 // Define dashboard routes
+// Define dashboard routes with localization
 Route::group([
-    'middleware' => ['auth', 'dashboard']
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth', 'dashboard'],
 ], function () {
     Route::prefix('dashboard')->group(function () {
-    Route::get('/dashboard', [DashboardMainController::class, 'index'])->name('dashboard');
-    // routing to CategryController 
-    Route::resource('/categories', CategoryController::class);
+        Route::get('/dashboard', [DashboardMainController::class, 'index'])->name('dashboard');
+        
+        // Define localized routes within the dashboard
+        Route::resource('/categories', CategoryController::class);
     });
 });
 

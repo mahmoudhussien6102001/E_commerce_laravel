@@ -45,7 +45,7 @@ class CategoryController extends Controller
         $category->create_user_id = auth()->user()->id;
         $category->update_user_id = null;
         $category->save();
-        return redirect('dashboard/categories')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
+        return redirect()->route('categories.index')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
         
 
     }
@@ -55,30 +55,93 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // get id to show 
+        $category = Category::find($id) ;
+
+        if($category == null) {
+            return redirect()->route('categories.index')->with('error' , 'category not found') ;
+        }
+        return view('dashboard.pages.Category.show' ,compact('category')) ;
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(int $id)
     {
-        //
+        //edit py id 
+        $category = Category::find($id) ;
+        if($category == null) {
+            return view('dashboard.pages.Category.categories404') ;
+        }else {
+            if(auth()->user()->user_type== 'admin'){
+                return view('dashboard.pages.category.edit', compact('category'));
+            }else{
+                return view('dashboard.pages.Category.categories404') ;
+            }
+        }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, int $id)
     {
         //
+        $request->validate([
+          'title'          => 'required|string|unique:categories,title|max:255',
+          'description'    => 'nullable|string|max:1020',
+          'create_user_id' => 'nullable|exists:users,id',
+          'update_user_id' => 'nullable|exists:users,id'
+        ]);
+
+        // get id to update 
+        $category = Category::find($id) ;
+        $category_old =Category::find($id) ;
+        $category->title = $request->title;
+        if( $category->title = $request->title){
+            $category->title =$category->title ;
+        }else{
+            $category->title = $request->title ;
+
+        }
+        $category->description = $request->description;
+        $category->update_user_id = auth()->user()->id;
+        $category->save();
+
+        return redirect()->route('categories.index', $id)->with('updated_category_sucessfully',"the category($category_old->title) has been updated Sucessfully");
+
+
+      
+              
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
         //
+        $category = Category::find($id);
+        $category->delete();
+        $category->update_at == null ;
+        $category->save() ;
+        return redirect()->route('dashboard');
+        
+                
     }
+    /*
+    public function delete()
+
+    $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);  
+
+    // Count the soft-deleted categories
+    $categories_count = $categories->count();
+
+    // Return the view with the categories and their count
+    return view('dashboard.pages.Category.deleted', compact('categories', 'categories_count'));
+}
+    */
+
 }

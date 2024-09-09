@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,8 @@
   </style>
     <title>@yield('title')</title>
 </head>
-<body>
+<body  @if(app()->getLocale() == 'ar') @endif>
+
     {{-- top-bar --}}
     @include('dashboard.includes.top-bar')
 
