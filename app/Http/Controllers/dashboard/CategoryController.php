@@ -46,7 +46,7 @@ class CategoryController extends Controller
         $category->update_user_id = null;
         $category->save();
         return redirect()->route('categories.index')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
-        
+
 
     }
 
@@ -55,7 +55,7 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        // get id to show 
+        // get id to show
         $category = Category::find($id) ;
 
         if($category == null) {
@@ -67,9 +67,9 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(int $id)
+    public function edit( int $id)
     {
-        //edit py id 
+        //edit py id
         $category = Category::find($id) ;
         if($category == null) {
             return view('dashboard.pages.Category.categories404') ;
@@ -95,7 +95,7 @@ class CategoryController extends Controller
           'update_user_id' => 'nullable|exists:users,id'
         ]);
 
-        // get id to update 
+        // get id to update
         $category = Category::find($id) ;
         $category_old =Category::find($id) ;
         $category->title = $request->title;
@@ -111,7 +111,7 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index', $category->$id)->with('updated_category_sucessfully',"the category($category_old->title) has been updated Sucessfully");
 
-              
+
     }
 
 
@@ -126,12 +126,12 @@ class CategoryController extends Controller
         $category->update_at == null ;
         $category->save() ;
         return redirect()->route('dashboard');
-                
+
     }
     /*
     public function delete()
 
-    $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);  
+    $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);
 
     // Count the soft-deleted categories
     $categories_count = $categories->count();
