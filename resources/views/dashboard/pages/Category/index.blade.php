@@ -62,5 +62,7 @@
     </tbody>
 </table>
 <!-- End Table with stripped rows -->
-
+<div class="my-4 d-flex justify-content-center">
+    {{ $categories->links() }}
+</div>
 @endsection

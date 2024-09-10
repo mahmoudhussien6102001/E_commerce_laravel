@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = category::orderBy('id','asc')->simplePaginate(5);
+        $categories = category::orderBy('id','asc')->simplePaginate(1);
         return view('dashboard.pages.category.index', compact('categories'));
     }
 
