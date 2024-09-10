@@ -46,6 +46,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="card card-custom border-light shadow-lg">
+                
                 <div class="card-header text-center">
                     <h2 class="mb-0">{{ $category->title ?? 'null' }}</h2>
                 </div>
@@ -57,7 +58,7 @@
                         <form action="{{ route('categories.destroy', $category->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <a class="btn btn-outline-secondary btn-custom" href="#"><i class="fa-solid fa-edit"></i> {{ __('show-dash.Edit') }} </a>
+                            <a class="btn btn-outline-secondary btn-custom" href=""><i class="fa-solid fa-edit"></i> {{ __('show-dash.Edit') }} </a>
                             <button class="btn btn-outline-danger btn-custom" type="submit"><i class="fa-solid fa-trash-alt"></i>  {{ __('show-dash.Delete') }} </button>
                         </form>
                         <a class="btn btn-outline-primary btn-custom" href="{{ route('categories.index') }}"><i class="fa-solid fa-arrow-left"></i> {{ __('show-dash.Return to Categories') }} </a>

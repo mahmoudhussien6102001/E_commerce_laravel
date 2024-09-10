@@ -47,9 +47,6 @@
                   </button>
                   
 
-                        <i class="fa-solid fa-user"></i> Dashboard
-                      </button>
-
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                       {{ __('home.Logout') }}

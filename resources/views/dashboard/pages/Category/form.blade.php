@@ -1,6 +1,7 @@
+
 {{-- Title --}}
 <div class="form-group mb-3">
-    <label for="title" class="form-label">{{ __('form-dash.Title') }} <span class="text-danger">*</span></label>
+    <label for="title" class="form-label  text-white ">{{ __('form-dash.Title') }} <span class="text-danger">*</span></label>
     <input type="text" name="title" id="title" 
            value="{{ old('title', $category->title ?? '') }}" 
            class="form-control @error('title') is-invalid @enderror">
@@ -13,7 +14,7 @@
 
 {{-- Description --}}
 <div class="form-group mb-3">
-    <label for="description" class="form-label">{{ __('form-dash.Description') }} </label>
+    <label for="description" class="form-label text-white">{{ __('form-dash.Description') }} </label>
     <input type="text" name="description" id="description" 
            value="{{ old('description', $category->description ?? '') }}" 
            class="form-control @error('description') is-invalid @enderror">
