@@ -39,7 +39,7 @@
             <td>{{$category->created_at}}</td>
             <td>{{$category->updated_at ?? 'N/A'}}</td>
             <td>
-                <form method="POST" class="d-flex justify-content-between align-items-center">
+                <form method="POST" class="d-flex justify-content-between align-items-center" action="{{ route('categories.destroy' ,$category->id) }}">
                     @csrf
                     @method('DELETE')
                     <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6 ms-2">{{__('index-dash.Show')}}</a>

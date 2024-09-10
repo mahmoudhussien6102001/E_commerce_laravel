@@ -42,6 +42,7 @@ Route::group([
         
         // Define localized routes within the dashboard
         Route::resource('/categories', CategoryController::class);
+        //Route::get('/category/delete' ,[CategoryController::class, 'delete'])->name('delete') ;
     });
 });
 
