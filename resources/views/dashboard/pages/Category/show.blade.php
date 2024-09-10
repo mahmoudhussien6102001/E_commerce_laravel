@@ -57,7 +57,7 @@
                         <form action="{{ route('categories.destroy', $category->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <a class="btn btn-outline-secondary btn-custom" href="#"><i class="fa-solid fa-edit"></i> {{ __('show-dash.Edit') }} </a>
+                            <a class="btn btn-outline-secondary btn-custom" href="{{ route('categories.edit' ,$category->id) }}"><i class="fa-solid fa-edit"></i> {{ __('show-dash.Edit') }} </a>
                             <button class="btn btn-outline-danger btn-custom" type="submit"><i class="fa-solid fa-trash-alt"></i>  {{ __('show-dash.Delete') }} </button>
                         </form>
                         <a class="btn btn-outline-primary btn-custom" href="{{ route('categories.index') }}"><i class="fa-solid fa-arrow-left"></i> {{ __('show-dash.Return to Categories') }} </a>
