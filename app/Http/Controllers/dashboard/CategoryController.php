@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = category::orderBy('id','desc')->simplePaginate(5);
+        $categories = category::orderBy('id','asc')->simplePaginate(5);
         return view('dashboard.pages.category.index', compact('categories'));
     }
 
@@ -99,7 +99,7 @@ class CategoryController extends Controller
         $category = Category::find($id) ;
         $category_old =Category::find($id) ;
         $category->title = $request->title;
-        if( $category->title = $request->title){
+        if($category->title = $request->title){
             $category->title =$category->title ;
         }else{
             $category->title = $request->title ;
@@ -111,8 +111,6 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index', $id)->with('updated_category_sucessfully',"the category($category_old->title) has been updated Sucessfully");
 
-
-      
               
     }
 
