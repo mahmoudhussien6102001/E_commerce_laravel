@@ -1,20 +1,18 @@
-@extends('dashboard.layouts.master') 
-@section('title' ,'Categories 404 ')
+@extends('dashboard.layouts.master')
+
+@section('title', __('404-error.404_title'))
+
 @section('main-content')
 <main>
     <div class="container">
 
       <section class="section error-404 min-vh-100 d-flex flex-column align-items-center justify-content-center">
-        <h1>404</h1>
-        <h2>The page you are looking for doesn't exist.</h2>
-        <a class="btn" href="index.html">Back to home</a>
-        <img src="assets/img/not-found.svg" class="img-fluid py-5" alt="Page Not Found">
+        <h1>{{ __('404-error.404_title') }}</h1>
+        <h2>{{ __('404-error.404_message') }}</h2>
+        <a class="btn" href="{{ url('/') }}">{{ __('404-error.back_to_home') }}</a>
+        <img src="{{ asset('dashboard/assets/img/not-found.svg') }}" class="img-fluid py-5" alt="{{ __('404-error.404_title') }}">
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          {!! __('404-error.credits') !!}
         </div>
       </section>
 

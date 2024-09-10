@@ -72,12 +72,12 @@ class CategoryController extends Controller
         //edit py id
         $category = Category::find($id) ;
         if($category == null) {
-            return view('dashboard.pages.Category.categories404') ;
+            return view('dashboard.pages.Category.404.categories-404') ;
         }else {
             if(auth()->user()->user_type== 'admin'){
                 return view('dashboard.pages.category.edit', compact('category'));
             }else{
-                return view('dashboard.pages.Category.categories404') ;
+                return view('dashboard.pages.Category.404.categories-404') ;
             }
         }
     }
@@ -121,6 +121,9 @@ class CategoryController extends Controller
     public function destroy(int $id)
     {
         //
+        if (auth()->user()->user_type !== 'admin') {
+            return view('dashboard.pages.Category.404.categories-404') ;
+        }
         $category = Category::find($id);
         $category->delete();
         $category->update_at == null ;

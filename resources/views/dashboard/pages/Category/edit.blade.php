@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.master')
-@section('title', __('edit--.title', ['category' => $category->title]))
+@section('title', __('edit-dash.title', ['category' => $category->title]))
 @section('main-content')
 
 <style>
@@ -77,8 +77,13 @@
 <div class="container container-custom w-50 m-auto my-3">
     <div class="row justify-content-center">
         <div class="col-12">
+<<<<<<< HEAD
             <div class="card card-custom shadow-md mb-4">
                 <strong class="card-title fs-2">{{ __('edit--.heading', ['category' => $category->title]) }}</strong>
+=======
+            <div class="card shadow-md mb-4">
+                <strong class="card-title fs-2">{{ __('edit-dash.heading', ['category' => $category->title]) }}</strong>
+>>>>>>> 64922bd68c6ec449d61e9cfbeb37817a927015df
             </div>
             <div class="card-body card-body-custom">
                 <div class="row">
@@ -87,9 +92,15 @@
                             @csrf
                             @method('PUT')
                             @include('dashboard.pages.category.form')
+<<<<<<< HEAD
                             <button type="submit" class="btn  btn-custom btn-md px-4 font-weight-bold fs-5">{{ __('edit--.update_button') }}</button>
                             <a href="{{ route('categories.index') }}" class="btn  btn-custom btn-md px-2 py-2">{{ __('edit--.return_button') }}</a>
                             <a href="{{ url()->previous() }}" class="btn  btn-custom btn-md px-2 py-2">{{ __('edit--.back_button') }}</a>
+=======
+                            <button type="submit" class="btn btn-primary btn-md px-4 font-weight-bold fs-5">{{ __('edit-dash.update_button') }}</button>
+                            <a href="{{ route('categories.index') }}" class="btn btn-dark btn-md px-2 py-2">{{ __('edit-dash.return_button') }}</a>
+                            <a href="{{ url()->previous() }}" class="btn btn-dark btn-md px-2 py-2">{{ __('edit-dash.back_button') }}</a>
+>>>>>>> 64922bd68c6ec449d61e9cfbeb37817a927015df
                         </form>
                     </div>
                 </div>
