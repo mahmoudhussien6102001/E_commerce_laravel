@@ -56,14 +56,13 @@
           <i class="bi bi-menu-button-wide"></i><span>{{ __('side-bar-dash.Categories') }}</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="Catogary-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-
             <li>
-                <a href="{{Route('categories.index')}}">
+                <a href="components-cards.html">
                     <i class="fa-sharp fa-solid fa-i fs-5"></i><span>{{ __('side-bar-dash.Index') }}</span>
                 </a>
               </li>
               <li>
-                <a href="{{Route('categories.create')}}">
+                <a href="components-carousel.html">
                     <i class="fa-solid fa-plus fs-5"></i><span>{{ __('side-bar-dash.Create') }}</span>
                 </a>
               </li>

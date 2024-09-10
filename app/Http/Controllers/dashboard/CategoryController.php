@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = category::orderBy('id','desc')->simplePaginate(5);
+        $categories = category::orderBy('id','asc')->simplePaginate(1);
         return view('dashboard.pages.category.index', compact('categories'));
     }
 
@@ -89,7 +89,7 @@ class CategoryController extends Controller
     {
         //
         $request->validate([
-          'title'          => 'required|string|unique:categories,title|max:255',
+          'title'          => 'required|string|max:255',
           'description'    => 'nullable|string|max:1020',
           'create_user_id' => 'nullable|exists:users,id',
           'update_user_id' => 'nullable|exists:users,id'
@@ -99,7 +99,7 @@ class CategoryController extends Controller
         $category = Category::find($id) ;
         $category_old =Category::find($id) ;
         $category->title = $request->title;
-        if( $category->title = $request->title){
+        if($category->title = $request->title){
             $category->title =$category->title ;
         }else{
             $category->title = $request->title ;
@@ -109,10 +109,8 @@ class CategoryController extends Controller
         $category->update_user_id = auth()->user()->id;
         $category->save();
 
-        return redirect()->route('categories.index', $id)->with('updated_category_sucessfully',"the category($category_old->title) has been updated Sucessfully");
+        return redirect()->route('categories.index', $category->$id)->with('updated_category_sucessfully',"the category($category_old->title) has been updated Sucessfully");
 
-
-      
               
     }
 
@@ -128,7 +126,6 @@ class CategoryController extends Controller
         $category->update_at == null ;
         $category->save() ;
         return redirect()->route('dashboard');
-        
                 
     }
     /*
