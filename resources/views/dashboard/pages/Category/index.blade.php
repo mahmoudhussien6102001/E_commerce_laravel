@@ -43,6 +43,7 @@
   }
   .pagination-custom .pagination {
       justify-content: center;
+     
   }
   .pagination-custom .page-item .page-link {
       color: #FF6F61;
@@ -94,7 +95,8 @@
 </div>
 
 <!-- Table with stripped rows -->
-<table class="table table-striped-custom w-50 m-auto">
+<div class="d-flex justify-content-center align-items-center ms-5">
+<table class="table table-striped-custom w-50 ms-5">
     <thead>
       <tr>
         <th scope="col">{{__('index-dash.#')}}</th>
@@ -140,9 +142,10 @@
         @endforelse
     </tbody>
 </table>
+</div>
 <!-- End Table with stripped rows -->
 
-<div class="my-4 pagination-custom">
+<div class="my-4 pagination-custom d-flex justify-content-center">
     {{ $categories->links() }}
 </div>
 
