@@ -27,6 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('dashboard/assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{ asset('dashboard/assets/css/custom-css/main.css') }}" rel="stylesheet" >
 <style>
   .cutom-marign{
     margin-right: 3rem;

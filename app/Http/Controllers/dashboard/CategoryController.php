@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = category::orderBy('id','asc')->simplePaginate(1);
+        $categories = Category::orderBy('id','asc')->simplePaginate(4);
         return view('dashboard.pages.category.index', compact('categories'));
     }
 
@@ -39,7 +39,7 @@ class CategoryController extends Controller
         ]);
 
         // create category
-        $category    = new category();
+        $category    = new Category();
         $category->title        = $request->title;
         $category->description  = $request->description;
         $category->create_user_id = auth()->user()->id;

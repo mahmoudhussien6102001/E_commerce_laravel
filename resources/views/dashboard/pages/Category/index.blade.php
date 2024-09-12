@@ -1,9 +1,8 @@
 @extends('dashboard.layouts.master') 
 @section('title', __('index-dash.Index Page'))
 @section('main-content')
-
 <style>
-  .table-striped-custom tbody tr:nth-of-type(odd) {
+     .table-striped-custom tbody tr:nth-of-type(odd) {
           background: linear-gradient(135deg, #0066cc, #3399ff);
   }
   .table-striped-custom tbody tr:hover {
@@ -78,10 +77,8 @@
             outline: none; 
             text-decoration: none; 
         }
-</style>
 
-
-
+    </style>
 <div class="row">
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
