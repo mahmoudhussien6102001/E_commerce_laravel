@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'Dashboard' => 'لوحة القيادة',
+    'Dashboard' => 'لوحة التحكم',
     'Website' => 'الموقع الإلكتروني',
     'Users' => 'المستخدمون',
-    'Admin' => 'مسؤول',
-    'Moderator' => 'المشرف',
-    'Customer' => 'العميل',
+    'Admin' => 'مدير النظام',
+    'Moderator' => 'مشرف',
+    'Customer' => 'عميل',
     'Index' => 'الفهرس',
-    'Create' => 'إنشاء',
+    'Create' => 'إضافة',
     'Categories' => 'الفئات',
     'Subcategories' => 'الفئات الفرعية',
     'Products' => 'المنتجات'

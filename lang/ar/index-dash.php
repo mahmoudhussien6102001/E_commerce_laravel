@@ -6,11 +6,11 @@ return [
     'Show' => 'عرض',
     'Edit' => 'تعديل',
     'Delete' => 'حذف',
-    'Add Categories From Here' => 'أضف الفئات من هنا',
-    'There are no categories yet!' => 'لا توجد فئات بعد!',
+    'Add Categories From Here' => 'إضافة فئات من هنا',
+    'There are no categories yet!' => 'لا توجد فئات حتى الآن!',
     'Title' => 'العنوان',
     'Description' => 'الوصف',
-    'Created By' => 'أنشأها',
+    'Created By' => 'تم إنشاؤه بواسطة',
     'Updated By' => 'تم تحديثه بواسطة',
     'Created At' => 'تاريخ الإنشاء',
     'Updated At' => 'تاريخ التحديث',
@@ -22,3 +22,4 @@ return [
     'previous' => '&laquo; السابق',
     'next' => 'التالي &raquo;',
 ];
+
