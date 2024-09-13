@@ -4,13 +4,13 @@ namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;// اللي بنورث منه كل المودلات  model  هنا بنستدعي الكلاس  
 
-class Category extends Model
+class Category extends Model 
 {
-    use HasFactory;
-    protected $guarded =[] ;
-    public function create_user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    use HasFactory; // Laravel هي أداة بتسهل إنشاء بيانات وهمية
+    protected $guarded =[] ;// [] الجزء هذا بيقول اني كل الاعمده في جدول الفئه مسموح التعديل عليها لو كنا عاوزين نمنع هذا علينا كتابه الاعمده بين القوسين
+    public function create_user(): \Illuminate\Database\Eloquent\Relations\BelongsTo //هذه الداله بتعرفك من الاخر "مين" اللي عمل إدخال أو إضافة للفئة في قاعدة البيانات.
     {
         return $this->belongsTo(User::class ,'create_user_id') ;
     }

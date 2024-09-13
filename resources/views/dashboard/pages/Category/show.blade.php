@@ -2,44 +2,7 @@
 @section('title' ,"Show Page")
 @section('main-content')
 
-<style>
-        .card-custom {
-            max-width: 900px; 
-            margin: auto; 
-            border-radius: 1rem; 
-            overflow: hidden; 
-            min-height: 400px; 
-        }
-        .card-header {
-            background: linear-gradient(135deg, #0066cc, #3399ff); 
-            color: #fff; 
-        }
-        .card-body {
-            padding: 2rem; 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; 
-        }
-        .btn-custom {
-            border-radius: 30px;
-            font-size: 1rem; 
-            padding: 12px 24px; 
-        }
-        
-        .btn-custom:hover, .btn-custom:focus {
-            box-shadow: none; 
-            outline: none; 
-            text-decoration: none; 
-        }
-        .large-text {
-    font-size: 24px; 
-}
 
-.bold-text {
-    font-weight: bold; 
-}
-
-    </style>
 
 
 <div class="container my-5">

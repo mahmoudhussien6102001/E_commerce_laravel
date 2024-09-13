@@ -15,7 +15,7 @@ class Dashboard
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->user() || auth()->user()->user_type == 'customer'){
+        if (! auth()->user() || auth()->user()->user_type == 'customer'){
             return redirect('/') ;
         }
         return $next($request);
