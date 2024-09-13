@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = category::orderBy('id','asc')->simplePaginate(5);
+        $categories = category::orderBy('id','asc')->simplePaginate(1); 
         return view('dashboard.pages.category.index', compact('categories'));
     }
 
@@ -89,7 +89,7 @@ class CategoryController extends Controller
     {
         //
         $request->validate([
-          'title'          => 'required|string|unique:categories,title|max:255',
+          'title'          => 'required|string|max:255',
           'description'    => 'nullable|string|max:1020',
           'create_user_id' => 'nullable|exists:users,id',
           'update_user_id' => 'nullable|exists:users,id'
@@ -125,13 +125,14 @@ class CategoryController extends Controller
         $category->delete();
         $category->update_at == null ;
         $category->save() ;
-        return redirect()->route('dashboard');
+        return redirect()->route('categories.create');
         
                 
     }
-    /*
+    
+   /*
     public function delete()
-
+{
     $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);  
 
     // Count the soft-deleted categories
@@ -140,6 +141,5 @@ class CategoryController extends Controller
     // Return the view with the categories and their count
     return view('dashboard.pages.Category.deleted', compact('categories', 'categories_count'));
 }
-    */
-
+ */   
 }

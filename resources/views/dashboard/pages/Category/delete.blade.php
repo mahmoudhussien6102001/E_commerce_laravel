@@ -1,18 +1,6 @@
-@extends('dashboard.layouts.master') 
-@section('title', __('index-dash.Index Page'))
+{{--@extends('dashboard.layouts.master') 
+@section('title' ,'Deleted categories')
 @section('main-content')
-
-<div class="row">
-    <div class="col-12 grid-margin">
-        <div class="d-flex justify-content-end flex-wrap">
-            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="{{ route('categories.create') }}" class="btn btn-danger my-3  text-light font-weight-bold cutom-marign">
-                    <span>{{__('index-dash.Add Category')}}</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Table with stripped rows -->
 <table class="table table-striped w-50 m-auto">
@@ -25,7 +13,9 @@
         <th scope="text-center">{{__('index-dash.Updated By')}}</th>
         <th scope="text-center">{{__('index-dash.Created At')}}</th>
         <th scope="text-center">{{__('index-dash.Updated At')}}</th>
+        @if(auth()->user_type == "admin")
         <th scope="text-center">{{__('index-dash.Action')}}</th>
+        @endif
       </tr>
     </thead>
     <tbody>
@@ -38,8 +28,10 @@
             <td>{{$category->update_user->name ?? 'N/A'}}</td>
             <td>{{$category->created_at}}</td>
             <td>{{$category->updated_at ?? 'N/A'}}</td>
+            <td>{{$category->deleted_at ?? 'N/A'}}</td>
+
             <td>
-                <form action="{{ route('categories.destroy',$category->id) }}" method="POST" class="d-flex justify-content-between align-items-center">
+                <form method="POST" class="d-flex justify-content-between align-items-center">
                     @csrf
                     @method('DELETE')
                     <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6 ms-2">{{__('index-dash.Show')}}</a>
@@ -62,10 +54,5 @@
     </tbody>
 </table>
 <!-- End Table with stripped rows -->
-<!-- simplepaginate-->
-<div class="my-4 d-flex justify-content-center">
-    {{ $categories->links() }}
-</div>
-
-
 @endsection
+--}

@@ -1,22 +1,23 @@
 <?php
 
 return [
-    'Index Page' => 'Index Page',
-    'Add Category' => 'Add Category',
-    'Show' => 'Show',
-    'Edit' => 'Edit',
-    'Delete' => 'Delete',
-    'Add Categories From Here' => 'Add Categories From Here',
-    'There are no categories yet!' => 'There are no categories yet!',
-    'Title' => 'Title',
-    'Description' => 'Description',
-    'Created By' => 'Created By',
-    'Updated By' => 'Updated By',
-    'Created At' => 'Created At',
-    'Updated At' => 'Updated At',
-    'Action' => 'Action',
+    'Index Page' => 'صفحة الفهرس',
+    'Add Category' => 'إضافة فئة',
+    'Show' => 'عرض',
+    'Edit' => 'تعديل',
+    'Delete' => 'حذف',
+    'Add Categories From Here' => 'أضف الفئات من هنا',
+    'There are no categories yet!' => 'لا توجد فئات بعد!',
+    'Title' => 'العنوان',
+    'Description' => 'الوصف',
+    'Created By' => 'أنشأها',
+    'Updated By' => 'تم تحديثه بواسطة',
+    'Created At' => 'تاريخ الإنشاء',
+    'Updated At' => 'تاريخ التحديث',
+    'Action' => 'الإجراء',
     '#' => '#',
-    'N/A' => 'N/A',
+    'N/A' => 'غير متاح',
     '...' => '...',
-    'Show all categories' => 'Show all categories'
+    'Show all categories' => 'عرض جميع الفئات'
 ];
+?>
