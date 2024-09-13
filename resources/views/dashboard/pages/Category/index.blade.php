@@ -2,12 +2,15 @@
 @section('title', __('index-dash.Index Page'))
 @section('main-content')
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 35398b904ed59713ebfcda277c192863650aca99
 <div class="row">
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
             <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="{{ route('categories.create') }}" class="btn btn-custom my-3 text-light font-weight-bold custom-margin">
+                <a href="{{ route('categories.create') }}" class="btn btn-custom1 my-3 text-light font-weight-bold custom-margin">
                     <span>{{__('index-dash.Add Category')}}</span>
                 </a>
             </div>
@@ -16,7 +19,8 @@
 </div>
 
 <!-- Table with stripped rows -->
-<table class="table table-striped-custom w-50 m-auto">
+<div class="d-flex justify-content-center align-items-center ms-5">
+<table class="table table-striped-custom w-50 ms-5">
     <thead>
       <tr>
         <th scope="col">{{__('index-dash.#')}}</th>
@@ -40,7 +44,8 @@
             <td>{{$category->created_at}}</td>
             <td>{{$category->updated_at ?? 'N/A'}}</td>
             <td>
-                <form method="POST" class="d-flex justify-content-center align-items-center" action="{{ route('categories.destroy' ,$category->id) }}">
+
+                <form action="{{ route('categories.destroy',$category->id) }}" method="POST" class="d-flex justify-content-between align-items-center">
                     @csrf
                     @method('DELETE')
                     <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6 custom-btn-space">{{__('index-dash.Show')}}</a>
@@ -62,8 +67,17 @@
         @endforelse
     </tbody>
 </table>
+</div>
 <!-- End Table with stripped rows -->
+<!-- simplepaginate-->
+<div class="my-4 d-flex justify-content-center">
+    {{ $categories->links() }}
+</div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35398b904ed59713ebfcda277c192863650aca99
 <div class="my-4 pagination-custom d-flex justify-content-center">
     {{ $categories->links() }}
 </div>

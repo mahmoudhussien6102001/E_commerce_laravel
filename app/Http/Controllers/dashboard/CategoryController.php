@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -12,8 +12,12 @@ class CategoryController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
         $categories = category::orderBy('id','asc')->simplePaginate(2);
+
+
+
         return view('dashboard.pages.category.index', compact('categories'));
     }
 
@@ -39,7 +43,8 @@ class CategoryController extends Controller
         ]);
 
         // create category
-        $category = new category();
+
+        $category    = new Category();
         $category->title        = $request->title;
         $category->description  = $request->description;
         $category->create_user_id = auth()->user()->id;
@@ -128,11 +133,14 @@ class CategoryController extends Controller
         $category->update_at == null ;
         $category->save() ;
         return redirect()->route('dashboard');
-        }
 
     }
-    /*
+    
+   /*
     public function delete()
+
+{
+    $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);  
 
     $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);
 
@@ -142,6 +150,5 @@ class CategoryController extends Controller
     // Return the view with the categories and their count
     return view('dashboard.pages.Category.deleted', compact('categories', 'categories_count'));
 }
-    */
-
+ */   
 }

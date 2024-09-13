@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'Create Category' => 'إنشاء فئة',
+    'Create Category' => 'إنشاء تصنيف',
     'Submit' => 'إرسال',
     'Reset' => 'إعادة تعيين',
-    'Card Title' => 'إنشاء فئة'
+    'Card Title' => 'إنشاء تصنيف'
 ];
 ?>
