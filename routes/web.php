@@ -38,12 +38,13 @@ Route::group([
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth', 'dashboard'],
 ], function () {
     Route::prefix('dashboard')->group(function () {
-        Route::get('/dashboard', [DashboardMainController::class, 'index'])->name('dashboard');
+        Route::get('/', [DashboardMainController::class, 'index'])->name('dashboard');
         
         // Define localized routes within the dashboard
         Route::resource('/categories', CategoryController::class);
+
         // Route of delete 
-        Route::get('/category/delete',[CategoryController::class,'delete'])->name('categories.delete');
+        //Route::get('/category/delete' ,[CategoryController::class, 'delete'])->name('delete') ;
     });
 });
 

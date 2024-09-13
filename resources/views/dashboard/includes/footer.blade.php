@@ -1,4 +1,4 @@
-<footer id="footer" class="footer fixed-bottom">
+<footer id="footer" class="footer">
   <div class="copyright">
     &copy; {{ __('footer-dash.Copyright') }} <strong><span>{{ __('footer-dash.NiceAdmin') }}</span></strong>. {{ __('footer-dash.All Rights Reserved') }}
   </div>

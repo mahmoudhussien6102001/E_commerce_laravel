@@ -27,14 +27,20 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('dashboard/assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{ asset('dashboard/assets/css/custom-css/main.css') }}" rel="stylesheet" >
 <style>
   .cutom-marign{
     margin-right: 3rem;
   }
   </style>
     <title>@yield('title')</title>
+
+    {{-- ar --}}
+   @if(app()->getLocale() == 'ar')
+   <link rel="stylesheet" href="{{asset('dashboard/assets/css/rtl.css')}}">
+   @endif
 </head>
-<body  @if(app()->getLocale() == 'ar') @endif>
+<body>
 
     {{-- top-bar --}}
     @include('dashboard.includes.top-bar')
@@ -69,7 +75,7 @@
   <script src="{{asset('dashboard/assets/vendor/php-email-form/validate.js')}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{{asset('assets/dashboard/assets/js/main.js')}}"></script>
+  <script src="{{asset('dashboard/assets/js/main.js')}}"></script>
     
 </body>
 </html>

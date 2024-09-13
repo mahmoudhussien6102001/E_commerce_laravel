@@ -6,7 +6,7 @@
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
             <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="{{ route('categories.create') }}" class="btn btn-danger my-3  text-light font-weight-bold cutom-marign">
+                <a href="{{ route('categories.create') }}" class="btn btn-custom1 my-3 text-light font-weight-bold custom-margin">
                     <span>{{__('index-dash.Add Category')}}</span>
                 </a>
             </div>
@@ -15,17 +15,18 @@
 </div>
 
 <!-- Table with stripped rows -->
-<table class="table table-striped w-50 m-auto">
+<div class="d-flex justify-content-center align-items-center ms-5">
+<table class="table table-striped-custom w-50 ms-5">
     <thead>
       <tr>
-        <th scope="text-center">{{__('index-dash.#')}}</th>
-        <th scope="text-center">{{__('index-dash.Title')}}</th>
-        <th scope="text-center">{{__('index-dash.Description')}}</th>
-        <th scope="text-center">{{__('index-dash.Created By')}}</th>
-        <th scope="text-center">{{__('index-dash.Updated By')}}</th>
-        <th scope="text-center">{{__('index-dash.Created At')}}</th>
-        <th scope="text-center">{{__('index-dash.Updated At')}}</th>
-        <th scope="text-center">{{__('index-dash.Action')}}</th>
+        <th scope="col">{{__('index-dash.#')}}</th>
+        <th scope="col">{{__('index-dash.Title')}}</th>
+        <th scope="col">{{__('index-dash.Description')}}</th>
+        <th scope="col">{{__('index-dash.Created By')}}</th>
+        <th scope="col">{{__('index-dash.Updated By')}}</th>
+        <th scope="col">{{__('index-dash.Created At')}}</th>
+        <th scope="col">{{__('index-dash.Updated At')}}</th>
+        <th scope="col">{{__('index-dash.Action')}}</th>
       </tr>
     </thead>
     <tbody>
@@ -39,13 +40,14 @@
             <td>{{$category->created_at}}</td>
             <td>{{$category->updated_at ?? 'N/A'}}</td>
             <td>
+
                 <form action="{{ route('categories.destroy',$category->id) }}" method="POST" class="d-flex justify-content-between align-items-center">
                     @csrf
                     @method('DELETE')
-                    <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6 ms-2">{{__('index-dash.Show')}}</a>
+                    <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6 custom-btn-space">{{__('index-dash.Show')}}</a>
                     @if(auth()->user()->user_type == 'admin')
-                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-danger btn-sm font-weight-bold fs-6 ms-2">{{__('index-dash.Edit')}}</a>
-                        <button type="submit" class="btn btn-success btn-sm font-weight-bold fs-6 ms-2">{{__('index-dash.Delete')}}</button>
+                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-success btn-sm font-weight-bold fs-6 custom-btn-space">{{__('index-dash.Edit')}}</a>
+                        <button type="submit" class="btn btn-danger  btn-sm font-weight-bold fs-6 custom-btn-space">{{__('index-dash.Delete')}}</button>
                     @endif
                 </form>
             </td>
@@ -53,7 +55,7 @@
         @empty
         <tr>
             <td colspan="8" class="text-center">
-                <div class="alert alert-danger my-5 w-50 mx-auto">
+                <div class="alert alert-danger-custom my-5 w-50 mx-auto">
                     <span>There are no categories yet! <a href="{{ route('categories.create') }}" class="fw-bold text-danger">Add Categories From Here</a></span>
                 </div>
             </td>
@@ -61,11 +63,16 @@
         @endforelse
     </tbody>
 </table>
+</div>
 <!-- End Table with stripped rows -->
 <!-- simplepaginate-->
 <div class="my-4 d-flex justify-content-center">
     {{ $categories->links() }}
 </div>
 
+
+<div class="my-4 pagination-custom d-flex justify-content-center">
+    {{ $categories->links() }}
+</div>
 
 @endsection

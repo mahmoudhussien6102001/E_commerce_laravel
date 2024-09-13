@@ -1,0 +1,291 @@
+/*  index page css */
+.table-striped-custom tbody tr:nth-of-type(odd) {
+    background: linear-gradient(135deg, #0066cc, #3399ff);
+}
+.table-striped-custom tbody tr:hover {
+    background-color: #e8e8e8;
+    transition: background-color 0.3s ease;
+}
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1rem;
+}
+.table th {
+background: linear-gradient(135deg, #4572ff, #3879ff);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1rem;
+    border:1px solid  #3399ff;
+}
+.table td {
+    padding: 0.75rem;
+}
+.btn-custom1 {
+background: linear-gradient(135deg, #0066cc, #3399ff);
+    color: white;
+    font-weight: bold;
+    font-size: 2.9rem;
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    margin:70px;
+}
+.btn-custom1:hover {
+    background-color: #e85a4f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+.pagination-custom .pagination {
+    justify-content: center;
+    
+}
+.pagination-custom .page-item .page-link {
+    color: #FF6F61;
+}
+.pagination-custom .page-item.active .page-link {
+    background-color: #FF6F61;
+    border-color: #FF6F61;
+}
+.alert-danger-custom {
+    background-color: #ffe6e6;
+    color: #d9534f;
+    font-weight: bold;
+    border: 1px solid #d9534f;
+}
+.custom-margin {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.custom-btn-space {
+    margin-left: 0.5rem;
+}
+
+
+.btn {
+        border-radius: 30px;
+        font-size: 1rem; 
+        padding: 12px 24px; 
+    }
+    
+    .btn:hover, .btn:focus {
+        box-shadow: none; 
+        outline: none; 
+        text-decoration: none; 
+    }
+
+
+
+/* create page  */
+    
+.container-custom {
+    max-width: 900px;
+    margin: auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    min-height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+    
+.card-custom {
+    background: linear-gradient(135deg, #0066cc, #3399ff);
+    color: #fff;
+    transition: background 0.5s ease;
+}
+
+.card-custom:hover {
+    background: linear-gradient(135deg, #004999, #1a75ff);
+}
+
+.card-body-custom {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-custom {
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    background-color:#E4E7EC;
+}
+
+.btn-custom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color:#198754;
+}
+
+.btn-custom-reset {
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    background-color:#E4E7EC;
+}
+
+.btn-custom-reset:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color:#DC3545;
+}
+
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: #fff;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: #fff;
+}
+
+.card-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    text-align:center;
+}
+
+body {
+    font-family: 'Cairo', sans-serif; 
+}
+/*  edit page css */
+
+
+.container-custom2 {
+    max-width: 900px;
+    margin: auto;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    min-height: 400px;
+    background-color: #eaeaea; 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); 
+}
+
+.card-custom {
+    background: linear-gradient(135deg, #FFFFFF); 
+    color: #fff; 
+    color: #fff;
+    border-radius: 1.25rem;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #0066cc, #3399ff); 
+    border-radius: 0 0 1.25rem 1.25rem;
+    box-shadow: inset 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-custom2 {
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    background-color:#E4E7EC;
+    
+}
+
+.btn-custom2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color:#198754;
+    color: #fff;
+}
+
+.btn-custom2-reset {
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    background-color:#E4E7EC;
+}
+
+.btn-custom2-reset:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color:#DC3545;
+    color: #fff;
+}
+
+.btn-custom2-go {
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    background-color:#E4E7EC;
+}
+
+.btn-custom2-go:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color:#6C757D;
+    color: #fff;
+}
+
+.card-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 32px;
+    margin-bottom: 1rem;
+    text-align:center;
+}
+/*  show page css */
+
+.card-custom2 {
+    max-width: 900px; 
+    margin: auto; 
+    border-radius: 1rem; 
+    overflow: hidden; 
+    min-height: 400px; 
+}
+.card-header {
+    background: linear-gradient(135deg, #0066cc, #3399ff); 
+    color: #fff; 
+}
+.card-body2 {
+    padding: 2rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.btn-custom3 {
+    border-radius: 30px;
+    font-size: 1rem; 
+    padding: 12px 24px; 
+}
+.btn-custom3:hover, .btn-custom3:focus {
+    box-shadow: none; 
+    outline: none; 
+    text-decoration: none; 
+}
+.large-text {
+    font-size: 24px; 
+}
+.bold-text {
+    font-weight: bold; 
+}
+
+
+

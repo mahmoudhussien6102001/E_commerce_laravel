@@ -18,6 +18,9 @@ return [
     '#' => '#',
     'N/A' => 'غير متاح',
     '...' => '...',
-    'Show all categories' => 'عرض جميع الفئات'
+    'Show all categories' => 'عرض جميع الفئات',
+    'previous' => '&laquo; السابق',
+    'next' => 'التالي &raquo;',
+
 ];
 ?>
