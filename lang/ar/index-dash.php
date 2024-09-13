@@ -21,5 +21,10 @@ return [
     'Show all categories' => 'عرض جميع الفئات',
     'previous' => '&laquo; السابق',
     'next' => 'التالي &raquo;',
-];
 
+];
+<<<<<<< HEAD
+
+=======
+?>
+>>>>>>> aa61488a55171fc42bf4cefe01e6696e64f8e171

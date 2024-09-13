@@ -17,11 +17,15 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    {{-- ar --}}
+   {{-- ar --}}
+   @if(app()->getLocale() == 'ar')
+   <link rel="stylesheet" href="{{asset('assets/css/rtl.css')}}">
+   @endif
    
 
 </head>
-<body  @if(app()->getLocale() == 'ar') @endif>
+
+<body >
  {{-- navbar include --}}
  @include('website.includes.navbar') 
   {{-- Main content --}}
