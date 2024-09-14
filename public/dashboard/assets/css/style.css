@@ -217,10 +217,10 @@ h6 {
 }
 
 /* Card */
-.card {
+.card-w {
   margin-bottom: 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
 }
 
@@ -232,23 +232,28 @@ h6 {
   padding: 15px;
 }
 
-.card-title {
+.card-title-w {
   padding: 20px 0 15px 0;
   font-size: 18px;
   font-weight: 500;
   color: #012970;
   font-family: "Poppins", sans-serif;
+ 
 }
 
-.card-title span {
+.card-title-w span {
   color: #899bbd;
   font-size: 14px;
   font-weight: 400;
+  border-radius: 30px;
 }
 
-.card-body {
+.card-body-w{
   padding: 0 20px 20px 20px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
+
 
 .card-img-overlay {
   background-color: rgba(255, 255, 255, 0.6);

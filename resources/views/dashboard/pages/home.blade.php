@@ -20,7 +20,7 @@
             <div class="row">
               <!-- Sales Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
+              <div class="card-w info-card sales-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -35,8 +35,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Sales <span>| Today</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Sales <span>| Today</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -56,7 +56,7 @@
 
             <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
+              <div class="card-w info-card revenue-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -71,8 +71,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Revenue <span>| This Month</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -93,7 +93,7 @@
             <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
 
-              <div class="card info-card customers-card">
+              <div class="card-w info-card customers-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -108,8 +108,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Customers <span>| This Year</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Customers <span>| This Year</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -136,7 +136,7 @@
             <div class="row">
               <!-- Sales Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
+              <div class="card-w info-card sales-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -151,8 +151,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Sales <span>| Today</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Sales <span>| Today</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -172,7 +172,7 @@
 
             <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
+              <div class="card-w info-card revenue-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -187,8 +187,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Revenue <span>| This Month</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -209,7 +209,7 @@
             <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
 
-              <div class="card info-card customers-card">
+              <div class="card-w info-card customers-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -224,8 +224,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Customers <span>| This Year</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Customers <span>| This Year</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -252,7 +252,7 @@
             <div class="row">
               <!-- Sales Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
+              <div class="card-w info-card sales-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -267,8 +267,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Sales <span>| Today</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Sales <span>| Today</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -288,7 +288,7 @@
 
             <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
+              <div class="card-w info-card revenue-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -303,8 +303,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Revenue <span>| This Month</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -325,7 +325,7 @@
             <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
 
-              <div class="card info-card customers-card">
+              <div class="card-w info-card customers-card">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -340,8 +340,8 @@
                   </ul>
                 </div>
 
-                <div class="card-body">
-                  <h5 class="card-title">Customers <span>| This Year</span></h5>
+                <div class="card-body-w">
+                  <h5 class="card-title-w">Customers <span>| This Year</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">

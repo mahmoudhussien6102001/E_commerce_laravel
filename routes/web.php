@@ -8,15 +8,6 @@ use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController};
 // Auth controller
 use Illuminate\Support\Facades\Auth;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|*/
 Auth::routes();
 
 // Define website routes
@@ -32,21 +23,26 @@ Route::group([
 });
 
 // Define dashboard routes
-// Define dashboard routes with localization
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth', 'dashboard'],
 ], function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardMainController::class, 'index'])->name('dashboard');
-        
-        // Define localized routes within the dashboard
         Route::resource('/categories', CategoryController::class);
-
-        // Route of delete 
-        //Route::get('/category/delete' ,[CategoryController::class, 'delete'])->name('delete') ;
     });
+    
 });
 
 
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home_auth');
+
+// Route for switching languages
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ar'])) {
+        Session::put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('lang.switch');

@@ -13,7 +13,8 @@
             <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
                 <h1 class="mb-2">{{ __('home.title') }}</h1>
                 <div class="intro-text text-center text-md-left">
-                    <p class="mb-4">{{ __('home.text') }}</p>
+                    <p class="mb-4" style="font-weight: bold; color:#fff">{{ __('home.text') }}</p>
+
                     <p>
                         <a href="#" class="btn btn-sm btn-primary">{{ __('home.shop_now') }}</a>
                     </p>
