@@ -18,6 +18,8 @@
                             <form action="{{ route('categories.store') }}" method="POST">
                                 @csrf
                                 @include('dashboard.pages.category.form')
+
+                                
                                 <button type="submit" class="btn    btn-custom">{{ __('create-dash.Submit') }}</button>
                                 <button type="reset" class="btn     btn-custom-reset">{{ __('create-dash.Reset') }}</button>
                             </form>
