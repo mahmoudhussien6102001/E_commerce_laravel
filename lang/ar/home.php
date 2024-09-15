@@ -9,7 +9,7 @@ return [
     "new arrivals" => "الوافدون الجدد",
     "contact" => "اتصل بنا",
     "login" => "تسجيل الدخول",
-    "register" => "تسجيل",
+    "register" => "انشاء حساب",
     "logout" => "تسجيل الخروج",
     "Shoppers" => "المتسوقون",
     "Search" => "بحث",

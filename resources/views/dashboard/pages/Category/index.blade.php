@@ -2,10 +2,7 @@
 @section('title', __('index-dash.Index Page'))
 @section('main-content')
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 35398b904ed59713ebfcda277c192863650aca99
 <div class="row">
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
@@ -70,14 +67,7 @@
 </div>
 <!-- End Table with stripped rows -->
 <!-- simplepaginate-->
-<div class="my-4 d-flex justify-content-center">
-    {{ $categories->links() }}
-</div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 35398b904ed59713ebfcda277c192863650aca99
 <div class="my-4 pagination-custom d-flex justify-content-center">
     {{ $categories->links() }}
 </div>

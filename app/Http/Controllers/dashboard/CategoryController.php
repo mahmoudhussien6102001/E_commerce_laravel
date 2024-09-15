@@ -151,5 +151,6 @@ class CategoryController extends Controller
     return view('dashboard.pages.Category.deleted', compact('categories', 'categories_count'));
 }
  */   
+
 }
 }
