@@ -29,15 +29,14 @@ Route::group([
 ], function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardMainController::class, 'index'])->name('dashboard');
+
         Route::resource('/categories', CategoryController::class);
     });
     
 });
 
-
-
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home_auth');
+
 
 // Route for switching languages
 Route::get('lang/{locale}', function ($locale) {

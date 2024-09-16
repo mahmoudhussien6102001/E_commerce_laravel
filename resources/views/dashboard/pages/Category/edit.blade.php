@@ -4,11 +4,9 @@
 
 
 
-<<<<<<< HEAD
 <div class="container container-custom w-50 m-auto my-3">
-=======
 <div class="container container-custom2 w-50 m-auto my-3">
->>>>>>> 35398b904ed59713ebfcda277c192863650aca99
+
     <div class="row justify-content-center">
         <div class="col-12">
 
@@ -20,11 +18,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <form action="{{ route('categories.update', $category->id) }}" method="post">
-                            @csrf
-                            @method('PUT')
+                        @csrf
+                        @method('PUT')
                             @include('dashboard.pages.category.form')
-
-                            <button type="submit" class="btn       btn-md px-4 font-weight-bold fs-5  btn-custom2">{{ __('edit-dash.update_button') }}</button>
+                            <button type="submit" class="btn  btn-md px-4 font-weight-bold fs-5  btn-custom2">{{ __('edit-dash.update_button') }}</button>
                             <a href="{{ route('categories.index') }}" class="btn  btn-md px-2 py-2  btn-custom2-reset">{{ __('edit-dash.return_button') }}</a>
                             <a href="{{ url()->previous() }}" class="btn  btn-md px-2 py-2  btn-custom2-go">{{ __('edit-dash.back_button') }}</a>
 
