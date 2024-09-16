@@ -2,10 +2,10 @@
 
 return [
     "home" => "الصفحة الرئيسية",
-    "about" => "حول",
+    "about" => "عننا",
     "shop" => "التسوق",
     "catalogue" => "الكتالوج",
-    "new arrivals" => "الوافدون الجدد",
+    "new arrivals" => "وصل حديثا",
     "contact" => "اتصل بنا",
     "login" => "تسجيل الدخول",
     "register" => "تسجيل",
