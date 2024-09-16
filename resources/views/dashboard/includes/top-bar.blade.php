@@ -8,6 +8,7 @@
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>
+    
     <!-- End Logo -->
 
     <div class="search-bar">
@@ -17,6 +18,20 @@
         </form>
     </div>
     <!-- End Search Bar -->
+     <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-globe"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('ar') }}">
+                    <i class="fas fa-text-height"></i> <strong>عربي</strong>
+                </a>
+                <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en') }}">
+                    <i class="fas fa-font"></i> <strong>English</strong>
+                </a>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+            </div>
+        </li>
 
     <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
@@ -47,6 +62,7 @@
                 <!-- Message items here -->
             </ul><!-- End Messages Dropdown Items -->
         </li><!-- End Messages Nav -->
+        
 
         <li class="nav-item dropdown pe-3">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -59,20 +75,7 @@
             </ul>
         </li><!-- End Profile Nav -->
 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-globe"></i>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('ar') }}">
-                    <i class="fas fa-text-height"></i> <strong>عربي</strong>
-                </a>
-                <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en') }}">
-                    <i class="fas fa-font"></i> <strong>English</strong>
-                </a>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-            </div>
-        </li>
+       
         <!-- End Language Dropdown -->
     </ul>
 </nav>
