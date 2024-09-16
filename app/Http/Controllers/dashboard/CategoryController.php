@@ -14,10 +14,7 @@ class CategoryController extends Controller
     public function index()
 
     {
-        $categories = category::orderBy('id','asc')->simplePaginate(2);
-
-
-
+        $categories = category::orderBy('id','asc')->simplePaginate(10);
         return view('dashboard.pages.category.index', compact('categories'));
     }
 
@@ -50,7 +47,7 @@ class CategoryController extends Controller
         $category->create_user_id = auth()->user()->id;
         $category->update_user_id = null;
         $category->save();// Eloquent ORM 
-        return redirect()->route('categories.index')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
+        return redirect()->route('categories.index')->with('Created_Category_Sucessfully',"the Category($category->title) has been created sucessfully");
     }
 
     /**
@@ -112,7 +109,7 @@ class CategoryController extends Controller
         $category->update_user_id = auth()->user()->id;
         $category->save();
 
-        return redirect()->route('categories.index', $category->$id)->with('updated_category_sucessfully',"the category($category_old->title) has been updated Sucessfully");
+        return redirect()->route('categories.index', $category->$id)->with('Updated_Category_Sucessfully',"the Category($category_old->title) has been updated sucessfully");
 
 
     }
@@ -123,34 +120,24 @@ class CategoryController extends Controller
      */
     public function destroy(int $id)
     {
-        //
-        if (auth()->user()->user_type !== 'admin') {
-            return view('dashboard.pages.Category.404.categories-404') ;
-        }
-        else{
+       
         $category = Category::find($id);
         $category->delete();
-        $category->update_at == null ;
         $category->save() ;
-        return redirect()->route('dashboard');
+        return redirect()->route('categories.delete')->with('Deleted_Category_Sucessfully',"the Category($category->title) has been deleted sucessfully");
+
+
 
     }
     
-   /*
+  
     public function delete()
 
 {
     $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);  
-
-    $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);
-
-    // Count the soft-deleted categories
     $categories_count = $categories->count();
-
-    // Return the view with the categories and their count
     return view('dashboard.pages.Category.deleted', compact('categories', 'categories_count'));
 }
- */   
 
-}
+
 }

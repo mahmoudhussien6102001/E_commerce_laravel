@@ -35,11 +35,7 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('dashboard/assets/css/style.css')}}" rel="stylesheet">
   <link href="{{ asset('dashboard/assets/css/custom-css/main.css') }}" rel="stylesheet" >
-<style>
-  .cutom-marign{
-    margin-right: 3rem;
-  }
-  </style>
+
     <title>@yield('title')</title>
 
     {{-- ar --}}
@@ -56,8 +52,10 @@
     @include('dashboard.includes.side-bar') 
 
     {{-- content --}}
+    <main id="main" class="main">
     @section('main-content')
     @show
+    </main>
 
 
     {{-- footer  --}}
