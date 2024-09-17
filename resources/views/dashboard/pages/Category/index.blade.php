@@ -15,7 +15,7 @@
     </div>
 </div>
 
-@include('dashboard.pages.Category.indexmessages.messages')
+@include('dashboard.pages.Category.indexmessages.messages')   {{--هنا بنستدعي صفحه الرسايل المخصص ليتم عرضها في حاله انشاء فئه جديده--}}
 
 <!-- Table with stripped rows -->
 

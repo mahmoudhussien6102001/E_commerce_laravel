@@ -31,6 +31,10 @@ Route::group([
         Route::get('/', [DashboardMainController::class, 'index'])->name('dashboard');
 
         Route::resource('/categories', CategoryController::class);
+        Route::get('/category/delete',[CategoryController::class, 'delete'])->name('categories.delete');
+        Route::get('/category/restore/{id}',[CategoryController::class, 'restore'])->name('categories.restore');
+        Route::delete('/category/forecDelete/{id}',[CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
+
     });
     
 });

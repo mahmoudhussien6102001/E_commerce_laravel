@@ -130,7 +130,8 @@ class CategoryController extends Controller
     public function destroy(int $id)
     {
         //
-        if (auth()->user()->user_type !== 'admin') {
+        if (auth()->user()->user_type !== 'admin')
+        {
             return view('dashboard.pages.Category.404.categories-404') ;
         }
         else{
@@ -139,18 +140,43 @@ class CategoryController extends Controller
         $category->save() ;
         return redirect()->route('categories.delete')->with('Deleted_Category_Sucessfully',"the Category($category->title) has been deleted sucessfully");
 
+    }
 
+  
+    }
+
+    public function delete()
+
+    {
+        $categories = Category::orderBy('id', 'desc')->onlyTrashed()->simplePaginate(3); //onlyTrashed() :بيجب الفئه اللي تحذفت
+        $categories_count = $categories->count(); // بيحسب عدد الفئه اللي موجوده حاليا 
+        return view('dashboard.pages.Category.delete', compact('categories', 'categories_count'));
+    }
+
+    public function restore($id)
+    {
+        $category = Category::onlyTrashed()->find($id);
+    
+        if ($category) {
+            $category->restore();
+            $category->update_user_id = auth()->user()->id;
+            $category->save();
+            return redirect()->route('categories.index')->with('message', 'Restored Category Successfully');
+        }
+    
+        return redirect()->route('categories.index')->with('error', 'Category not found');
+    }
+
+    public function forceDelete($id)
+    {
+        $category = Category::where('id',$id);
+        $category->forceDelete();
+        return redirect()->route('categories.index')->with('message', 'Category deleted successfully',"the Category () has been Successfully");
 
     }
     
-  
-    public function delete()
-
-{
-    $categories = Category::onlyTrashed()->orderBy('id', 'desc')->simplePaginate(5);  
-    $categories_count = $categories->count();
-    return view('dashboard.pages.Category.deleted', compact('categories', 'categories_count'));
+    
 }
 
 
-}
+

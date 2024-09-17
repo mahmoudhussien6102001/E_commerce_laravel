@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('create_user_id')->nullable()->constrained('users');
             $table->foreignId('update_user_id')->nullable()->constrained('users');
             $table->timestamps(); //هذه الداله خاصه بالوقت والتريخ 
-           //$table -> softDeletes();
+            $table -> softDeletes();// deleted_at تقوم بإضافة عمود خاص إلى الجدول في قاعدة في  يسمى 
         });
     }
 

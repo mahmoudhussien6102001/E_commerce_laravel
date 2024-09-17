@@ -14,6 +14,7 @@ return [
     'Updated By' => 'Updated By',
     'Created At' => 'Created At',
     'Updated At' => 'Updated At',
+    'Deleted At' => 'Deleted At',
     'Action' => 'Action',
     '#' => '#',
     'N/A' => 'N/A',

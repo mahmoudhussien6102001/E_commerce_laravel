@@ -8,10 +8,12 @@
 <div class="container container-custom my-5">
     <div class="row justify-content-center">
         <div class="col-12">
-            <div class="card card-custom shadow-lg mb-4">
+            <div class="card card-custom mb-4">
+                
                 <div class="card-header">
                     <strong class="card-title  fs-2">{{ __('create-dash.Create Category') }}</strong>
                 </div>
+                
                 <div class="card-body card-body-custom">
                     <div class="row">
                         <div class="col-md-12">

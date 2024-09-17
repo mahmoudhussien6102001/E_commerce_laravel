@@ -2,22 +2,17 @@
 @section('title', __('edit-dash.title', ['category' => $category->title]))
 @section('main-content')
 
-
-
-<<<<<<< HEAD
-<div class="container container-custom w-50 m-auto my-3">
-=======
 <div class="container container-custom2 w-50 m-auto my-3">
->>>>>>> 35398b904ed59713ebfcda277c192863650aca99
     <div class="row justify-content-center">
         <div class="col-12">
-            <div class="card shadow-md mb-4">
+            <div class="card card-custom mb-4">
+                
+                <div class="card-header">
                 <strong class="card-title fs-2">{{ __('edit-dash.heading', ['category' => $category->title]) }}</strong>
-
-            </div>
+                </div>
+            
             <div class="card-body card-body-custom">
                 <div class="row">
-                    <div class="col-md-12">
                         <form action="{{ route('categories.update', $category->id) }}" method="post">
                         @csrf
                         @method('PUT')
@@ -36,3 +31,5 @@
 
 
 @endsection
+
+
