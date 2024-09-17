@@ -12,8 +12,12 @@ class CategoryController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-{
-        $categories = Category::orderBy('id','asc')->simplePaginate(4);
+
+    {
+        $categories = category::orderBy('id','asc')->simplePaginate(2);
+
+
+
         return view('dashboard.pages.category.index', compact('categories'));
     }
 
@@ -39,15 +43,14 @@ class CategoryController extends Controller
         ]);
 
         // create category
+
         $category    = new Category();
         $category->title        = $request->title;
         $category->description  = $request->description;
         $category->create_user_id = auth()->user()->id;
         $category->update_user_id = null;
-        $category->save();
+        $category->save();// Eloquent ORM 
         return redirect()->route('categories.index')->with('created_category_sucessfully',"the category($category->title) has Been created Sucessfully");
-
-
     }
 
     /**
@@ -124,11 +127,13 @@ class CategoryController extends Controller
         if (auth()->user()->user_type !== 'admin') {
             return view('dashboard.pages.Category.404.categories-404') ;
         }
+        else{
         $category = Category::find($id);
         $category->delete();
         $category->update_at == null ;
         $category->save() ;
         return redirect()->route('dashboard');
+
     }
     
    /*
@@ -146,4 +151,6 @@ class CategoryController extends Controller
     return view('dashboard.pages.Category.deleted', compact('categories', 'categories_count'));
 }
  */   
+
+}
 }

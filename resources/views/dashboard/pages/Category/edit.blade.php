@@ -4,7 +4,11 @@
 
 
 
+<<<<<<< HEAD
+<div class="container container-custom w-50 m-auto my-3">
+=======
 <div class="container container-custom2 w-50 m-auto my-3">
+>>>>>>> 35398b904ed59713ebfcda277c192863650aca99
     <div class="row justify-content-center">
         <div class="col-12">
 

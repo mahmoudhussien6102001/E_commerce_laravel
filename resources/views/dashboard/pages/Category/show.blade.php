@@ -4,6 +4,10 @@
 
 @section('main-content')
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 35398b904ed59713ebfcda277c192863650aca99
 
 
 <div class="container my-5">

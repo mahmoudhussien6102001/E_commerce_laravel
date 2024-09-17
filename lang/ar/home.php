@@ -1,5 +1,6 @@
 <?php
 
+
 return [
     "home" => "الصفحة الرئيسية",
     "about" => "عننا",
@@ -8,7 +9,7 @@ return [
     "new arrivals" => "وصل حديثا",
     "contact" => "اتصل بنا",
     "login" => "تسجيل الدخول",
-    "register" => "تسجيل",
+    "register" => "انشاء حساب",
     "logout" => "تسجيل الخروج",
     "Shoppers" => "المتسوقون",
     "Search" => "بحث",
@@ -53,5 +54,6 @@ return [
     'Dashboard' => 'لوحة التحكم',
     'Logout' => 'تسجيل الخروج'
 ];
+
 
 ?>
