@@ -4,14 +4,10 @@
 
 
 
-<<<<<<< HEAD
-<div class="container container-custom w-50 m-auto my-3">
-=======
+
 <div class="container container-custom2 w-50 m-auto my-3">
->>>>>>> 35398b904ed59713ebfcda277c192863650aca99
     <div class="row justify-content-center">
         <div class="col-12">
-
             <div class="card shadow-md mb-4">
                 <strong class="card-title fs-2">{{ __('edit-dash.heading', ['category' => $category->title]) }}</strong>
 

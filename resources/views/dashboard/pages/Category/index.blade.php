@@ -7,7 +7,7 @@
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
             <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="{{ route('categories.create') }}" class="btn btn-custom1 my-3 text-light font-weight-bold custom-margin">
+                <a href="{{ route('categories.create') }}" class="btn btn-custom1 my-3 text-light font-weight-bold">
                     <span>{{__('index-dash.Add Category')}}</span>
                 </a>
             </div>
@@ -15,21 +15,24 @@
     </div>
 </div>
 
+@include('dashboard.pages.Category.indexmessages.messages')
+
 <!-- Table with stripped rows -->
-<div class="d-flex justify-content-center align-items-center ms-5">
+
 <table class="table table-striped-custom w-50 ms-5">
     <thead>
-      <tr>
-        <th scope="col">{{__('index-dash.#')}}</th>
-        <th scope="col">{{__('index-dash.Title')}}</th>
-        <th scope="col">{{__('index-dash.Description')}}</th>
-        <th scope="col">{{__('index-dash.Created By')}}</th>
-        <th scope="col">{{__('index-dash.Updated By')}}</th>
-        <th scope="col">{{__('index-dash.Created At')}}</th>
-        <th scope="col">{{__('index-dash.Updated At')}}</th>
-        <th scope="col">{{__('index-dash.Action')}}</th>
-      </tr>
-    </thead>
+        <tr>
+          <th scope="col">{{__('index-dash.#')}}</th>
+          <th scope="col">{{__('index-dash.Title')}}</th>
+          <th scope="col">{{__('index-dash.Description')}}</th>
+          <th scope="col" style="white-space: nowrap;">{{__('index-dash.Created By')}}</th>
+          <th scope="col" style="white-space: nowrap;">{{__('index-dash.Updated By')}}</th>
+          <th scope="col" style="white-space: nowrap;">{{__('index-dash.Created At')}}</th>
+          <th scope="col" style="white-space: nowrap;">{{__('index-dash.Updated At')}}</th>
+          <th scope="col">{{__('index-dash.Action')}}</th>
+        </tr>
+      </thead>
+      
     <tbody>
         @forelse ($categories as $category)
         <tr>
@@ -64,7 +67,7 @@
         @endforelse
     </tbody>
 </table>
-</div>
+
 <!-- End Table with stripped rows -->
 <!-- simplepaginate-->
 

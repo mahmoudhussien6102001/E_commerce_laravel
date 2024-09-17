@@ -2,7 +2,6 @@
 @section('title' , 'Home Page')
 @section('main-content')
 {{-- -Home Page  --}}
-<main id="main" class="main">
     <div class="pagetitle">
         <h1>Dashboard</h1>
         <nav>
@@ -366,7 +365,6 @@
 
         </div>
       </section>
-</main>
 
 
 @endsection
