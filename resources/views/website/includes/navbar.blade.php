@@ -71,7 +71,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('ar') }}">  <i class="fas fa-text-height"> </i> <strong> عربي</strong>
             </a>
-             <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en') }}"> <i class="fas fa-font"></i><strong> English</strong> </a>
+             <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en') }}"> <i class="fas fa-font"></i><strong> {{ __('home.English') }}</strong> </a>
           </div>
         </li>
             </ul>

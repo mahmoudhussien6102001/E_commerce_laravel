@@ -2,6 +2,8 @@
 @section('title' ,'Deleted categories')
 @section('main-content')
 
+
+@include('dashboard.pages.Category.indexmessages.messages')
 <!-- Table with stripped rows -->
 <table class="table table-striped w-50 m-auto">
     <thead>
@@ -9,15 +11,13 @@
         <th scope="col">{{__('index-dash.#')}}</th>
         <th scope="col">{{__('index-dash.Title')}}</th>
         <th scope="col">{{__('index-dash.Description')}}</th>
-        <th scope="col">{{__('index-dash.Created By')}}</th>
-        <th scope="col">{{__('index-dash.Updated By')}}</th>
-        <th scope="col">{{__('index-dash.Created At')}}</th>
-        <th scope="col">{{__('index-dash.Updated At')}}</th>
-        <th scope="col">{{__('index-dash.Deleted At')}}</th>
+        <th scope="col"  style="white-space: nowrap;" >{{__('index-dash.Created By')}}</th>
+        <th scope="col"  style="white-space: nowrap;" >{{__('index-dash.Updated By')}}</th>
+        <th scope="col"  style="white-space: nowrap;">{{__('index-dash.Created At')}}</th>
+        <th scope="col"  style="white-space: nowrap;">{{__('index-dash.Updated At')}}</th>
+        <th scope="col"  style="white-space: nowrap;">{{__('index-dash.Deleted At')}}</th>
         @if(auth()->user()->user_type == "admin")
         <th class="col ">{{ __('index-dash.Action') }}</th>
-        
-
         @endif
      
       </tr>
@@ -28,7 +28,7 @@
         <tr>
             <td class="font-weight-bold">{{$loop->iteration}}</td>
             <td>{{$category->title}}</td>
-            <td>{{Str::words($category->description, '3', '...')}}</td>
+            <td>{{Str::words($category->description, '3', '...') ?? 'N/A'}}</td>
             <td>{{ $category->create_user->name ?? 'N/A' }}</td>
             <td>{{ $category->update_user->name ?? 'N/A' }}</td>
             <td>{{ $category->created_at->format('Y-m-d H:i') }}</td>

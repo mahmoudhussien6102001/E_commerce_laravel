@@ -49,5 +49,6 @@ return [
     'guest' =>'guest',
     'Profile Management' =>'Profile Management',
     'Dashboard' =>'Dashboard',
-    'Logout' =>'Logout'
+    'Logout' =>'Logout',
+    'English' => 'English'
 ];
