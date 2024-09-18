@@ -73,7 +73,7 @@
                     <i class="fas fa-text-height"></i> <strong>عربي</strong>
                 </a>
                 <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en') }}">
-                    <i class="fas fa-font"></i> <strong>English</strong>
+                    <i class="fas fa-font"></i> <strong>{{__('home.English')}}</strong>
                 </a>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
             </div>

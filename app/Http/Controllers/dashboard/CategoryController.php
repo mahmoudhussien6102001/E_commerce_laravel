@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
 
     {
-        $categories = category::orderBy('id','asc')->simplePaginate(2);
+        $categories = category::orderBy('id','asc')->simplePaginate(5);
 
 
 
@@ -129,7 +129,7 @@ class CategoryController extends Controller
      */
     public function destroy(int $id)
     {
-        //
+        
         if (auth()->user()->user_type !== 'admin')
         {
             return view('dashboard.pages.Category.404.categories-404') ;
@@ -138,7 +138,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->delete();
         $category->save() ;
-        return redirect()->route('categories.delete')->with('Deleted_Category_Sucessfully',"the Category($category->title) has been deleted sucessfully");
+        return redirect()->route('categories.delete')->with('status', sprintf('Are you sure you want to delete the category "%s"?', $category->title));
 
     }
 
@@ -148,8 +148,8 @@ class CategoryController extends Controller
     public function delete()
 
     {
-        $categories = Category::orderBy('id', 'desc')->onlyTrashed()->simplePaginate(3); //onlyTrashed() :بيجب الفئه اللي تحذفت
-        $categories_count = $categories->count(); // بيحسب عدد الفئه اللي موجوده حاليا 
+        $categories = Category::orderBy('id', 'desc')->onlyTrashed()->simplePaginate(5); 
+        $categories_count = $categories->count(); 
         return view('dashboard.pages.Category.delete', compact('categories', 'categories_count'));
     }
 
@@ -161,7 +161,7 @@ class CategoryController extends Controller
             $category->restore();
             $category->update_user_id = auth()->user()->id;
             $category->save();
-            return redirect()->route('categories.index')->with('message', 'Restored Category Successfully');
+            return redirect()->route('categories.index')->with('Restored', 'Restored Category Successfully');
         }
     
         return redirect()->route('categories.index')->with('error', 'Category not found');
@@ -171,7 +171,7 @@ class CategoryController extends Controller
     {
         $category = Category::where('id',$id);
         $category->forceDelete();
-        return redirect()->route('categories.index')->with('message', 'Category deleted successfully',"the Category () has been Successfully");
+        return redirect()->route('categories.index')->with('Deleted', 'Category deleted successfully',"the Category () has been Successfully");
 
     }
     
