@@ -56,7 +56,7 @@
     <h4 class="font-weight-bold">
         <i class="fas fa-exclamation-circle" style="display: inline-block; animation: bounceIcon 1.5s infinite;"></i>
         <span style="display: inline-block; animation: flashText 2s infinite;">
-            {{ session()->get('message') }}
+            {{ session()->get('Deleted') }}
         </span>
     </h4>
 </div>

@@ -38,6 +38,12 @@ return [
             'description' => 'I am a backend developer with strong skills in PHP, focusing on creating secure and scalable web applications, offering innovative solutions while staying updated on the latest industry trends.',
             'image' => 'person_5.jpg',
         ],
+        [
+            'name' => 'Omar Abohashim ',
+            'position' => 'Backend Developer',
+            'description'=> ' I am a Backend Developer with expertise in PHP and Laravel, dedicated to creating powerful and scalable web applications. My responsibilities include developing efficient server-side logic, managing and optimizing databases, and integrating APIs seamlessly. I am committed to delivering clean, high-performance code that improves the overall security, functionality, and efficiency of the applications I work on',
+            'image' => 'person_7.jpg',
+        ]
     ],
     'free_shipping' => 'Free Shipping',
     'free_shipping_desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at iaculis quam.',
