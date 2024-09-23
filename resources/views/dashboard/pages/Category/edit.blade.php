@@ -13,6 +13,7 @@
             
             <div class="card-body card-body-custom">
                 <div class="row">
+                    
                         <form action="{{ route('categories.update', $category->id) }}" method="post">
                         @csrf
                         @method('PUT')
@@ -20,8 +21,8 @@
                             <button type="submit" class="btn  btn-md px-4 font-weight-bold fs-5  btn-custom2">{{ __('edit-dash.update_button') }}</button>
                             <a href="{{ route('categories.index') }}" class="btn  btn-md px-2 py-2  btn-custom2-reset">{{ __('edit-dash.return_button') }}</a>
                             <a href="{{ url()->previous() }}" class="btn  btn-md px-2 py-2  btn-custom2-go">{{ __('edit-dash.back_button') }}</a>
-
                         </form>
+
                     </div>
                 </div>
             </div>
