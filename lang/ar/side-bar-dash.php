@@ -11,7 +11,8 @@ return [
     'Create' => 'إضافة',
     'Categories' => 'الفئات',
     'Subcategories' => 'الفئات الفرعية',
-    'Products' => 'المنتجات'
+    'Products' => 'المنتجات',
+    'trash'=>'نفايه',
 ];
 
 ?>

@@ -52,7 +52,8 @@ return [
     'guest' => 'ضيف',
     'Profile Management' => 'إدارة الملف الشخصي',
     'Dashboard' => 'لوحة التحكم',
-    'Logout' => 'تسجيل الخروج'
+    'Logout' => 'تسجيل الخروج',
+    'English' => 'إنجليزي'
 ];
 
 

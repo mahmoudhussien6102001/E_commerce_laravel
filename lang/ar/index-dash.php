@@ -14,6 +14,8 @@ return [
     'Updated By' => 'تم تحديثه بواسطة',
     'Created At' => 'تاريخ الإنشاء',
     'Updated At' => 'تاريخ التحديث',
+    'Deleted At' => 'حذف',
+
     'Action' => 'الإجراء',
     '#' => '#',
     'N/A' => 'غير متاح',
@@ -22,4 +24,6 @@ return [
     'previous' => '&laquo; السابق',
     'next' => 'التالي &raquo;',
 
+
 ];
+?>

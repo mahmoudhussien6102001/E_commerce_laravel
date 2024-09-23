@@ -15,7 +15,7 @@
     </div>
 </div>
 
-@include('dashboard.pages.Category.indexmessages.messages')
+@include('dashboard.pages.Category.indexmessages.messages')   {{--هنا بنستدعي صفحه الرسايل المخصص ليتم عرضها في حاله انشاء فئه جديده--}}
 
 <!-- Table with stripped rows -->
 
@@ -38,7 +38,7 @@
         <tr>
             <td class="font-weight-bold">{{$loop->iteration}}</td>
             <td>{{$category->title}}</td>
-            <td>{{Illuminate\Support\Str::words($category->description, 3, '...') }}</td>
+            <td>{{Str::words($category->description, 3, '...') ?? 'N/A' }}</td>
             <td>{{$category->create_user->name ?? '...'}}</td>
             <td>{{$category->update_user->name ?? 'N/A'}}</td>
             <td>{{$category->created_at}}</td>

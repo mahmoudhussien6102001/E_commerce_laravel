@@ -7,11 +7,11 @@
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <div class="card card-custom2 border-light shadow-lg">
+            <div class="card card-custom border-light shadow-lg">
                 <div class="card-header text-center">
                     <h2 class="mb-0">{{ $category->title ?? 'No Title' }}</h2>
                 </div>
-                <div class="card-body2">
+                <div class="card-body">
                     <p class="card-text large-text bold-text">{{ $category->description ?? 'No Description' }}</p>
 
                     <hr>

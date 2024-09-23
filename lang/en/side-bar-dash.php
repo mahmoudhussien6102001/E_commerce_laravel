@@ -10,6 +10,7 @@ return [
     'Create' => 'Create',
     'Categories' => 'Categories',
     'Subcategories' => 'Subcategories ',
-    'Products' => 'Products'
+    'Products' => 'Products',
+    'trash'=>'Trash',
 
 ];
