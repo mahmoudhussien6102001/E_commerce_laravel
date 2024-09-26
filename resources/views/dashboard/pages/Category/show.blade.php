@@ -21,7 +21,7 @@
                             <i class="fa-solid fa-edit"></i> {{ __('show-dash.Edit') }} 
                         </a>
 
-                        <form action="{{ route('categories.destroy', $category->id) }}" method="post">
+                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-outline-danger btn-custom3" type="submit">
