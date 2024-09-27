@@ -22,5 +22,8 @@ return [
     'Show all categories' => 'Show all categories',
     'previous' => '&laquo; Previous',
     'next' => 'Next &raquo;',
+    'Category'=> 'Category',
+    'Add SubCategory' => 'Add SubCategory',
+    'SubCategory Index Page' =>'SubCategory Index Page'
 ];
 ?>

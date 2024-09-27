@@ -23,6 +23,10 @@ return [
     'Show all categories' => 'عرض جميع الفئات',
     'previous' => '&laquo; السابق',
     'next' => 'التالي &raquo;',
+    'Category'=>'فئة/صنف',
+    'Add SubCategory' => 'إضافة فئة/صنف فرعية',
+    'SubCategory Index Page' =>'صفحة فهرس الفئات الفرعية',
+    
 
 
 ];

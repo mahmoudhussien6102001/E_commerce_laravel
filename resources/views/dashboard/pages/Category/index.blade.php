@@ -2,7 +2,6 @@
 @section('title', __('index-dash.Index Page'))
 @section('main-content')
 
-
 <div class="row">
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
@@ -15,46 +14,43 @@
     </div>
 </div>
 
-@include('dashboard.pages.Category.indexmessages.messages')   {{--هنا بنستدعي صفحه الرسايل المخصص ليتم عرضها في حاله انشاء فئه جديده--}}
+@include('dashboard.pages.Category.indexmessages.messages')  {{-- تضمين رسائل النجاح أو الخطأ --}}
 
 <!-- Table with stripped rows -->
-
-<table class="table table-striped-custom w-50 ms-5">
+<table class="table table-striped-custom w-100 mx-auto">
     <thead>
         <tr>
-          <th scope="col">{{__('index-dash.#')}}</th>
-          <th scope="col">{{__('index-dash.Title')}}</th>
-          <th scope="col">{{__('index-dash.Description')}}</th>
-          <th scope="col" style="white-space: nowrap;">{{__('index-dash.Created By')}}</th>
-          <th scope="col" style="white-space: nowrap;">{{__('index-dash.Updated By')}}</th>
-          <th scope="col" style="white-space: nowrap;">{{__('index-dash.Created At')}}</th>
-          <th scope="col" style="white-space: nowrap;">{{__('index-dash.Updated At')}}</th>
-          <th scope="col">{{__('index-dash.Action')}}</th>
+            <th scope="col">{{__('index-dash.#')}}</th>
+            <th scope="col">{{__('index-dash.Title')}}</th>
+            <th scope="col">{{__('index-dash.Description')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.Created By')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.Updated By')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.Created At')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.Updated At')}}</th>
+            <th scope="col">{{__('index-dash.Action')}}</th>
         </tr>
-      </thead>
-      
+    </thead>
+    
     <tbody>
         @forelse ($categories as $category)
         <tr>
-            <td class="font-weight-bold">{{$loop->iteration}}</td>
-            <td>{{$category->title}}</td>
-            <td>{{Illuminate\Support\Str::words($category->description, 3, '...') }}</td>
-            <td>{{$category->create_user->name ?? '...'}}</td>
-            <td>{{$category->update_user->name ?? 'N/A'}}</td>
-            <td>{{$category->created_at}}</td>
-            <td>{{$category->updated_at ?? 'N/A'}}</td>
+            <td class="font-weight-bold">{{ $loop->iteration }}</td>
+            <td>{{ $category->title }}</td>
+            <td>{{ Str::words($category->description, 3, '...') }}</td>
+            <td>{{ $category->create_user->name ?? '...' }}</td>
+            <td>{{ $category->update_user->name ?? 'N/A' }}</td>
+            <td>{{ $category->created_at->format('Y-m-d H:i') }}</td> {{-- تنسيق التاريخ --}}
+            <td>{{ $category->updated_at ? $category->updated_at->format('Y-m-d H:i') : 'N/A' }}</td>
             <td>
-
-                <form action="{{ route('categories.destroy',$category->id) }}" method="POST" class="d-flex justify-content-between align-items-center">
+                <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-flex justify-content-between align-items-center">
                     @csrf
                     @method('DELETE')
-                    <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6 custom-btn-space">{{__('index-dash.Show')}}</a>
+                    <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6 custom-btn-space">{{ __('index-dash.Show') }}</a>
                     @if(auth()->user()->user_type == 'admin')
-                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-success btn-sm font-weight-bold fs-6 custom-btn-space">{{__('index-dash.Edit')}}</a>
-                        <button type="submit" class="btn btn-danger  btn-sm font-weight-bold fs-6 custom-btn-space">{{__('index-dash.Delete')}}</button>
+                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-success btn-sm font-weight-bold fs-6 custom-btn-space">{{ __('index-dash.Edit') }}</a>
+                        <button type="submit" class="btn btn-danger btn-sm font-weight-bold fs-6 custom-btn-space">{{ __('index-dash.Delete') }}</button>
                     @endif
                 </form>
-                
             </td>
         </tr>
         @empty
@@ -68,10 +64,9 @@
         @endforelse
     </tbody>
 </table>
-
 <!-- End Table with stripped rows -->
-<!-- simplepaginate-->
 
+<!-- Pagination -->
 <div class="my-4 pagination-custom d-flex justify-content-center">
     {{ $categories->links() }}
 </div>

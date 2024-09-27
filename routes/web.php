@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 // website controller
 use App\Http\Controllers\website\{MainController, ProductController};
 // Dashboard controller
-use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController};
+use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController,SubCategoryController};
 // Auth controller
 use Illuminate\Support\Facades\Auth;
 
@@ -34,6 +34,9 @@ Route::group([
         Route::get('/category/delete',[CategoryController::class, 'delete'])->name('categories.delete');
         Route::get('/category/restore/{id}',[CategoryController::class, 'restore'])->name('categories.restore');
         Route::delete('/category/forecDelete/{id}',[CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
+       
+       Route::resource('subcategories', SubCategoryController::class);
+
 
     });
     

@@ -127,7 +127,9 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(int $id)
+    public function destroy(int $id)//(الـ trash). هنا بيتم حذف الفئة بس الحذف ده مؤقت. يعني الفئة مش بتتمسح بالكامل من قاعدة البيانات، بتروح لسلة المهملات 
+
+    
     {
         
         if (auth()->user()->user_type !== 'admin')
@@ -137,7 +139,7 @@ class CategoryController extends Controller
         else{
         $category = Category::find($id);
         $category->delete();
-        $category->save() ;
+        // $category->save() ;
         return redirect()->route('categories.delete')->with('status', sprintf('Are you sure you want to delete the category "%s"?', $category->title));
 
     }
@@ -145,13 +147,13 @@ class CategoryController extends Controller
   
     }
 
-    public function delete()
-
+    public function delete()//هنا بيتم جلب الفئات اللي اتحذفت مؤقتًا بس
     {
-        $categories = Category::orderBy('id', 'desc')->onlyTrashed()->simplePaginate(5); 
-        $categories_count = $categories->count(); 
+        $categories = Category::orderBy('id', 'desc')->onlyTrashed()->simplePaginate(5); // (يعني اللي اتحذفت مؤقتًا مش نهائيًا) trash بتجيب الفئات اللي موجودة في الـ  :onlyTrashed()
+        $categories_count = $categories->count(); //هنا بيحسب عدد الفئات اللي اتحذفت مؤقتًا عشان يعرف كام فئة محذوفة موجودة.
         return view('dashboard.pages.Category.delete', compact('categories', 'categories_count'));
     }
+
 
     public function restore($id)
     {
@@ -167,7 +169,9 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('error', 'Category not found');
     }
 
-    public function forceDelete($id)
+    public function forceDelete($id)// ومش ممكن استرجاعها  trash بيحذف الفئة بشكل نهائي من قاعدة البيانات، يعني مش هتروح للـ 
+ 
+
     {
         $category = Category::where('id',$id);
         $category->forceDelete();

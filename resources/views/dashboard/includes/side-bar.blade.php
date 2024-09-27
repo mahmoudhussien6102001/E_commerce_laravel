@@ -83,14 +83,21 @@
         <ul id="SubCategories-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
             <li>
-                <a href="components-cards.html">
+                <a href="{{route('subcategories.index')}}">
                     <i class="fa-sharp fa-solid fa-i fs-5"></i><span>{{ __('side-bar-dash.Index') }}</span>
                 </a>
               </li>
               <li>
-                <a href="components-carousel.html">
+                <a href="{{ route('subcategories.create') }}">
                     <i class="fa-solid fa-plus fs-5"></i><span>{{ __('side-bar-dash.Create') }}</span>
                 </a>
+              </li>
+              <li>
+                <a href="#">
+                <i class="fa-solid fa-minus fs-5"></i>
+                <span>{{ __('side-bar-dash.trash') }}</span>
+                </a>
+              </li>
             </ul>
         </li>
               {{--products--}}
