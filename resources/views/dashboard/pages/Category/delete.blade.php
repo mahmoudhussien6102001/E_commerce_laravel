@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.master') 
-@section('title' ,'Deleted categories')
+@section('title' ,__('index-dash.Deleted categories'))
 @section('main-content')
 
 @include('dashboard.pages.Category.indexmessages.messages')
@@ -38,13 +38,13 @@
                 <td class="text-center">
                     <div class="d-flex justify-content-between">
                         <form action="{{ route('categories.restore', $category->id) }}" method="GET">
-                            <button type="submit" class="btn btn-sm btn-success font-weight-bold fs-6 mx-1">Restore</button>
+                            <button type="submit" class="btn btn-sm btn-success font-weight-bold fs-6 mx-1">{{__('index-dash.Restore')}}</button>
                         </form>
 
                         <form action="{{ route('categories.forceDelete', $category->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger font-weight-bold fs-6 mx-1">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-danger font-weight-bold fs-6 mx-1">{{__('index-dash.Delete')}}</button>
                         </form>
                     </div>
                 </td>

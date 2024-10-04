@@ -1,8 +1,8 @@
 {{-- Title --}}
 <div class="form-group mb-3">
-    <label for="title" class="form-label text-white">{{ __('form-dash.Title') }} <span class="text-danger">*</span></label>
+    <label for="title" class="form-label text-white">{{ __('form-dash.Title') }} </label>
     <input type="text" name="title" id="title" 
-           value="{{ old('title', $subcategory->title ?? '') }}" 
+           value="{{ old('title', $subCategory->title ?? '') }}" 
            class="form-control @error('title') is-invalid @enderror">
     @error('title')
         <span class="invalid-feedback" role="alert">
@@ -15,7 +15,7 @@
 <div class="form-group mb-3">
     <label for="description" class="form-label text-white">{{ __('form-dash.Description') }}</label>
     <textarea name="description" id="description" 
-              rows="4" class="form-control @error('description') is-invalid @enderror">{{ old('description', $subcategory->description ?? '') }}</textarea>
+              rows="4" class="form-control @error('description') is-invalid @enderror">{{ old('description', $subCategory->description ?? '') }}</textarea>
     @error('description')
         <span class="invalid-feedback" role="alert">
             <strong class="text-danger">{{ $message }}</strong>
@@ -30,7 +30,7 @@
         <option value="" disabled selected> ----------- {{ __('create-dash.Select a Category') }} -------- </option>
 
         @forelse ($categories as $category)
-            <option value="{{ $category->id }}" {{ old('category_id', $subcategory->category_id ?? '') == $category->id ? 'selected' : '' }}>
+            <option value="{{ $category->id }}" {{ old('category_id', $subCategory->category_id ?? '') == $category->id ? 'selected' : '' }}>
                 {{ $category->title }}
             </option>
         @empty

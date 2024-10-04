@@ -24,6 +24,10 @@ return [
     'next' => 'Next &raquo;',
     'Category'=> 'Category',
     'Add SubCategory' => 'Add SubCategory',
-    'SubCategory Index Page' =>'SubCategory Index Page'
+    'SubCategory Index Page' =>'SubCategory Index Page',
+    'Deleted categories' =>'Deleted categories',
+    'Deleted sub_categories'=>'Deleted sub_categories',
+    'Restore' => 'Restore',
+    'Delete' => 'Delete'
 ];
 ?>

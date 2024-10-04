@@ -93,7 +93,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{ route('subcategories.delete') }}">
                 <i class="fa-solid fa-minus fs-5"></i>
                 <span>{{ __('side-bar-dash.trash') }}</span>
                 </a>

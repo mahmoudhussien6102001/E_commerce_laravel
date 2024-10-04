@@ -44,8 +44,4 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 4bb2ebbbe8f2fcdd3177c75637790b4c9df490f2
 @endsection
