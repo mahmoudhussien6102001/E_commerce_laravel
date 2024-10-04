@@ -14,7 +14,8 @@ Auth::routes();
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
-], function () {
+],
+ function () {
     Route::get('/', [MainController::class, 'home'])->name('home');
     Route::get('/about', [MainController::class, 'about'])->name('about');
     Route::get('/contactUs', [MainController::class, 'contactUs'])->name('contactUs');

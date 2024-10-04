@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up(): void // up()<=هذه داله تستخدم لانشاء جدول في قاعده البيانات 
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
@@ -25,7 +25,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down(): void // down() وعاوز ترجع التعديلات يجب استخدام هذه الداله لارجاع كل التعديلات الذي تمت باستخدام داله  categories اذا قمت بتعديل الاعمده في هذا الجدول  up() هذه الداله تستخدم في تراجع تغيرات الداله 
     {
         Schema::dropIfExists('categories');
     }
