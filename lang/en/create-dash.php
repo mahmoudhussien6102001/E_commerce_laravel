@@ -6,7 +6,7 @@ return [
     'Reset' => 'Reset',
     'Card Title' => 'Create Category',
     'Select a Category' => 'Select a Category',
-    ' No categories' => ' No categories',
+    ' No categories' => ' No categories yet !',
     'titleSubcategory'=>'Create Subcategory',
 ];
 ?>
