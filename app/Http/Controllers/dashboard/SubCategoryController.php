@@ -13,7 +13,7 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+       
         $subcategories = SubCategory::latest()->simplePaginate(5);
         return view('dashboard.pages.SubCategory.index', compact('subcategories'));
 
