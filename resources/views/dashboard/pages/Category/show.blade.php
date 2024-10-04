@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master') 
 
-@section('title', 'Show Page')
+@section('title', __('show-dash.title'))
 
 @section('main-content')
 
@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text large-text bold-text">{{ $category->description ?? 'No Description' }}</p>
-
+                    <h4>{{$category->create_user->name ?? 'No Admin Name' }}</h4> 
                     <hr>
                     
                     <div class="d-flex justify-content-between">

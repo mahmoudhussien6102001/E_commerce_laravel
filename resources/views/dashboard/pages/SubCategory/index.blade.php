@@ -44,13 +44,13 @@
                 <td>{{$subcategory->created_at}}</td>
                 <td>{{$subcategory->updated_at ?? 'N/A'}}</td>
                 <td>
-                    <form action="#" method="POST" class="d-flex justify-content-between align-items-center">
+                    <form action="{{ route('subcategories.destroy', $subcategory->id) }}" method="POST" class="d-flex justify-content-between align-items-center">
                         @csrf
                         @method('DELETE')
-                        <a href="#" class="btn btn-warning btn-sm font-weight-bold fs-6 custom-btn-space">Show</a>
+                        <a href="{{ route('subcategories.show', $subcategory->id) }}" class="btn btn-warning btn-sm font-weight-bold fs-6 custom-btn-space">{{ __('index-dash.Show') }}</a>
                         @if(auth()->user()->user_type == 'admin')
-                            <a href="#" class="btn btn-success btn-sm font-weight-bold fs-6 custom-btn-space">Edit</a>
-                            <button type="submit" class="btn btn-danger btn-sm font-weight-bold fs-6 custom-btn-space">Delete</button>
+                            <a href="{{ route('subcategories.edit', $subcategory->id) }}" class="btn btn-success btn-sm font-weight-bold fs-6 custom-btn-space">{{ __('index-dash.Edit') }}</a>
+                            <button type="submit" class="btn btn-danger btn-sm font-weight-bold fs-6 custom-btn-space">{{ __('index-dash.Delete') }}</button>
                         @endif
                     </form>
                 </td>

@@ -37,7 +37,9 @@ Route::group([
         Route::delete('/category/forecDelete/{id}',[CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
        
        Route::resource('subcategories', SubCategoryController::class);
-
+       Route::get('/subcategory/delete',[SubCategoryController::class, 'delete'])->name('subcategories.delete');
+       Route::get('/subcategory/restore/{id}', [SubCategoryController::class, 'restore'])->name('subcategories.restore');
+       Route::delete('/subcategory/forceDelete/{id}', [SubCategoryController::class,'forceDelete'])->name('subcategories.forceDelete');
 
     });
     

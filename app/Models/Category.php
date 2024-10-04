@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;// اللي بنورث منه كل الم
 
 class Category extends Model 
 {
-    use HasFactory ,SoftDeletes; //    هي أداة بتسهل إنشاء بيانات وهمية:asFactory
+    use HasFactory , SoftDeletes; //    هي أداة بتسهل إنشاء بيانات وهمية:asFactory
     //       لتسجيل فيه تريخ المسح  delet_at هذه ميزه بنستخدمها لمسح مواقت مش مسح نهائي بياتم اضافه عامود في قاعده البيانتات اسمه :SoftDeletes
     protected $guarded =[] ;// fillable [] الجزء هذا بيقول اني كل الاعمده في جدول الفئه مسموح التعديل عليها لو كنا عاوزين نمنع هذا علينا كتابه الاعمده بين القوسين
     public function create_user(): \Illuminate\Database\Eloquent\Relations\BelongsTo //هذه الداله بتعرفك من الاخر "مين" اللي عمل إدخال أو إضافة للفئة في قاعدة البيانات.

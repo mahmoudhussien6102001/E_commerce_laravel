@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\{Factories\HasFactory,SoftDeletes};
 use Illuminate\Database\Eloquent\Model;
 
 class SubCategory extends Model
 {
-    use HasFactory;
+    use HasFactory , SoftDeletes;
     protected $guarded =[] ;// fillable [] الجزء هذا بيقول اني كل الاعمده في جدول الفئه مسموح التعديل عليها لو كنا عاوزين نمنع هذا علينا كتابه الاعمده بين القوسين
     public function create_user(): \Illuminate\Database\Eloquent\Relations\BelongsTo //هذه الداله بتعرفك من الاخر "مين" اللي عمل إدخال أو إضافة للفئة في قاعدة البيانات.
     {
@@ -21,6 +21,5 @@ class SubCategory extends Model
 {
     return $this->belongsTo(Category::class);
 }
-
 
 }
