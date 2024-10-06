@@ -18,8 +18,13 @@ class SubCategory extends Model
         return $this->belongsTo(User::class ,'update_user_id');
     }
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-{
-    return $this->belongsTo(Category::class);
-}
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
+
 
 }

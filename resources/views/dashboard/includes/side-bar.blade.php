@@ -108,12 +108,12 @@
                 <ul id="Products-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         
                     <li>
-                        <a href="components-cards.html">
+                        <a href="{{ route('products.index') }}">
                             <i class="fa-sharp fa-solid fa-i fs-5"></i><span>{{ __('side-bar-dash.Index') }}</span>
                         </a>
                     </li>
                       <li>
-                        <a href="components-carousel.html">
+                        <a href="{{ route('products.create') }}">
                             <i class="fa-solid fa-plus fs-5"></i><span>{{ __('side-bar-dash.Create') }}</span>
                         </a>
                       </li>

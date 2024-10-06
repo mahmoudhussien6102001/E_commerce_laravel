@@ -25,5 +25,10 @@ class Category extends Model
     {
         return $this->hasMany(SubCategory::class);
     }
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
+
     
 }

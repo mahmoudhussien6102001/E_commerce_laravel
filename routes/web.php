@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 // website controller
 use App\Http\Controllers\website\{MainController, ProductController};
 // Dashboard controller
-use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController,SubCategoryController};
+use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController,SubCategoryController,ProductsController};
 // Auth controller
 use Illuminate\Support\Facades\Auth;
 
@@ -40,6 +40,8 @@ Route::group([
        Route::get('/subcategory/delete',[SubCategoryController::class, 'delete'])->name('subcategories.delete');
        Route::get('/subcategory/restore/{id}', [SubCategoryController::class, 'restore'])->name('subcategories.restore');
        Route::delete('/subcategory/forceDelete/{id}', [SubCategoryController::class,'forceDelete'])->name('subcategories.forceDelete');
+       //  routing Products
+       Route::resource('/products' ,ProductsController::class);
 
     });
     
