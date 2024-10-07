@@ -41,7 +41,10 @@ Route::group([
        Route::get('/subcategory/restore/{id}', [SubCategoryController::class, 'restore'])->name('subcategories.restore');
        Route::delete('/subcategory/forceDelete/{id}', [SubCategoryController::class,'forceDelete'])->name('subcategories.forceDelete');
        //  routing Products
-       Route::resource('/products' ,ProductsController::class);
+       Route::resource('/products', ProductsController::class);
+       Route::get('/products/delete', [ProductsController::class, 'delete'])->name('products.delete');
+       Route::get('/products/restore/{id}', [ProductsController::class, 'restore'])->name('products.restore');
+       Route::delete('/products/forceDelete/{id}', [ProductsController::class, 'forceDelete'])->name('products.forceDelete');
 
     });
     

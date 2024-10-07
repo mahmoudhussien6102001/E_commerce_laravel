@@ -117,6 +117,12 @@
                             <i class="fa-solid fa-plus fs-5"></i><span>{{ __('side-bar-dash.Create') }}</span>
                         </a>
                       </li>
+                      <li>
+                            <a href="{{ route('products.delete') }}">
+                            <i class="fa-solid fa-minus fs-5"></i>
+                            <span>{{ __('side-bar-dash.trash') }}</span>
+                            </a>
+                     </li>
                 </ul>
               </li>
         

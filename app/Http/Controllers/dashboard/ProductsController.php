@@ -117,9 +117,9 @@ class ProductsController extends Controller
          $product_old = Product::find($id) ;
          $product->title                   = $request->title;
          $product->description             = $request->description;
-         $product->price                  = $request->price;
+         $product->price                   = $request->price;
          $product->available_quantity      = $request->available_quantity;
-         $product->category_id            = $request->category_id;
+         $product->category_id             = $request->category_id;
          $product->sub_category_id         = $request->sub_category_id;
          $product->update_user_id          = auth()->user()->id;
          $product->save();
@@ -132,5 +132,51 @@ class ProductsController extends Controller
     public function destroy(string $id)
     {
         //
+        if (auth()->user()->user_type !== 'admin')
+        {
+            return view('dashboard.pages.Category.404.categories-404') ;
+        }
+        else{
+            $products = Product::find($id);
+            $products->delete();
+            return redirect()->route('products.delete')->with('status', sprintf('Are you sure you want to delete the products "%s"?', $products->title ));
+            }
     }
+
+    public function delete()
+    {
+        $products = Product::orderBy('id', 'desc')->onlyTrashed()->simplePaginate(5);
+        $products_count = $products->count(); 
+        
+        return view('dashboard.pages.Product.delete', compact('products','products_count'));
+    }
+    
+    public function restore($id)
+    {
+        $products = Product::onlyTrashed()->find($id);
+    
+        if ($products) {
+            $products->restore();
+            $products->update_user_id = auth()->user()->id; // Update the user who restored the product
+            $products->save(); // Save the updated product
+    
+            return redirect()->route('products.index')->with('success', 'Product restored successfully.'); // Use 'success' for messages
+        }
+    
+        return redirect()->route('products.index')->with('error', 'Product not found.');
+    }
+    
+    public function forceDelete($id)
+    {
+        $products = Product::withTrashed()->find($id); // Retrieve the product including trashed ones
+    
+        if ($products) {
+            $products->forceDelete(); // Permanently delete the product
+    
+            return redirect()->route('products.index')->with('success', 'Product deleted successfully.'); // Use 'success' for messages
+        }
+    
+        return redirect()->route('products.index')->with('error', 'Product not found.'); // Handle case when product is not found
+    }
+    
 }

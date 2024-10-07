@@ -24,7 +24,6 @@
               @endauth
               
               @auth
-              
                 @if(auth()->user()->user_type === 'customer')
                 <li><a href="#" class="text-decoration-none"><span class="icon icon-heart-o"></span></a></li>
                 <li>

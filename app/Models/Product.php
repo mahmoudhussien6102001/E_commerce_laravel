@@ -2,29 +2,33 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\{Factories\HasFactory,Relations\BelongsTo,Model};
+use Illuminate\Database\Eloquent\{Factories\HasFactory, Relations\BelongsTo, Model};
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
     public function create_user(): BelongsTo
     {
-        return $this->belongsTo(User::class ,'create_user_id' ,'id');
+        return $this->belongsTo(User::class, 'create_user_id', 'id');
     }
-    public function update_user(): BelongsTo 
+
+    public function update_user(): BelongsTo
     {
-        return $this->belongsTo(User::class ,'update_user_id' ,'id');
+        return $this->belongsTo(User::class, 'update_user_id', 'id');
     }
-    public function category(): BelongsTo 
+
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class) ;
+        return $this->belongsTo(Category::class);
     }
-    public function subcategory(): BelongsTo 
+
+    public function subcategory(): BelongsTo
     {
         return $this->belongsTo(SubCategory::class);
     }
-
 }
+
