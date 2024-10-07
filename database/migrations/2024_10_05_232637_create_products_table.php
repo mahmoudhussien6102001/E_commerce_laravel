@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('update_user_id')->nullable()->constrained('users');
             $table->foreignId('create_user_id')->nullable()->constrained('users');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

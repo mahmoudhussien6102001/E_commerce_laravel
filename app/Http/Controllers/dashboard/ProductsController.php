@@ -156,9 +156,57 @@ class ProductsController extends Controller
     return redirect()->route('products.index')->with('Updated_Product_Sucessfully', "The Product ($product_old->title) has been updated successfully");
 }
 
-    
-    public function destroy(string $id)
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($id)
+
     {
         //
+        if (auth()->user()->user_type !== 'admin')
+        {
+            return view('dashboard.pages.Category.404.categories-404') ;
+        }
+        else{
+            $product = Product::find($id);
+            $product->delete();
+        return redirect()->route('products.delete')->with('status', sprintf('Are you sure you want to delete the product "%s"?', $product->title ));
+        }
     }
+
+    public function delete()
+    {
+        $products= Product::orderBy('id', 'desc')->onlyTrashed()->simplePaginate(5);
+         
+        $products_count = $products->count(); 
+     
+        return view('dashboard.pages.Product.delete', compact('products', 'products_count'));
+    }
+
+    public function restore($id)
+    {
+        $product = Product::onlyTrashed()->find($id);
+    
+        if ($product) {
+            $product->restore();
+            $product->update_user_id = auth()->user()->id;
+            $product->save();
+            return redirect()->route('products.index')->with('Restored Product', 'Restored Product Successfully');
+        }
+    
+        return redirect()->route('subcategories.index')->with('error', ' Sub_Category not found');
+    }
+
+     public function forceDelete($id)
+     {
+        $product = Product::where('id',$id);
+
+        $product->forceDelete();
+
+        return redirect()->route('products.index')->with('Deleted Product', 'Product deleted successfully',"the Product () has been Successfully");
+
+     }
+
+
+
 }

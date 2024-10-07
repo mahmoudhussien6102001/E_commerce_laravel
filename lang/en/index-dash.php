@@ -34,7 +34,7 @@ return [
     'Image' => 'Image',
     'Price' => 'Price',
     'Available Quantity' => 'Available Quantity',
-    'Subcategory' => 'Subcategory'
-
+    'Subcategory' => 'Subcategory',
+    'deleted Product' => 'deleted Product'
 ];
 ?>

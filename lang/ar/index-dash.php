@@ -35,8 +35,8 @@ return [
     'Image' => 'الصورة',
     'Price' => 'السعر',
     'Available Quantity' => 'الكمية المتاحة',
-    'Subcategory' => 'الفئة الفرعية'
-    
+    'Subcategory' => 'الفئة الفرعية',
+     'deleted Product' => 'حذف المنتج'
 
 
 ];

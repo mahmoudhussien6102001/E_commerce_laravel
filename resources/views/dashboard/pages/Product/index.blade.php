@@ -2,6 +2,7 @@
 @section('title', __('index-dash.Products Page'))
 @section('main-content')
 
+
 <div class="row">
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
@@ -9,12 +10,13 @@
                 <a href="{{ route('products.create') }}" class="btn btn-custom1 my-3 text-light font-weight-bold">
                     <span>{{__('index-dash.Add Product')}}</span>
                 </a>
+                </div>
+
             </div>
         </div>
     </div>
-</div>
 
-@include('dashboard.pages.Category.indexmessages.messages')
+    @include('dashboard.pages.Category.indexmessages.messages')
 
 <!-- Table with stripped rows -->
 <table class="table table-striped-custom w-100 mx-auto">
@@ -83,9 +85,10 @@
 </table>
 <!-- End Table with stripped rows -->
 
-<!-- Pagination -->
-<div class="my-4 pagination-custom d-flex justify-content-center">
-    {{ $products->links() }}
+    <!-- Pagination -->
+    <div class="my-4 pagination-custom d-flex justify-content-center">
+        {{ $products->links() }}
+    </div>
 </div>
 
 @endsection

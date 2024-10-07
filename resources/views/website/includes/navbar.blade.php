@@ -24,7 +24,6 @@
               @endauth
               
               @auth
-              
                 @if(auth()->user()->user_type === 'customer')
                 <li><a href="#" class="text-decoration-none"><span class="icon icon-heart-o"></span></a></li>
                 <li>
@@ -53,7 +52,7 @@
                     </button>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                      <i class="fa-solid fa-left-from-bracket"></i> {{ __('home.Logout') }}
+                      <i class="fa-solid fa-sign-out-alt"></i> {{ __('home.Logout') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf

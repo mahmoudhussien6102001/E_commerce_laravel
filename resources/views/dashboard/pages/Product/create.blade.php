@@ -3,9 +3,9 @@
 
 @section('main-content')
 
-<div class="container container-custom my-5">
+<div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8">  {{-- Column width adjusts based on screen size --}}
+        <div class="col-12 col-md-7 col-lg-7">  <!-- Adjusted column width to be larger -->
             <div class="card card-custom mb-4">
                 
                 <div class="card-header">
@@ -19,7 +19,7 @@
                                 @csrf
                                 @include('dashboard.pages.Product.form') 
                                 <div class="d-flex justify-content-between"> 
-                                    <button type="submit" class="btn btn-custom">{{ __('create-dash.Reset') }}</button>
+                                    <button type="submit" class="btn btn-custom">{{ __('create-dash.Submit') }}</button>
                                     <button type="reset" class="btn btn-custom-reset">{{ __('create-dash.Reset') }}</button>
                                 </div>
                             </form>
