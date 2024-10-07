@@ -8,5 +8,7 @@ return [
     'back_button' => 'Go Back',
     'return_SubCategories_button' => 'Return to SubCategories',
     'title_subcategory' =>'Edit subCategory (:subCategory)',
-    'heading_subCategory' => 'Edit Category (:subCategory)'
+    'heading_subCategory' => 'Edit Category (:subCategory)',
+    "Return to Products" => "Return to Products",
+    "Edit Product" => "Edit Product"
 ];

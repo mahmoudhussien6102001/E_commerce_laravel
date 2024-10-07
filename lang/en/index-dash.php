@@ -28,6 +28,13 @@ return [
     'Deleted categories' =>'Deleted categories',
     'Deleted sub_categories'=>'Deleted sub_categories',
     'Restore' => 'Restore',
-    'Delete' => 'Delete'
+    'Delete' => 'Delete',
+    'Products Page' => 'Products Page',
+    'Add Product' => 'Add Product',
+    'Image' => 'Image',
+    'Price' => 'Price',
+    'Available Quantity' => 'Available Quantity',
+    'Subcategory' => 'Subcategory'
+
 ];
 ?>

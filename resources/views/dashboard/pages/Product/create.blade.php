@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.master') 
-@section('title' , 'Create Product')
+@section('title' ,  __('create-dash.Create Product'))
 
 @section('main-content')
 
@@ -9,18 +9,18 @@
             <div class="card card-custom mb-4">
                 
                 <div class="card-header">
-                    <strong class="card-title fs-4">Create Product</strong>  {{-- Font size adjusted --}}
+                    <strong class="card-title fs-4">{{ __('create-dash.Create Product') }}</strong>  {{-- Font size adjusted --}}
                 </div>
                 
                 <div class="card-body card-body-custom">
                     <div class="row">
                         <div class="col-12">
-                            <form action="{{ route('products.store') }}" method="POST">
+                            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                @include('dashboard.pages.Product.form') {{-- Include form partial for products --}}
-                                <div class="d-flex justify-content-between">  {{-- Make buttons responsive --}}
-                                    <button type="submit" class="btn btn-custom">Submit</button>
-                                    <button type="reset" class="btn btn-custom-reset">Reset</button>
+                                @include('dashboard.pages.Product.form') 
+                                <div class="d-flex justify-content-between"> 
+                                    <button type="submit" class="btn btn-custom">{{ __('create-dash.Reset') }}</button>
+                                    <button type="reset" class="btn btn-custom-reset">{{ __('create-dash.Reset') }}</button>
                                 </div>
                             </form>
                         </div>
