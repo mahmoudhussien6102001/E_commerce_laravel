@@ -52,7 +52,7 @@
                     </button>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                      {{ __('home.Logout') }}
+                      <i class="fa-solid fa-sign-out-alt"></i> {{ __('home.Logout') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
@@ -63,7 +63,7 @@
                   @endif
                 </div>
               </li>
-              <li class="nav-item dropdown">
+         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-globe"></i>
           </a>

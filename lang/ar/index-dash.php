@@ -29,8 +29,14 @@ return [
     'Deleted categories' =>'حذف الفئات ',
     'Deleted sub_categories'=>'حذف الفئات الفرعيه',
     'Restore' => ' استعادة',
-    'Delete' => 'حذف'
-    
+    'Delete' => 'حذف',
+    'Products Page' => 'صفحة المنتجات',
+    'Add Product' => 'إضافة منتج',
+    'Image' => 'الصورة',
+    'Price' => 'السعر',
+    'Available Quantity' => 'الكمية المتاحة',
+    'Subcategory' => 'الفئة الفرعية',
+     'deleted Product' => 'حذف المنتج'
 
 
 ];

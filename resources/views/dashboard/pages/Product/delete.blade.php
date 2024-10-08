@@ -12,10 +12,10 @@
                 <th scope="col">{{ __('index-dash.#') }}</th>
                 <th scope="col">{{ __('index-dash.Title') }}</th>
                 <th scope="col">{{ __('index-dash.Description') }}</th>
-                <th scope="col">price</th>
-                <th scope="col">available_quantity</th>
-                <th scope="col">Category</th>
-                <th scope="col">SubCategory</th>
+                <th scope="col">{{__('index-dash.Price')}}</th>
+                <th scope="col">{{__('index-dash.Available Quantity')}}</th>
+                <th scope="col">{{__('index-dash.Category')}}</th>
+                <th scope="col">{{__('index-dash.Subcategory')}}</th>
                 <th scope="col" style="white-space: nowrap;">{{ __('index-dash.Created By') }}</th>
                 <th scope="col" style="white-space: nowrap;">{{ __('index-dash.Updated By') }}</th>
                 <th scope="col" style="white-space: nowrap;">{{ __('index-dash.Created At') }}</th>

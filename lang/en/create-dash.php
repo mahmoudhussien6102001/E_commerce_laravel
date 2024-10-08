@@ -8,5 +8,6 @@ return [
     'Select a Category' => 'Select a Category',
     ' No categories' => ' No categories yet !',
     'titleSubcategory'=>'Create Subcategory',
+    'Create Product' => 'Create Product'
 ];
 ?>

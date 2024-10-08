@@ -8,5 +8,7 @@ return [
     'back_button' => 'العودة للخلف',
     'return_SubCategories_button' => 'الرجوع الي الفئات الفرعيه',
     'title_subcategory' =>'تعديل الفئات الفرعيه (:subCategory)',
-    'heading_subCategory' => 'تعديل الفئات الفرعيه (:subCategory)'
+    'heading_subCategory' => 'تعديل الفئات الفرعيه (:subCategory)',
+    "Return to Products" => "الرجوع الي المنتجات",
+    "Edit Product" => "تعديل المنتج"
 ];

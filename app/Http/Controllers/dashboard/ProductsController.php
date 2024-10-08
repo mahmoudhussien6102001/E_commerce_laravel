@@ -34,33 +34,43 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
             'title'                    => 'required|string|max:255',
+            'image'                    => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
             'description'              => 'nullable|string|max:1020',
             'price'                    => 'required|numeric|max:1020',
             'available_quantity'       => 'required|integer|max:1020',
             'category_id'              => 'nullable|exists:categories,id',
             'sub_category_id'          => 'nullable|exists:sub_categories,id',
             'create_user_id'           => 'nullable|exists:users,id',
-            'update_user_id'           => 'nullable|exists:users,id',
+            'update_user_id'           => 'nullable|exists:users,id'
         ]);
-
-        $product = new Product ();
+    
+        $product = new Product();
         $product->title                   = $request->title;
         $product->description             = $request->description;
-        $product->price                   = $request->price;
+        $product->price                  = $request->price;
         $product->available_quantity      = $request->available_quantity;
-        $product->category_id             = $request->category_id;
+        $product->category_id            = $request->category_id;
         $product->sub_category_id         = $request->sub_category_id;
         $product->create_user_id          = auth()->user()->id;
         $product->update_user_id          = null;
+    
+        if ($request->hasFile('image')) {
+            $imageName = $request->file('image')->store('products', 'public'); // رفع الصورة إلى مجلد 'products' داخل مجلد 'public'
+
+            $product->image = $imageName; // حفظ مسار الصورة في قاعدة البيانات
+        }
+    
+        // حفظ المنتج في قاعدة البيانات
         $product->save();
-        return redirect()->route('products.index')->with('Created_Product_Sucessfully',"the Product($product->title) has been created sucessfully");
-    }
+    
+        return redirect()->route('products.index')->with('Created_Product_Sucessfully', "The Product ($product->title) has been created successfully");
+    }    
 
     /**
      * Display the specified resource.
+     *
      */
     public function show($id)
     {
@@ -69,23 +79,24 @@ class ProductsController extends Controller
         if($product == null) {
             return redirect()->route('products.index')->with('error', 'product not found') ;
         }
-        return view('dashboard.pages.products.show', compact('product'));
+        return view('dashboard.pages.Product.show', compact('product'));
     }
 
     /**
      * Show the form for editing the specified resource.
+     * 
      */
     public function edit($id)
     {
         //
         $product = Product::find($id);
         if($product == null) {
-            return redirect()->route('products.index')->with('error', 'product not found') ;
+           return view('dashboard.pages.Category.404.categories-404');
         }else{
             if(auth()->user()->user_type ==='admin'){
                 $categories = Category::all();
                 $subcategories = SubCategory::all();
-                return view('dashboard.pages.products.edit', compact('product','categories','subcategories'));
+                return view('dashboard.pages.Product.edit', compact('product','categories','subcategories'));
 
             }else{
                 return view('dashboard.pages.Category.404.categories-404');
@@ -98,38 +109,58 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
-    {
-        //
-        $request->validate([
-            'title'                    => 'required|string|max:255',
-            'description'              => 'nullable|string|max:1020',
-            'price'                    => 'required|numeric|max:1020',
-            'available_quantity'       => 'required|integer|max:1020',
-            'category_id'              => 'nullable|exists:categories,id',
-            'sub_category_id'           => 'nullable|exists:sub_categories,id',
-            'update_user_id'           => 'nullable|exists:users,id',
-        
-        ]);
+   public function update(Request $request, string $id)
+{
+    $request->validate([
+        'title'                    => 'required|string|max:255',
+        'image'                    => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
+        'description'              => 'nullable|string|max:1020',
+        'price'                    => 'required|numeric|max:1020',
+        'available_quantity'       => 'required|integer|max:1020',
+        'category_id'              => 'nullable|exists:categories,id',
+        'sub_category_id'          => 'nullable|exists:sub_categories,id',
+        'create_user_id'           => 'nullable|exists:users,id',
+        'update_user_id'           => 'nullable|exists:users,id'
+    ]);
 
-         // get id to update
-         $product = Product::find($id) ;
-         $product_old = Product::find($id) ;
-         $product->title                   = $request->title;
-         $product->description             = $request->description;
-         $product->price                   = $request->price;
-         $product->available_quantity      = $request->available_quantity;
-         $product->category_id             = $request->category_id;
-         $product->sub_category_id         = $request->sub_category_id;
-         $product->update_user_id          = auth()->user()->id;
-         $product->save();
-         return redirect()->route('products.index')->with('Updated_Product_Sucessfully',"the Product($product_old->title) has been updated sucessfully");
+    $product = Product::find($id);
+    $product_old = Product::find($id);
+    if( $product->title == $request->title)
+    {
+        $product->title =  $product->title ;
+    }
+    else{
+        $product->title = $request->title ;
         }
+    $product->description             = $request->description;
+    $product->price                   = $request->price;
+    $product->available_quantity      = $request->available_quantity;
+    $product->category_id             = $request->category_id;
+    $product->sub_category_id         = $request->sub_category_id;
+    $product->update_user_id          = auth()->user()->id;
+
+
+    if ($request->hasFile('image')) {
+        if ($product->image) {
+            $oldImagePath = public_path('storage/' . $product->image);
+            if (file_exists($oldImagePath)) {
+                unlink($oldImagePath);
+            }
+        }
+
+        $imageName = $request->file('image')->store('products', 'public'); 
+        $product->image = $imageName; 
+    }
+
+    $product->save();
+    return redirect()->route('products.index')->with('Updated_Product_Sucessfully', "The Product ($product_old->title) has been updated successfully");
+}
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy($id)
+
     {
         //
         if (auth()->user()->user_type !== 'admin')
