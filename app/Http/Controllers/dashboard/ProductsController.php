@@ -41,7 +41,7 @@ class ProductsController extends Controller
             'price'                    => 'required|numeric|max:1020',
             'available_quantity'       => 'required|integer|max:1020',
             'category_id'              => 'nullable|exists:categories,id',
-            'sub_category_id'           => 'nullable|exists:sub_categories,id',
+            'sub_category_id'          => 'nullable|exists:sub_categories,id',
             'create_user_id'           => 'nullable|exists:users,id',
             'update_user_id'           => 'nullable|exists:users,id',
         ]);
@@ -49,9 +49,9 @@ class ProductsController extends Controller
         $product = new Product ();
         $product->title                   = $request->title;
         $product->description             = $request->description;
-        $product->price                  = $request->price;
+        $product->price                   = $request->price;
         $product->available_quantity      = $request->available_quantity;
-        $product->category_id            = $request->category_id;
+        $product->category_id             = $request->category_id;
         $product->sub_category_id         = $request->sub_category_id;
         $product->create_user_id          = auth()->user()->id;
         $product->update_user_id          = null;
