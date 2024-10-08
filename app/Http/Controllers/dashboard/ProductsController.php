@@ -163,7 +163,7 @@ class ProductsController extends Controller
             return redirect()->route('products.index')->with('Restored Product', 'Restored Product Successfully');
         }
     
-        return redirect()->route('subcategories.index')->with('error', ' Sub_Category not found');
+        return redirect()->route('products.index')->with('error', ' Product not found');
     }
 
      public function forceDelete($id)
