@@ -90,6 +90,26 @@
     </h4>
 </div>
 
+@elseif(session()->has('Restored Product'))
+<div class="alert alert-success text-center mx-auto shadow-lg" style="max-width: 80%; margin-top: 3%; border-radius: 15px; padding: 20px; background-color: #0067A9; color: white; position: relative; overflow: hidden; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); transition: transform 0.3s; animation: scaleUp 1.5s infinite;">
+    <h4 class="font-weight-bold">
+        <i class="fas fa-check-circle" style="display: inline-block; animation: bounceIcon 1.5s infinite;"></i>
+        <span style="display: inline-block; animation: flashText 2s infinite;">
+            {{ session()->get('Restored Sub_Category') }}
+        </span>
+    </h4>
+</div>
+@elseif(session()->has('Deleted Product'))
+<div class="alert alert-danger text-center mx-auto shadow-lg" style="max-width: 80%; margin-top: 3%; border-radius: 15px; padding: 20px; background-color: #dc3545; color: white; position: relative; overflow: hidden; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); transition: transform 0.3s; animation: scaleUp 1.5s infinite;">
+    <h4 class="font-weight-bold">
+        <i class="fas fa-exclamation-circle" style="display: inline-block; animation: bounceIcon 1.5s infinite;"></i>
+        <span style="display: inline-block; animation: flashText 2s infinite;">
+            {{ session()->get('Deleted Product') }}
+        </span>
+    </h4>
+</div>r
+
+
 @elseif(session()->has('Deleted Sub_Category'))
 <div class="alert alert-danger text-center mx-auto shadow-lg" style="max-width: 80%; margin-top: 3%; border-radius: 15px; padding: 20px; background-color: #dc3545; color: white; position: relative; overflow: hidden; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); transition: transform 0.3s; animation: scaleUp 1.5s infinite;">
     <h4 class="font-weight-bold">

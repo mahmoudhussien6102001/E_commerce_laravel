@@ -12,6 +12,10 @@
                 <th scope="col">{{ __('index-dash.#') }}</th>
                 <th scope="col">{{ __('index-dash.Title') }}</th>
                 <th scope="col">{{ __('index-dash.Description') }}</th>
+                <th scope="col">price</th>
+                <th scope="col">available_quantity</th>
+                <th scope="col">Category</th>
+                <th scope="col">SubCategory</th>
                 <th scope="col" style="white-space: nowrap;">{{ __('index-dash.Created By') }}</th>
                 <th scope="col" style="white-space: nowrap;">{{ __('index-dash.Updated By') }}</th>
                 <th scope="col" style="white-space: nowrap;">{{ __('index-dash.Created At') }}</th>
@@ -24,24 +28,28 @@
         </thead>
 
         <tbody>
-            @forelse ($products as $pro)  
+            @forelse ($products as $product)  
             <tr>
                 <td class="font-weight-bold">{{ $loop->iteration }}</td>
-                <td>{{ $pro->title ?? 'N/A' }}</td> 
-                <td>{{ Str::words($pro->description, '3', '...') ?? 'N/A' }}</td>
-                <td>{{ $pro->update_user->name ?? 'N/A' }}</td>
-                <td>{{ $pro->create_user->name ?? 'N/A' }}</td>
-                <td>{{ $pro->created_at->format('Y-m-d H:i') }}</td>
-                <td>{{ $pro->updated_at ? $pro->updated_at->format('Y-m-d H:i') : 'N/A' }}</td>
-                <td>{{ $pro->deleted_at ? $pro->deleted_at->format('Y-m-d H:i') : 'N/A' }}</td>
+                <td>{{ $product->title ?? 'N/A' }}</td> 
+                <td>{{ Str::words($product->description, '3', '...') ?? 'N/A' }}</td>
+                <td>${{ number_format($product->price, 2) }}</td>
+                <td>{{ $product->available_quantity }}</td>
+                <td>{{ $product->category->title ?? 'N/A' }}</td>
+                <td>{{ $product->subcategory->title ?? 'N/A' }}</td>
+                <td>{{ $product->create_user->name ?? 'N/A' }}</td>
+                <td>{{ $product->update_user->name ?? 'N/A' }}</td>
+                <td>{{ $product->created_at->format('Y-m-d H:i') }}</td>
+                <td>{{ $product->updated_at ? $product->updated_at->format('Y-m-d H:i') : 'N/A' }}</td>
+                <td>{{ $product->deleted_at ? $product->deleted_at->format('Y-m-d H:i') : 'N/A' }}</td>
                 @if(auth()->user()->user_type == "admin")
                 <td class="text-center">
                     <div class="d-flex justify-content-between">
-                        <form action="{{ route('products.restore', $pro->id) }}" method="GET">
+                        <form action="{{ route('products.restore' , $product->id) }}" method="GET">
                             <button type="submit" class="btn btn-sm btn-success font-weight-bold fs-6 mx-1">{{ __('index-dash.Restore') }}</button>
                         </form>
 
-                        <form action="{{ route('products.forceDelete', $pro->id) }}" method="POST">
+                        <form action="{{ route('products.forceDelete', $product->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger font-weight-bold fs-6 mx-1">{{ __('index-dash.Delete') }}</button>

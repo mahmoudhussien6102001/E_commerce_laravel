@@ -45,8 +45,8 @@
                     <td>{{ Str::words($product->description, 3, '...') }}</td>
                     <td>${{ number_format($product->price, 2) }}</td>
                     <td>{{ $product->available_quantity }}</td>
-                    <td>{{ $product->category->name ?? 'N/A' }}</td>
-                    <td>{{ $product->subcategory->name ?? 'N/A' }}</td>
+                    <td>{{ $product->category->title ?? 'N/A' }}</td>
+                    <td>{{ $product->subcategory->title ?? 'N/A' }}</td>
                     <td>{{ $product->create_user->name ?? '...' }}</td>
                     <td>{{ $product->update_user->name ?? 'N/A' }}</td>
                     <td>{{ $product->created_at->format('Y-m-d H:i') }}</td>
