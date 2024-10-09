@@ -49,9 +49,9 @@ class ProductsController extends Controller
         $product = new Product();
         $product->title                   = $request->title;
         $product->description             = $request->description;
-        $product->price                   = $request->price;
-        $product->available_quantity       = $request->available_quantity;
-        $product->category_id             = $request->category_id;
+        $product->price                  = $request->price;
+        $product->available_quantity      = $request->available_quantity;
+        $product->category_id            = $request->category_id;
         $product->sub_category_id         = $request->sub_category_id;
         $product->create_user_id          = auth()->user()->id;
         $product->update_user_id          = null;
