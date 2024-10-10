@@ -15,9 +15,6 @@ class CategoryController extends Controller
 
     {
         $categories = category::orderBy('id','asc')->simplePaginate(5);
-
-
-
         return view('dashboard.pages.category.index', compact('categories'));
     }
 

@@ -21,7 +21,7 @@
                     <p class="card-text large-text bold-text">{{ $product->description ?? 'No Description' }}</p>
                     <h4>{{ $product->create_user->name ?? 'No Admin Name' }}</h4> 
                     <h5>{{ $product->category->title ?? 'No Category' }}</h5>
-                    <h5>{{ $product->products->title ?? 'No Sub_Category' }}</h5>
+                    <h5>{{ $product->subcategory->title ?? 'No Sub_Category' }}</h5>
                     <hr>
                     
                     <div class="d-flex justify-content-between">

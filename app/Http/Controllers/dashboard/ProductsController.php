@@ -65,6 +65,7 @@ class ProductsController extends Controller
         // حفظ المنتج في قاعدة البيانات
         $product->save();
     
+      
         return redirect()->route('products.index')->with('Created_Product_Sucessfully', "The Product ($product->title) has been created successfully");
     }    
 
