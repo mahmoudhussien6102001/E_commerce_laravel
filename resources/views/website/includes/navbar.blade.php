@@ -106,8 +106,8 @@
             <li><a href="#">{{ __('home.Menu three') }}</a></li>
           </ul>
         </li>
-        <li><a href="{{ route('shop') }}">{{ __('home.shop') }}</a></li>
-        <li><a href="#">{{ __('home.category') }}</a></li>
+        <li><a href="{{ route('shop') }}"> {{ __('home.shop') }}</a></li>
+        <li><a href="{{route('categories')}}">{{ __('home.category') }}</a></li>
         <li><a href="#">{{ __('home.newArrivals') }}</a></li>
         <li><a href="{{ route('contactUs') }}">{{ __('home.Contact') }}</a></li>
 

@@ -1,0 +1,36 @@
+  Card Catgory 
+  
+    /* Styling for card hover effect */
+    .card:hover .card-body {
+        transform: scale(1.05);
+      }
+    
+      /* Icon styling inside card header */
+      .card-icon {
+        font-size: 3rem;
+      }
+    
+      /* Transition effect for scaling the card */
+      .card-body {
+        transition: transform 0.3s ease;
+      }
+    
+      /* Button styling */
+      .btn-outline-primary {
+        border-color: #007bff;
+        color: #007bff;
+      }
+    
+      /* Button hover effect */
+      .btn-outline-primary:hover {
+        background-color: #7971EA; /* تم تصحيح تكرار "#" */
+        color: #fff;
+      }
+    
+      /* Card header background image */
+      .card-header {
+     
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+      }

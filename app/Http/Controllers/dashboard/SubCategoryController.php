@@ -36,10 +36,8 @@ class SubCategoryController extends Controller
     {
         //
         $request->validate([
-            'title'          => 'required|string|max:255',
+            'title'          => 'required|string|max:255|min:3|unique:sub_categories',
             'description'    => 'nullable|string|max:1020',
-            'create_user_id' => 'nullable|exists:users,id',
-            'update_user_id' => 'nullable|exists:users,id',
             'category_id' => 'required|exists:categories,id',
         ]);
 
@@ -60,9 +58,9 @@ class SubCategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $title)
     {
-        $subCategory = SubCategory::find($id);
+        $subCategory = SubCategory::where('title',$title)->firstOrFail();
         if($subCategory == null){
             return redirect()->route('subcategories.index')->with('error',"the sub category is not found");
         }
@@ -98,28 +96,20 @@ class SubCategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title'          => 'required|string|max:255',
+            'title'          => 'required|string|max:255|min:3|unique:sub_categories ,title,'. $id,
             'description'    => 'nullable|string|max:1020',
             'category_id' => 'required|exists:categories,id',
-            'create_user_id' => 'nullable|exists:users,id',
-            'update_user_id' => 'nullable|exists:users,id',
-            
+  
         ]);
        
         $subCategory = SubCategory::find($id);
         $subCategory_old = SubCategory::find($id);
         $subCategory->title = $request->title;
-        if($subCategory->title == $request->title)
-        {
-            $subCategory->title = $subCategory->title ;
-        }
-        else{
-            $subCategory->title = $request->title ;
-            }
-            $subCategory->description = $request->description;
-            $subCategory->category_id = $request->category_id;
-            $subCategory->update_user_id = auth()->user()->id;
-            $subCategory->save();
+
+        $subCategory->description = $request->description;
+        $subCategory->category_id = $request->category_id;
+        $subCategory->update_user_id = auth()->user()->id;
+        $subCategory->save();
 
         return redirect()->route('subcategories.index', $subCategory->$id)->with('Updated_Sub_Category_Sucessfully',"the SubCategory( $subCategory_old->title) has been updated sucessfully");
   
@@ -144,7 +134,7 @@ class SubCategoryController extends Controller
 
     public function delete()
     {
-        $subcategories = SubCategory::orderBy('id', 'desc')->onlyTrashed()->simplePaginate(5);
+        $subcategories = SubCategory::orderBy('deleted_at', 'desc')->onlyTrashed()->simplePaginate(5);
          
         $subcategories_count = $subcategories->count(); 
      
@@ -153,9 +143,10 @@ class SubCategoryController extends Controller
 
     public function restore($id)
     {
-        $subCategory = SubCategory::onlyTrashed()->find($id);
+        $subCategory = SubCategory::whithTrashed()->find($id);
     
-        if ($subCategory) {
+        if ($subCategory && auth()->user()->user_type == "admin") //authorization 
+        {
             $subCategory->restore();
             $subCategory->update_user_id = auth()->user()->id;
             $subCategory->save();

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\website;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Category;
+
 class MainController extends Controller
 {
     
@@ -19,5 +21,10 @@ class MainController extends Controller
     // Contact us
     public function contactUs(){
         return view('website.pages.contuctUs');
+    }
+
+    public function categories(){
+        $categories = Category::all();
+        return view('website.pages.categories.categories',compact('categories'));
     }
 }

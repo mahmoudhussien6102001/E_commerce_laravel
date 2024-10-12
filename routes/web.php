@@ -21,6 +21,8 @@ Route::group([
     Route::get('/contactUs', [MainController::class, 'contactUs'])->name('contactUs');
     Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
     Route::get('/shop-single', [ProductController::class, 'shopsingle'])->name('shopsingle');
+
+    Route::get('/categories', [MainController::class, 'categories'])->name('categories');
 });
 
 // Define dashboard routes
@@ -35,6 +37,18 @@ Route::group([
         Route::get('/category/delete',[CategoryController::class, 'delete'])->name('categories.delete');
         Route::get('/category/restore/{id}',[CategoryController::class, 'restore'])->name('categories.restore');
         Route::delete('/category/forecDelete/{id}',[CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
+
+
+
+
+
+
+
+
+
+
+
+        
        
        Route::resource('subcategories', SubCategoryController::class);
        Route::get('/subcategory/delete',[SubCategoryController::class, 'delete'])->name('subcategories.delete');

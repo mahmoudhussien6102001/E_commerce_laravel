@@ -4,24 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\{Factories\HasFactory,SoftDeletes};
 use Illuminate\Database\Eloquent\Model;
+Use Illuminate\Database\Eloquent\Relations\HasMany;
+Use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SubCategory extends Model
 {
     use HasFactory , SoftDeletes;
     protected $guarded =[] ;// fillable [] الجزء هذا بيقول اني كل الاعمده في جدول الفئه مسموح التعديل عليها لو كنا عاوزين نمنع هذا علينا كتابه الاعمده بين القوسين
-    public function create_user(): \Illuminate\Database\Eloquent\Relations\BelongsTo //هذه الداله بتعرفك من الاخر "مين" اللي عمل إدخال أو إضافة للفئة في قاعدة البيانات.
+    public function create_user()
     {
-        return $this->belongsTo(User::class ,'create_user_id');
+        return $this->belongsTo(User::class ,'create_user_id','id');
     }
-    public function update_user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function update_user()
     {
-        return $this->belongsTo(User::class ,'update_user_id');
+        return $this->belongsTo(User::class ,'update_user_id','id');
     }
-    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
-    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function products() 
     {
         return $this->hasMany(Product::class);
     }

@@ -17,12 +17,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'user_type', 
-    ];
+    protected $guarded = [];
+
+    public function SubCategories ()
+    {
+        return $this->HasMany(SubCategory::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
