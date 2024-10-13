@@ -1,4 +1,5 @@
 @extends('website.layouts.master')
+@section('title', 'Shop Page') 
 @section('main-content')
 
 <div class="site-wrap">
@@ -9,7 +10,6 @@
       </div>
     </div>
   </div>
-
   
   <div class="site-section">
     <div class="container">
@@ -23,14 +23,15 @@
               <div class="d-flex">
                 <div class="dropdown mr-1 ml-md-auto">
                   <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{__('shop.latest')}}
+                      {{__('shop.latest')}}
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                    <a class="dropdown-item" href="#">{{__('shop.men')}}</a>
-                    <a class="dropdown-item" href="#">{{__('shop.women')}}</a>
-                    <a class="dropdown-item" href="#">{{__('shop.children')}}</a>
+                      <a class="dropdown-item" href="{{ route('shop', ['category' => 'men']) }}">{{__('shop.men')}}</a>
+                      <a class="dropdown-item" href="{{ route('shop', ['category' => 'women']) }}">{{__('shop.women')}}</a>
+                      <a class="dropdown-item" href="{{ route('shop', ['category' => 'children']) }}">{{__('shop.children')}}</a>
                   </div>
-                </div>
+              </div>
+              
                 <div class="btn-group">
                   <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{__('shop.reference')}}
@@ -48,183 +49,106 @@
             </div>
           </div>
           <div class="row mb-5">
-
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/cloth_1.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="website.pages.products.shop-single">{{__('shop.tank_top')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_tshirt')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
+            <div class="container mb-5">
+              <div class="row">
+                  @forelse($products as $product)
+                      <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" style="min-height: 400px;">
+                          <div class="card text-center border shadow-sm">
+                            <figure class="block-4-image">
+                              <a href="{{ route('shopsingle', $product->id) }}">
+                                  <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                              </a>
+                            </figure>
+                              <div class="card-body">
+                                  <h3 class="card-title">
+                                      <a href="{{ route('shopsingle', $product->id) }}" class="text-decoration-none text-dark">{{ $product->title }}</a>
+                                  </h3>
+                                  <p class="card-text">{{ Str::limit($product->description ?? 'No description available', 50, '...') }}</p>
+                                  <p class="text-primary font-weight-bold">{{ $product->price }}$</p>
+                                  <p class="text-secondary">{{ $product->available_quantity }} available</p>
+                              </div>
+                          </div>
+                      </div>
+                  @empty
+                      <div class="col-12 mt-5">
+                          <div class="alert alert-warning text-center" role="alert">
+                              No Products available to display at the moment.
+                          </div>
+                      </div>
+                  @endforelse
               </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/shoe_1.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="website.pages.products.shop-single">{{__('shop.corater')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/cloth_2.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="website.pages.products.shop-single">{{__('shop.polo_shirt')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/cloth_3.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.tshirt_mockup')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/shoe_1.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.corater')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/cloth_1.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.tank_top')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_tshirt')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/shoe_1.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.corater')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/cloth_2.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.polo_shirt')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/cloth_3.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.tshirt_mockup')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/shoe_1.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.corater')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/cloth_1.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.tank_top')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_tshirt')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-              <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{asset('assets/images/cloth_2.jpg')}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a href="shop-single.html">{{__('shop.polo_shirt')}}</a></h3>
-                  <p class="mb-0">{{__('shop.finding_perfect_products')}}</p>
-                  <p class="text-primary font-weight-bold">{{__('shop.price_50')}}</p>
-                </div>
-              </div>
-            </div>
-
-
+          </div>
+          
+           
           </div>
           <div class="row" data-aos="fade-up">
             <div class="col-md-12 text-center">
-              <div class="site-block-27">
-                <ul>
-                  <li><a href="#">&lt;</a></li>
-                  <li class="active"><span>1</span></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">&gt;</a></li>
-                </ul>
-              </div>
+                <div class="site-block-27">
+                    <ul>
+                        <!-- Previous Page Link -->
+                        @if ($products->onFirstPage())
+                            <li class="disabled"><span>&lt;</span></li>
+                        @else
+                            <li><a href="{{ $products->previousPageUrl() }}">&lt;</a></li>
+                        @endif
+        
+                        <!-- Pagination Elements -->
+                        @foreach ($products->onEachSide(2)->links()->elements as $element)
+                            <!-- "Three Dots" Separator -->
+                            @if (is_string($element))
+                                <li class="disabled"><span>{{ $element }}</span></li>
+                            @endif
+        
+                            <!-- Array Of Links -->
+                            @if (is_array($element))
+                                @foreach ($element as $page => $url)
+                                    @if ($page == $products->currentPage())
+                                        <li class="active"><span>{{ $page }}</span></li>
+                                    @else
+                                        <li><a href="{{ $url }}">{{ $page }}</a></li>
+                                    @endif
+                                @endforeach
+                            @endif
+                        @endforeach
+        
+                        <!-- Next Page Link -->
+                        @if ($products->hasMorePages())
+                            <li><a href="{{ $products->nextPageUrl() }}">&gt;</a></li>
+                        @else
+                            <li class="disabled"><span>&gt;</span></li>
+                        @endif
+                    </ul>
+                </div>
             </div>
-          </div>
+        </div>
+        
         </div>
 
         <div class="col-md-3 order-1 mb-5 mb-md-0">
-          <div class="border p-4 rounded mb-4">
-            <h3 class="mb-3 h6 text-uppercase text-black d-block">{{__('shop.categories')}}</h3>
-            <ul class="list-unstyled mb-0">
-              <li class="mb-1"><a href="#" class="d-flex"><span>{{__('shop.men_count')}}</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-              <li class="mb-1"><a href="#" class="d-flex"><span>{{__('shop.women_count')}}</span> <span class="text-black ml-auto">(2,550)</span></a></li>
-              <li class="mb-1"><a href="#" class="d-flex"><span>{{__('shop.children_count')}}</span> <span class="text-black ml-auto">(2,124)</span></a></li>
-            </ul>
-          </div>
+            <div class="border p-4 rounded mb-4">
+                <h3 class="mb-3 h6 text-uppercase text-black d-block">{{ __('shop.categories') }}</h3>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                        <a href="#" class="d-flex">
+                            <span>{{ __('shop.men_count') }}</span>
+                            <span class="text-black ml-auto">({{ $menCount }})</span>
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#" class="d-flex">
+                            <span>{{ __('shop.women_count') }}</span>
+                            <span class="text-black ml-auto">({{ $womenCount }})</span>
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#" class="d-flex">
+                            <span>{{ __('shop.children_count') }}</span>
+                            <span class="text-black ml-auto">({{ $childrenCount }})</span>
+                        </a>
+                    </li>
+                </ul>
+        </div>
+        
 
           <div class="border p-4 rounded mb-4">
             <div class="mb-4">
@@ -247,20 +171,44 @@
             </div>
 
             <div class="mb-4">
-              <h3 class="mb-3 h6 text-uppercase text-black d-block">{{__('shop.color')}}</h3>
-              <a href="#" class="d-flex color-item align-items-center" >
-                <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.red_color')}}</span>
+              <h3 class="mb-3 h6 text-uppercase text-black d-block">{{ __('shop.color') }}</h3>
+              
+              <a href="#" class="d-flex color-item align-items-center">
+                  <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> 
+                  <span class="text-black">{{ __('shop.red_color') }}</span>
               </a>
-              <a href="#" class="d-flex color-item align-items-center" >
-                <span class="bg-success color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.green_color')}}</span>
+              
+              <a href="#" class="d-flex color-item align-items-center">
+                  <span class="bg-success color d-inline-block rounded-circle mr-2"></span> 
+                  <span class="text-black">{{ __('shop.green_color') }}</span>
               </a>
-              <a href="#" class="d-flex color-item align-items-center" >
-                <span class="bg-info color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.blue_color')}}</span>
+              
+              <a href="#" class="d-flex color-item align-items-center">
+                  <span class="bg-info color d-inline-block rounded-circle mr-2"></span> 
+                  <span class="text-black">{{ __('shop.blue_color') }}</span>
               </a>
-              <a href="#" class="d-flex color-item align-items-center" >
-                <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span class="text-black">{{__('shop.purple_color')}}</span>
+              
+              <a href="#" class="d-flex color-item align-items-center">
+                  <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> 
+                  <span class="text-black">{{ __('shop.purple_color') }}</span>
               </a>
-            </div>
+              
+              <!-- إضافة ألوان جديدة -->
+              <a href="#" class="d-flex color-item align-items-center">
+                  <span class="bg-warning color d-inline-block rounded-circle mr-2"></span> 
+                  <span class="text-black">{{ __('shop.yellow_color') }}</span>
+              </a>
+              
+              <a href="#" class="d-flex color-item align-items-center">
+                  <span class="bg-dark color d-inline-block rounded-circle mr-2"></span> 
+                  <span class="text-black">{{ __('shop.black_color') }}</span>
+              </a> 
+              <a href="#" class="d-flex color-item align-items-center">
+                  <span class="bg-secondary color d-inline-block rounded-circle mr-2"></span> 
+                  <span class="text-black">{{ __('shop.gray_color') }}</span>
+              </a>
+          </div>
+          
 
           </div>
         </div>
@@ -278,7 +226,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
                   <a class="block-2-item" href="#">
                     <figure class="image">
-                      <img src="{{asset('assets/images/women.jpg')}}" alt="" class="img-fluid">
+                      <img src="{{asset('assets/images/pngtree-businesswoman-multitasks.jpg')}}" alt="" class="img-fluid" style="height: 229.18px;">
                     </figure>
                     <div class="text">
                       <span class="text-uppercase">{{__('shop.collections')}}</span>
@@ -289,7 +237,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
                   <a class="block-2-item" href="#">
                     <figure class="image">
-                      <img src="{{asset('assets/images/children.jpg')}}" alt="" class="img-fluid">
+                      <img src="{{asset('assets/images/cute-girl-choosing-modern-stylish-children-clothing.avif')}}" alt="" class="img-fluid">
                     </figure>
                     <div class="text">
                       <span class="text-uppercase">{{__('shop.collections')}}</span>
@@ -300,7 +248,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
                   <a class="block-2-item" href="#">
                     <figure class="image">
-                      <img src="{{asset('assets/images/men.jpg')}}" alt="" class="img-fluid">
+                      <img src="{{asset('assets/images/pngtree-a-fashionable-young-man.jpg')}}" alt="" class="img-fluid">
                     </figure>
                     <div class="text">
                       <span class="text-uppercase">{{__('shop.collections')}}</span>

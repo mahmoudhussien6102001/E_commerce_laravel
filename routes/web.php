@@ -19,9 +19,8 @@ Route::group([
     Route::get('/', [MainController::class, 'home'])->name('home');
     Route::get('/about', [MainController::class, 'about'])->name('about');
     Route::get('/contactUs', [MainController::class, 'contactUs'])->name('contactUs');
-    Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
-    Route::get('/shop-single', [ProductController::class, 'shopsingle'])->name('shopsingle');
-
+    Route::get('/shop/{category?}', [ProductController::class, 'shop'])->name('shop');
+    Route::get('/shop-single/{id}', [ProductController::class, 'shopsingle'])->name('shopsingle');
     Route::get('/categories', [MainController::class, 'categories'])->name('categories');
 });
 
