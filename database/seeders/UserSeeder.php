@@ -17,7 +17,9 @@ class UserSeeder extends Seeder
         // create seeder to test  ==> create data
         //admin
     $user = User::create([
-        'name' => 'Awad',
+        'name' => 'Mahmoudawad',
+        'username'=>'Awad',
+        'phone'=>'01152531478',
         'email' => 'awadppp389@gmail.com',
         'password' => bcrypt('123456789'),
         'created_at' => Carbon::now()->toDateString(),
@@ -26,7 +28,9 @@ class UserSeeder extends Seeder
     ]);
     // Admin Another 
     $user2 = User::create([
-        'name' => 'sedeek',
+        'name' => 'MohamedSedeek',
+        'username'=>'Sedeek',
+        'phone'=>'01062385269',
         'email' => 'sedeek@gmail.com',
         'password' => bcrypt('123456789'),
         'created_at' => Carbon::now()->toDateString(),
@@ -36,6 +40,8 @@ class UserSeeder extends Seeder
      // customer 
     $customer = User::create([
         'name' => 'waad',
+        'username'=>'waad',
+        'phone'=>'01033251393',
         'email' => 'waad@gmail.com',
         'password' => bcrypt('123456789'),
         'created_at' => Carbon::now()->toDateString(),
@@ -45,6 +51,8 @@ class UserSeeder extends Seeder
     // customer  another 
     $customer2 = User::create([
         'name' => 'Omar',
+        'username'=>'Omar',
+        'phone'=>'01115674016',
         'email' => 'omar@gmail.com',
         'password' => bcrypt('123456789'),
         'created_at' => Carbon::now()->toDateString(),
@@ -56,6 +64,8 @@ class UserSeeder extends Seeder
     // moderator
     $moderator = User::create([
         'name' => 'Ahmed Sayed',
+        'username' =>'Ahmed',
+        'phone'=>'01025501018',
         'email' => 'Ahmed@gmail.com',
         'password' => bcrypt('123456789'),
         'created_at' => Carbon::now()->toDateString(),

@@ -38,11 +38,11 @@
 @php
 function getCategoryImage($categoryTitle) {
     switch (strtolower(trim($categoryTitle))) {
-        case 'men':
+        case 'man':
             return 'assets/images/pngtree-a-fashionable-young-man.jpg'; // مسار صورة الرجال
         case 'women':
             return 'assets/images/pngtree-businesswoman-multitasks.jpg'; // مسار صورة النساء
-        case 'children':
+        case 'children' :
             return 'assets/images/cute-girl-choosing-modern-stylish-children-clothing.avif'; // مسار صورة الأطفال
         default:
             return 'assets/images/default.jpg'; // صورة افتراضية في حال لم توجد فئة

@@ -18,7 +18,7 @@
           <div class="site-top-icons">
             <ul>
               @auth
-                <li><a href="javascript:void(0)" class="text-decoration-none">{{ auth()->user()->name }}</a></li>
+                <li><a href="javascript:void(0)" class="text-decoration-none">{{ auth()->user()->name ?? auth()->user()->username}}</a></li>
               @else
               <li><a class="text-decoration-none">{{ __('home.guest') . '_' . uniqid() }}</a></li>
               @endauth
@@ -84,6 +84,7 @@
       <ul class="site-menu js-clone-nav d-none d-md-block">
         <li class="has-children">
           <a href="{{ route('home') }}">{{ __('home.home') }}</a>
+          <!--
           <ul class="dropdown">
             <li><a href="#">{{ __('home.Menu one') }}</a></li>
             <li><a href="#">{{ __('home.Menu two') }}</a></li>
@@ -97,14 +98,17 @@
               </ul>
             </li>
           </ul>
+        -->
         </li>
         <li class="has-children">
           <a href="{{ route('about') }}">{{ __('home.about') }}</a>
+          <!--
           <ul class="dropdown">
             <li><a href="#">{{ __('home.Menu one') }}</a></li>
             <li><a href="#">{{ __('home.Menu two') }}</a></li>
             <li><a href="#">{{ __('home.Menu three') }}</a></li>
           </ul>
+        -->
         </li>
         <li><a href="{{ route('shop') }}"> {{ __('home.shop') }}</a></li>
         <li><a href="{{route('categories')}}">{{ __('home.category') }}</a></li>

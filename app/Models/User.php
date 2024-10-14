@@ -23,6 +23,21 @@ class User extends Authenticatable
     {
         return $this->HasMany(SubCategory::class);
     }
+    public function Categories ()
+    {
+        return $this->HasMany(Category::class);
+    }
+    public function users(){
+        return $this->HasMany(User::class);
+    }
+    public function create_user()
+    {
+        return $this->belongsTo(User::class ,'create_user_id','id');
+    }
+    public function update_user()
+    {
+        return $this->belongsTo(User::class ,'update_user_id','id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

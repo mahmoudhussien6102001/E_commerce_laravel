@@ -104,7 +104,7 @@
             <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="{{ asset('dashboard/assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
-                    <span class="d-none d-md-block dropdown-toggle ps-2">{{auth()->user()->name}}</span>
+                    <span class="d-none d-md-block dropdown-toggle ps-2">{{auth()->user()->name ?? auth()->user()->username}}</span>
                 </a>
                 <!-- End Profile Image Icon -->
 
@@ -139,12 +139,12 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
 
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class="bi bi-box-arrow-right"></i>
-                            <span>{{ __('top-bar-dash.profile.sign_out') }}</span>
-                        </a>
-                    </li>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fa-solid fa-sign-out-alt"></i> {{ __('top-bar-dash.profile.sign_out') }}
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                      </form>
                 </ul>
                 <!-- End Profile Dropdown Items -->
             </li>

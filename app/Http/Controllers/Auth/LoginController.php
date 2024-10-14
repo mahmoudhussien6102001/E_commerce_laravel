@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -38,4 +39,31 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
     }
+
+    // to ability to  login in email , username ,phone
+    protected function credentials(Request $request)
+{
+    $password = $request->input('password');
+    $login = $request->input('email'); 
+    
+    if (is_numeric($login)) {
+        return [
+            'phone' => $login,
+            'password' => $password,
+        ];
+    } elseif (filter_var($login, FILTER_VALIDATE_EMAIL)) {
+        return [
+            'email' => $login,
+            'password' => $password,
+        ];
+    } else {
+        return [
+            'username' => $login,
+            'password' => $password,
+        ];
+    }
+}
+
+    
+
 }

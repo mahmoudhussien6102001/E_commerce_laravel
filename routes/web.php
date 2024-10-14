@@ -30,8 +30,8 @@ Route::group([
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth', 'dashboard'],
 ], function () {
     Route::prefix('dashboard')->group(function () {
+        // categories
         Route::get('/', [DashboardMainController::class, 'index'])->name('dashboard');
-
         Route::resource('/categories', CategoryController::class);
         Route::get('/category/delete',[CategoryController::class, 'delete'])->name('categories.delete');
         Route::get('/category/restore/{id}',[CategoryController::class, 'restore'])->name('categories.restore');
@@ -48,7 +48,7 @@ Route::group([
 
 
         
-       
+       //subcategories
        Route::resource('subcategories', SubCategoryController::class);
        Route::get('/subcategory/delete',[SubCategoryController::class, 'delete'])->name('subcategories.delete');
        Route::get('/subcategory/restore/{id}', [SubCategoryController::class, 'restore'])->name('subcategories.restore');
@@ -58,6 +58,9 @@ Route::group([
        Route::get('/product/delete',[ProductsController::class, 'delete'])->name('products.delete');
        Route::get('/product/restore/{id}', [ProductsController::class, 'restore'])->name('products.restore');
        Route::delete('/product/forceDelete/{id}', [ProductsController::class,'forceDelete'])->name('products.forceDelete');
+
+
+       // Users 
     });
     
 });
