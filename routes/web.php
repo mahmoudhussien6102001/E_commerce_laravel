@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 // website controller
 use App\Http\Controllers\website\{MainController, ProductController};
 // Dashboard controller
-use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController,SubCategoryController,ProductsController};
+use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController,SubCategoryController,ProductsController,UserController};
 // Auth controller
 use Illuminate\Support\Facades\Auth;
 
@@ -37,17 +37,6 @@ Route::group([
         Route::get('/category/restore/{id}',[CategoryController::class, 'restore'])->name('categories.restore');
         Route::delete('/category/forecDelete/{id}',[CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
 
-
-
-
-
-
-
-
-
-
-
-        
        //subcategories
        Route::resource('subcategories', SubCategoryController::class);
        Route::get('/subcategory/delete',[SubCategoryController::class, 'delete'])->name('subcategories.delete');
@@ -59,8 +48,13 @@ Route::group([
        Route::get('/product/restore/{id}', [ProductsController::class, 'restore'])->name('products.restore');
        Route::delete('/product/forceDelete/{id}', [ProductsController::class,'forceDelete'])->name('products.forceDelete');
 
-
        // Users 
+       Route::resource('/users', UserController::class)->parameters(['users' => 'username']);
+       Route::get('/user/customer',[UserController::class, 'customersIndex'])->name('users.customers');
+       Route::get('/user/moderator',[UserController::class, 'moderatorIndex'])->name('users.moderators');
+       Route::get('/user/admin',[UserController::class, 'adminIndex'])->name('users.admins');
+       
+
     });
     
 });

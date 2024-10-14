@@ -22,27 +22,27 @@
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-                <a href="components-badges.html">
+                <a href="{{route('users.admins')}}">
                     <i class="fa-solid fa-user-tie fs-5"></i><span>{{ __('side-bar-dash.Admin') }}</span>
                 </a>
               </li>
               <li>
-                <a href="components-breadcrumbs.html">
+                <a href="{{route('users.moderators')}}">
                     <i class="fa-solid fa-m fs-5"></i><span>{{ __('side-bar-dash.Moderator') }}</span>
                 </a>
               </li>
               <li>
-                <a href="components-buttons.html">
+                <a href="{{route('users.customers')}}">
                     <i class="fa-brands fa-cuttlefish fs-5"></i><span>{{ __('side-bar-dash.Customer') }}</span>
                 </a>
               </li>
               <li>
-                <a href="components-cards.html">
+                <a href="{{route('users.index')}}">
                     <i class="fa-sharp fa-solid fa-i fs-5"></i><span>{{ __('side-bar-dash.Index') }}</span>
                 </a>
               </li>
               <li>
-                <a href="components-carousel.html">
+                <a href="{{route('users.create')}}">
                     <i class="fa-solid fa-plus fs-5"></i><span>{{ __('side-bar-dash.Create') }}</span>
                 </a>
               </li>
