@@ -64,7 +64,7 @@ class UserSeeder extends Seeder
     // moderator
     $moderator = User::create([
         'name' => 'Ahmed Sayed',
-        'username' =>'Ahmed',
+        'username' =>'AhmedCR7',
         'phone'=>'01025501018',
         'email' => 'Ahmed@gmail.com',
         'password' => bcrypt('123456789'),
