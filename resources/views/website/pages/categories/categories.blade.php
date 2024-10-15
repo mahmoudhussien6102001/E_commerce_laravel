@@ -34,7 +34,7 @@
 </div>
 
 @endsection
-
+<!-- Function of image -->
 @php
 function getCategoryImage($categoryTitle) {
     switch (strtolower(trim($categoryTitle))) {

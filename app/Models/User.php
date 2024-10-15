@@ -38,6 +38,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(User::class ,'update_user_id','id');
     }
+    public function profile(){
+        
+        return $this->HasOne(Profile::class);
+    }
+    public function profileUser(){
+        
+        return $this->HasOne(UserProfile::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

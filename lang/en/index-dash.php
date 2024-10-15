@@ -35,6 +35,14 @@ return [
     'Price' => 'Price',
     'Available Quantity' => 'Available Quantity',
     'Subcategory' => 'Subcategory',
-    'deleted Product' => 'deleted Product'
+    'deleted Product' => 'deleted Product',
+    'index profiles' => 'Index Profiles',
+    'Add Profile' => 'Add Profile',
+    'UserName' => 'UserName',
+    'User Id' =>'User Id',
+    'Bio' =>'Bio',
+    'Address' => 'Address',
+    'Gender' => 'Gender',
+
 ];
 ?>

@@ -8,6 +8,7 @@ return [
     'titleSubcategory' => ' إنشاء فئة فرعية',
     'Select a Category' => 'اختر فئة',
     'No categories' => 'لا توجد فئات',
-    'Create Product' => 'إنشاء منتج'
+    'Create Product' => 'إنشاء منتج',
+    'Create Profile' => 'إنشاء ملف تعريف'
 ];
 ?>

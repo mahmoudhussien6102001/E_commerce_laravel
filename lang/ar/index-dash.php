@@ -36,8 +36,13 @@ return [
     'Price' => 'السعر',
     'Available Quantity' => 'الكمية المتاحة',
     'Subcategory' => 'الفئة الفرعية',
-     'deleted Product' => 'حذف المنتج'
-
+     'deleted Product' => 'حذف المنتج',
+     'Add Profile' => 'إضافة ملف تعريف',
+     'UserName' => 'اسم المستخدم',
+     'User Id' => 'رقم تعريف المستخدم',
+     'Bio' => 'السيرة الذاتية',
+     'Address' => 'العنوان',
+     'Gender' => 'الجنس',
 
 ];
 ?>
