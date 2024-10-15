@@ -96,8 +96,7 @@ class UserSeeder extends Seeder
             'image' => 'profile_ahmed.jpg',
             'created_at' => Carbon::now(),
             'updated_at' => null,
-        ]);
-
-     
+       
+    ]);
     }
 }

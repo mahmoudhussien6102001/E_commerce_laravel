@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 // website controller
 use App\Http\Controllers\website\{MainController, ProductController, UserProfileController};
 // Dashboard controller
-use App\Http\Controllers\dashboard\{DashboardMainController, CategoryController, SubCategoryController, ProductsController, profileController};
+use App\Http\Controllers\dashboard\{DashboardMainController, CategoryController, SubCategoryController, ProductsController, profileController,UserController};
+
 // Auth controller
 use Illuminate\Support\Facades\Auth;
 
@@ -45,19 +46,24 @@ Route::group([
         Route::get('/category/restore/{id}',[CategoryController::class, 'restore'])->name('categories.restore');
         Route::delete('/category/forecDelete/{id}',[CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
 
-        // subcategories
-        Route::resource('subcategories', SubCategoryController::class);
-        Route::get('/subcategory/delete',[SubCategoryController::class, 'delete'])->name('subcategories.delete');
-        Route::get('/subcategory/restore/{id}', [SubCategoryController::class, 'restore'])->name('subcategories.restore');
-        Route::delete('/subcategory/forceDelete/{id}', [SubCategoryController::class,'forceDelete'])->name('subcategories.forceDelete');
+       //subcategories
+       Route::resource('subcategories', SubCategoryController::class);
+       Route::get('/subcategory/delete',[SubCategoryController::class, 'delete'])->name('subcategories.delete');
+       Route::get('/subcategory/restore/{id}', [SubCategoryController::class, 'restore'])->name('subcategories.restore');
+       Route::delete('/subcategory/forceDelete/{id}', [SubCategoryController::class,'forceDelete'])->name('subcategories.forceDelete');
+       //  routing Products
+       Route::resource('/products', ProductsController::class);
+       Route::get('/product/delete',[ProductsController::class, 'delete'])->name('products.delete');
+       Route::get('/product/restore/{id}', [ProductsController::class, 'restore'])->name('products.restore');
+       Route::delete('/product/forceDelete/{id}', [ProductsController::class,'forceDelete'])->name('products.forceDelete');
 
-        // routing Products
-        Route::resource('/products', ProductsController::class);
-        Route::get('/product/delete',[ProductsController::class, 'delete'])->name('products.delete');
-        Route::get('/product/restore/{id}', [ProductsController::class, 'restore'])->name('products.restore');
-        Route::delete('/product/forceDelete/{id}', [ProductsController::class,'forceDelete'])->name('products.forceDelete');
-
-        // profiles
+       // Users 
+       Route::resource('/users', UserController::class)->parameters(['users' => 'username']);
+       Route::get('/user/customer',[UserController::class, 'customersIndex'])->name('users.customers');
+       Route::get('/user/moderator',[UserController::class, 'moderatorIndex'])->name('users.moderators');
+       Route::get('/user/admin',[UserController::class, 'adminIndex'])->name('users.admins');
+       
+       // profiles
         Route::resource('/profiles', profileController::class);
     });
 });

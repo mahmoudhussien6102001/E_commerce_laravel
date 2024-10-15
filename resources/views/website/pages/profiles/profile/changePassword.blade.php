@@ -1,10 +1,10 @@
 @extends('website.layouts.master')
 
-@section('title', 'Change Password')
+@section('title',__('profile_admin.Change Password') )
 
 @section('main-content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #7B1FA2;">Change Password</h1>
+    <h1 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #7B1FA2;">{{ __('profile_admin.Change Password') }}/h1>
 
     @if(session('success'))
         <div class="alert alert-success text-center" style="background-color: #E1BEE7; font-weight: bold; font-size: 1.1rem; border-radius: 8px;">
@@ -22,7 +22,7 @@
                         @method('PUT') <!-- This is important to indicate the PUT method -->
 
                         <div class="form-group">
-                            <label for="current_password" style="color: #7B1FA2; font-weight: bold;">Current Password</label>
+                            <label for="current_password" style="color: #7B1FA2; font-weight: bold;">{{ __('profile_admin.Current Password') }}</label>
                             <div class="input-group">
                                 <input type="password" id="current_password" name="current_password" class="form-control" required>
                                 <div class="input-group-append">
@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="new_password" style="color: #7B1FA2; font-weight: bold;">New Password</label>
+                            <label for="new_password" style="color: #7B1FA2; font-weight: bold;">{{ __('profile_admin.New Password') }}</label>
                             <div class="input-group">
                                 <input type="password" id="new_password" name="new_password" class="form-control" required>
                                 <div class="input-group-append">
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="confirm_password" style="color: #7B1FA2; font-weight: bold;">Confirm New Password</label>
+                            <label for="confirm_password" style="color: #7B1FA2; font-weight: bold;">{{ __('profile_admin.Confirm New Password') }}</label>
                             <div class="input-group">
                                 <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
                                 <div class="input-group-append">
