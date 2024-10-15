@@ -15,5 +15,16 @@ return [
     "Enter Price" => "Enter Price",
     "Enter Available Quantity" => "Enter Available Quantity",
     "--- Select a Category --- " => "--- Select a Category --- ",
-    "--- Select a Subcategory ---" => " --- Select a Subcategory ---"
+    "--- Select a Subcategory ---" => " --- Select a Subcategory ---" ,
+    'User Name' =>'User Name',
+    'Select an Admin' =>'Select an Admin',
+    ' --- No admins available --- ' =>' --- No admins available --- ',
+    'Bio' =>'Bio',
+    'Enter bio' =>'Enter bio',
+    'Addess' => 'Addess',
+    'Enter address' =>'Enter address',
+    'Select Gender' =>'Select Gender',
+    'Gender'=>'Gender',
+    'Male'=>'Male',
+    'Female'=>'Female',
 ];

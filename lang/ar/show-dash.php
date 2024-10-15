@@ -7,6 +7,8 @@ return [
     'Return to subCategories' => 'الرجوع الي الفئات الفرعيه',
      'title_subCategory' =>'عرض الفئات الفرعية',
        'show product' => 'عرض المنتج ',
-    ' Return to Products' => ' الرجوع الي المنتجات'
+    ' Return to Products' => ' الرجوع الي المنتجات',
+    'Return_to_Profiles' =>'الرجوع الي الملفات التعريفيه',
+    'show profile' =>'عرض الملف التعريفي'
 ];
 ?>

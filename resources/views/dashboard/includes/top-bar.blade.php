@@ -103,7 +103,7 @@
 
             <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="{{ asset('dashboard/assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
+                    <img src="{{ auth()->user()->profile && auth()->user()->profile->image ? Storage::url(auth()->user()->profile->image) : asset('path/to/your/default-user-image.jpg') }}" alt="Profile" class="rounded-circle">
                     <span class="d-none d-md-block dropdown-toggle ps-2">{{auth()->user()->name ?? auth()->user()->username}}</span>
                 </a>
                 <!-- End Profile Image Icon -->
@@ -114,29 +114,29 @@
                         <span>{{ucfirst(auth()->user()->user_type)}}</span>
                     </li>
                     <li><hr class="dropdown-divider"></li>
-
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('profiles.index') }}">
                             <i class="bi bi-person"></i>
                             <span>{{ __('top-bar-dash.profile.my_profile') }}</span>
                         </a>
                     </li>
                     <li><hr class="dropdown-divider"></li>
-
+                    
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ isset($userProfile) ? route('profiles.edit', ['profile' => $userProfile->id]) : 'profiles.edit' }}">
                             <i class="bi bi-gear"></i>
                             <span>{{ __('top-bar-dash.profile.account_settings') }}</span>
                         </a>
-                    </li>
+                    </li>                     
                     <li><hr class="dropdown-divider"></li>
-
+                    
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('profiles.index') }}">
                             <i class="bi bi-question-circle"></i>
                             <span>{{ __('top-bar-dash.profile.need_help') }}</span>
                         </a>
                     </li>
+                    
                     <li><hr class="dropdown-divider"></li>
 
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

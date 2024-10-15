@@ -43,25 +43,25 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                   @if(auth()->user())
-                    <button class="dropdown-item" type="button">
-                      <i class="fa-solid fa-user"></i> {{ __('home.Profile Management') }}
-                    </button>
-                    @if(auth()->user()->user_type === 'admin' || auth()->user()->user_type === 'moderator')
-                    <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('dashboard') }}'">
-                      <i class="fa-solid fa-user"></i> {{ __('home.Dashboard') }}
-                    </button>
-                    @endif
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                      <i class="fa-solid fa-sign-out-alt"></i> {{ __('home.Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      @csrf
-                    </form>
-                  @else
-                    <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('login') }}'">{{ __("home.login") }}</button>
-                    <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('register') }}'">{{ __("home.register") }}</button>
+                  <button class="dropdown-item" type="button" onclick="window.location.href='{{ auth()->user()->user_type === 'admin' ? route('profileAdmin') : route('profile.show') }}'">
+                    <i class="fa-solid fa-user"></i> {{ __('home.Profile Management') }}
+                  </button>
+                  @if(auth()->user()->user_type === 'admin' || auth()->user()->user_type === 'moderator')
+                      <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('dashboard') }}'">
+                          <i class="fa-solid fa-user"></i> {{ __('home.Dashboard') }}
+                      </button>
                   @endif
-                </div>
+                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      <i class="fa-solid fa-sign-out-alt"></i> {{ __('home.Logout') }}
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
+              @else
+                  <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('login') }}'">{{ __("home.login") }}</button>
+                  <button class="dropdown-item" type="button" onclick="window.location.href='{{ route('register') }}'">{{ __("home.register") }}</button>
+              @endif
+              
               </li>
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

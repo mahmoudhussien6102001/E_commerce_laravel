@@ -10,5 +10,7 @@ return [
     'title_subcategory' =>'Edit subCategory (:subCategory)',
     'heading_subCategory' => 'Edit Category (:subCategory)',
     "Return to Products" => "Return to Products",
-    "Edit Product" => "Edit Product"
+    "Edit Product" => "Edit Product",
+    'Edit Profile' =>'Edit Profile',
+    'Return_to_Profiles'=>'Return to Profiles'
 ];

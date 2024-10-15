@@ -7,6 +7,8 @@ return [
     'Return to subCategories' =>'Return to subCategories',
     'title_subCategory' =>'Show sub-categories',
     'show product' => 'Show Product',
-    ' Return to Products' => ' Return to Products'
+    'Return to Products' => ' Return to Products',
+    'Return_to_Profiles' =>' Return to Profiles',
+    'show profile' =>'show profile'
 ];
 ?>

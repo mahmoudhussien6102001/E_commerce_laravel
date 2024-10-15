@@ -35,7 +35,17 @@ return [
     'Price' => 'السعر',
     'Available Quantity' => 'الكمية المتاحة',
     'Subcategory' => 'الفئة الفرعية',
+<<<<<<< HEAD
     'deleted Product' => 'حذف المنتج',
+=======
+     'deleted Product' => 'حذف المنتج',
+     'Add Profile' => 'إضافة ملف تعريف',
+     'UserName' => 'اسم المستخدم',
+     'User Id' => 'رقم تعريف المستخدم',
+     'Bio' => 'السيرة الذاتية',
+     'Address' => 'العنوان',
+     'Gender' => 'الجنس',
+>>>>>>> 144da4b5e290378049f7a53b8332b49157b80a2c
 
     // New translations
     'name' => 'الاسم',

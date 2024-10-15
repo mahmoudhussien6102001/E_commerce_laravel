@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 // website controller
-use App\Http\Controllers\website\{MainController, ProductController};
+use App\Http\Controllers\website\{MainController, ProductController, UserProfileController};
 // Dashboard controller
-use App\Http\Controllers\dashboard\{DashboardMainController,CategoryController,SubCategoryController,ProductsController,UserController};
+use App\Http\Controllers\dashboard\{DashboardMainController, CategoryController, SubCategoryController, ProductsController, profileController,UserController};
+
 // Auth controller
 use Illuminate\Support\Facades\Auth;
 
@@ -22,6 +23,14 @@ Route::group([
     Route::get('/shop/{category?}', [ProductController::class, 'shop'])->name('shop');
     Route::get('/shop-single/{id}', [ProductController::class, 'shopsingle'])->name('shopsingle');
     Route::get('/categories', [MainController::class, 'categories'])->name('categories');
+    Route::get('/profiles', [MainController::class, 'profileAdmin'])->name('profileAdmin');
+
+    // User profile routes
+    Route::get('/profile', [UserProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/edit', [UserProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [UserProfileController::class, 'update'])->name('profile.update');
+    Route::get('/profile/{username}/change-password', [UserProfileController::class, 'changePassword'])->name('profile.changePassword');
+    Route::put('/profile/{id}/update-password', [UserProfileController::class, 'updatePassword'])->name('profile.updatePassword');
 });
 
 // Define dashboard routes
@@ -54,13 +63,12 @@ Route::group([
        Route::get('/user/moderator',[UserController::class, 'moderatorIndex'])->name('users.moderators');
        Route::get('/user/admin',[UserController::class, 'adminIndex'])->name('users.admins');
        
-
+       // profiles
+        Route::resource('/profiles', profileController::class);
     });
-    
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home_auth');
-
 
 // Route for switching languages
 Route::get('lang/{locale}', function ($locale) {

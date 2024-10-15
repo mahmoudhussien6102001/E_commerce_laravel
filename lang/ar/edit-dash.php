@@ -10,5 +10,7 @@ return [
     'title_subcategory' =>'تعديل الفئات الفرعيه (:subCategory)',
     'heading_subCategory' => 'تعديل الفئات الفرعيه (:subCategory)',
     "Return to Products" => "الرجوع الي المنتجات",
-    "Edit Product" => "تعديل المنتج"
+    "Edit Product" => "تعديل المنتج",
+     'Edit Profile' =>'تعديل الملف التعريفي',
+    'Return_to_Profiles'=>'الرجوع الي الملفات التعريفيه'
 ];

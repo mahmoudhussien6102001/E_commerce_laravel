@@ -15,5 +15,16 @@ return [
     "Enter Price" => "ادخل السعر",
     "Enter Available Quantity" => "ادخل الكميه المتاحه",
     "--- Select a Category --- " => "--- اختر الفئه --- ",
-    "--- Select a Subcategory ---" => " ---  اختر الفئه الفرعيه---"
+    "--- Select a Subcategory ---" => " ---  اختر الفئه الفرعيه---",
+    'User Name' =>'إسم المستخدم',
+'Select an Admin' =>'اختر إداري',
+' --- No admins available --- ' =>' --- لا يوجد إداريون متاحون --- ',
+'Bio' =>'السيرة الذاتية',
+'Enter bio' =>'أدخل السيرة الذاتية',
+'Addess' =>'العنوان',
+'Enter address' =>'أدخل العنوان',
+'Select Gender' =>'اختر الجنس',
+'Gender'=>'الجنس',
+'Male'=>'ذكر',
+'Female'=>'أنثي',
 ];

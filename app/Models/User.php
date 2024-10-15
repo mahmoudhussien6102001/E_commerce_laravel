@@ -27,6 +27,9 @@ class User extends Authenticatable
     {
         return $this->HasMany(Category::class);
     }
+    public function Products (){
+        return $this->HasMany(Product::class);
+    }
     public function users(){
         return $this->HasMany(User::class);
     }
@@ -37,6 +40,14 @@ class User extends Authenticatable
     public function update_user()
     {
         return $this->belongsTo(User::class ,'update_user_id','id');
+    }
+    public function profile(){
+        
+        return $this->HasOne(Profile::class);
+    }
+    public function profileUser(){
+        
+        return $this->HasOne(UserProfile::class);
     }
 
     /**

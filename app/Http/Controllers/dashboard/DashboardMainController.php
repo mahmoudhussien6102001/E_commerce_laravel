@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\User;
+use App\Models\Product;
 
 class DashboardMainController extends Controller
 {
@@ -17,7 +18,7 @@ class DashboardMainController extends Controller
         $customerCount = User::where('user_type', 'customer')->count();
         $categoryCount = Category::count(); 
         $subCategoryCount = SubCategory::count(); 
-        
-        return view('dashboard.pages.home', compact('adminCount', 'moderatorCount', 'customerCount','categoryCount', 'subCategoryCount'));
+        $productCount = Product::count();
+        return view('dashboard.pages.home', compact('adminCount', 'moderatorCount', 'customerCount','categoryCount', 'subCategoryCount' , 'productCount'));
     }
 }
