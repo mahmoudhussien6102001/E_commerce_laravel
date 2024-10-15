@@ -21,13 +21,13 @@
     <thead>
         <tr>
             <th scope="col">{{__('index-dash.#')}}</th>
-            <th scope="col">Name</th>
-            <th scope="col">Username</th>
-            <th scope="col" style="white-space: nowrap;">Email</th>
-            <th scope="col" style="white-space: nowrap;">user_Type</th>
-            <th scope="col" style="white-space: nowrap;">Phone</th>
-            <th scope="col" style="white-space: nowrap;">Created At</th>
-            <th scope="col" style="white-space: nowrap;">Updated At</th>
+            <th scope="col">{{__('index-dash.name')}}</th>
+            <th scope="col">{{__('index-dash.username')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.email')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.type')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.phone')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.create_at')}}</th>
+            <th scope="col" style="white-space: nowrap;">{{__('index-dash.update_at')}}</th>
             <th scope="col">{{__('index-dash.Action')}}</th>
         </tr>
     </thead>

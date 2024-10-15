@@ -24,14 +24,14 @@
                         @include('dashboard.pages.user.form')
                         
                         <div class="d-flex justify-content-between mt-3">
-                            <button type="submit" class="btn btn-lg btn-custom edit-btn">
+                            <button type="submit" class="btn btn-lg btn-custom2">
                                 {{ __('edit-dash.update_button') }}
                             </button>
                             <div>
-                                <a href="{{ route('users.index') }}" class="btn btn-lg btn-custom return-btn">
+                                <a href="{{ route('users.index') }}" class="btn btn-lg  btn-custom2-reset">
                                     {{ __('edit-dash.return_button') }}
                                 </a>
-                                <a href="{{ url()->previous() }}" class="btn btn-lg btn-custom back-btn">
+                                <a href="{{ url()->previous() }}" class="btn btn-lg btn-custom2-go">
                                     {{ __('edit-dash.back_button') }}
                                 </a>
                             </div>
