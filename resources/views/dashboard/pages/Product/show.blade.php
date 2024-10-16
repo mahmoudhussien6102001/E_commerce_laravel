@@ -25,19 +25,19 @@
                     <hr>
                     
                     <div class="d-flex justify-content-between">
-                        <a class="btn btn-outline-secondary btn-custom3" href="{{ route('products.edit',  $product->id) }}">
+                        <a class="btn btn-md px-4 font-weight-bold fs-5 btn-custom2" href="{{ route('products.edit',  $product->id) }}">
                             <i class="fa-solid fa-edit"></i>{{ __('show-dash.Edit') }}  
                         </a>
 
                         <form action="{{ route('products.destroy',  $product->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-danger btn-custom3" type="submit">
+                            <button class="btn btn-danger btn-custom3" type="submit">
                                 <i class="fa-solid fa-trash-alt"></i> {{ __('show-dash.Delete') }} 
                             </button>
                         </form>
 
-                        <a class="btn btn-outline-primary btn-custom3" href="{{ route('products.index') }}">
+                        <a class="btn btn-primary btn-custom3" href="{{ route('products.index') }}">
                             <i class="fa-solid fa-arrow-left"></i> {{ __('show-dash. Return to Products') }}
                         </a>
                     </div>

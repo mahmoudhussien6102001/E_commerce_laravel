@@ -363,31 +363,41 @@ body {
 
 
 
-
 .btn-custom2 {
-    background-color: #007bff; /* لون الخلفية */
+    background-color: #28a745; /* لون أخضر للتعديل */
     color: #fff; /* لون النص */
     border-radius: 20px; /* حواف دائرية */
     transition: background-color 0.3s, transform 0.3s; /* تأثيرات عند التمرير */
 }
 
 .btn-custom2:hover {
-    background-color: #0056b3; /* لون الخلفية عند التمرير */
+    background-color: #218838; /* لون أخضر داكن عند التمرير */
     transform: scale(1.05); /* تأثير التكبير عند التمرير */
 }
 
-.btn-custom2-reset,
 .btn-custom2-go {
-    background-color: #f8f9fa; /* لون خلفية للأزرار الأخرى */
-    color: #333; /* لون النص */
+    background-color: #007bff; /* لون أزرق للقائمة */
+    color: #fff; /* لون النص */
     border-radius: 20px; /* حواف دائرية */
     transition: background-color 0.3s; /* تأثيرات عند التمرير */
 }
 
-.btn-custom2-reset:hover,
 .btn-custom2-go:hover {
-    background-color: #e2e6ea; /* لون الخلفية عند التمرير */
+    background-color: #0056b3; /* لون أزرق داكن عند التمرير */
 }
+
+.btn-custom2-reset {
+    background-color: #ff6f61; /* لون مشمشي للعودة */
+    color: #fff; /* لون النص */
+    border-radius: 20px; /* حواف دائرية */
+    transition: background-color 0.3s; /* تأثيرات عند التمرير */
+}
+
+.btn-custom2-reset:hover {
+    background-color: #e65c50; /* لون مشمشي داكن عند التحويم */
+}
+
+
 
 
 
@@ -399,37 +409,5 @@ body {
 
 
 /* زر التحديث */
-.edit-btn {
-    background-color: #4CAF50; /* لون زر التحديث */
-}
 
-/* زر التحديث عند التمرير */
-.edit-btn:hover {
-    background-color: #45a049; /* لون عند التمرير */
-}
-
-/* زر العودة */
-.return-btn {
-    background-color: #2196F3; /* لون زر العودة */
-}
-
-/* زر العودة عند التمرير */
-.return-btn:hover {
-    background-color: #1976D2; /* لون عند التمرير */
-}
-
-/* زر العودة للخلف */
-.back-btn {
-    background-color: #f44336; /* لون زر العودة للخلف */
-}
-
-/* زر العودة للخلف عند التمرير */
-.back-btn:hover {
-    background-color: #d32f2f; /* لون عند التمرير */
-}
-
-/* تأثير عند الضغط */
-.btn-custom:active {
-    transform: scale(0.95); /* تصغير الزر عند الضغط */
-}
 
