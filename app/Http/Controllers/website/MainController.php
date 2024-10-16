@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Category;
 use App\Models\Profile;
+use  App\Models\Product;
 
 class MainController extends Controller
 {
@@ -23,6 +24,13 @@ class MainController extends Controller
     public function contactUs(){
         return view('website.pages.contuctUs');
     }
+
+    public function newArrivals()
+{
+    // Fetch new arrival products
+    $products = Product::latest()->take(8)->get(); // Modify query as needed
+    return view('website.pages.new_arrivales', compact('products'));
+}
 
     public function categories(){
         $categories = Category::all();
