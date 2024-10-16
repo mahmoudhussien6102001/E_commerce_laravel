@@ -24,6 +24,8 @@
             background-color: #343a40; /* لون خلفية داكن */
             padding: 1rem; /* حشوة إضافية */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* تأثير ظل أقوى */
+            margin-bottom: 60px;
+
         }
 
         .navbar-brand {

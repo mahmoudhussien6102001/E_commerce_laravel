@@ -35,7 +35,6 @@ return [
     'Price' => 'Price',
     'Available Quantity' => 'Available Quantity',
     'Subcategory' => 'Subcategory',
-<<<<<<< HEAD
     'deleted Product' => 'Deleted Product',
 
     // New translations
@@ -49,7 +48,7 @@ return [
     'Add admin' => 'Add Admin',
     'Add customer' => 'Add Customer',
     'Add moderator' => 'Add Moderator',
-=======
+
     'deleted Product' => 'deleted Product',
     'index profiles' => 'Index Profiles',
     'Add Profile' => 'Add Profile',
@@ -59,7 +58,7 @@ return [
     'Address' => 'Address',
     'Gender' => 'Gender',
 
->>>>>>> 144da4b5e290378049f7a53b8332b49157b80a2c
+
 ];
 
 ?>
