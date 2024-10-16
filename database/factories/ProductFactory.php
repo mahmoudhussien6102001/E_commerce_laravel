@@ -14,15 +14,11 @@ class ProductFactory extends Factory
     {
         // مصفوفة تحتوي على أسماء الصور
         $images = [
-            'products/9zBlz27W4BuLcNR17Sf6DVrvzZJoRypIEMIMmq71.jpg',
-            'products/JO5r0tNQbNkCuHarIEfIfD2ZR0ViUgvRt9y48Xwp.png',
-            'products/3cFg6LP8ACKlUGxsuRNSt87pmfibR0PML1IhGGlk.jpg',
-            'products/yRp4ANDtNm0r1WN5xwOEJREKwHYZroMjxONtn32T.jpg',
-            'products/6rzcQzxyNcz0IfUKZnwhjW8JfE6LrQJJSUUkk5Im.jpg',
-            'products/tgdJ3qhrDr4MIGVZvPs8U37nFbgajyt8LhjF9Fn6.webp',
-            'products/X6fIghQCLwLr15wNHewsYxcdwfq9eZmp6dy4qcYz.jpg',
-            'products/zWoQyHjZGoAdaWolTWeq9zlSg8Rg5NmruEQTCwrz.jpg',
-            'products/JO5r0tNQbNkCuHarIEfIfD2ZR0ViUgvRt9y48Xwp.png',
+            'products/f3gMdtjvsViZaycTYjLQdN1wJZvFThr09frXiGHu.jpg',
+            'products/eIFTD7p2m41SJVjp1TPlYkfmug92pBqgOBenx7uu.jpg',
+            'products/oktGQLnz1X5aXLPNiUv4Uv2O2TWoFYXBOAH1ehSU.jpg',
+            'products/UliYMV48aue6s776WoTbqRqaxdI0jtVFgu2ilxT3.jpg',
+
             // أضف المزيد من الصور حسب الحاجة
         ];
         // اختيار صورة عشوائية من المصفوفة
