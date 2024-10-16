@@ -11,7 +11,7 @@ return [
     'View' =>'عرض',
     'Edit' =>'تعديل ',
     'Delete' =>'حذف',
-    ' Date of Birth' =>'تاريخ الميلاد',
+    'Date of Birth' =>'تاريخ الميلاد',
     'Phone' =>'الهاتف',
     'Change Password','تغير كلمه السر',
     'Edit Profile' =>'تعديل الملف الشخصي',
@@ -22,7 +22,7 @@ return [
      'Male' =>'ذكر',
      'Female'=>'أنثي',
      'Other'=>'الاخر',
-     'Current Password'=>'كلمه السر الحاليه ',
+     'Current Password'=>'كلمه السر الحاليه',
      'New Password'=>'كلمه السر الجديده',
      'Confirm New Password'=>'تأكيد كلمه السر الجديده'
 ]; 

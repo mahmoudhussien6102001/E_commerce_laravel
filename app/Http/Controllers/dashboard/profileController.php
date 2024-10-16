@@ -73,6 +73,7 @@ class profileController extends Controller
        return view('dashboard.pages.profiles.show', compact('userProfile'));
     }
 
+    
     public function edit(string $id)
     {
         $userProfile = Profile::findOrFail($id);

@@ -4,7 +4,7 @@
 
 @section('main-content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #7B1FA2;">{{ __('profile_admin.Phone') }}Edit Profile</h1>
+    <h1 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #7B1FA2;">{{ __('profile_admin.Edit Profile') }}</h1>
 
     @if(session('success'))
         <div class="alert alert-success text-center" style="background-color: #E1BEE7; font-weight: bold; font-size: 1.1rem; border-radius: 8px;">
