@@ -35,7 +35,7 @@
                                             <h5 class="product-title text-dark text-center">{{ $product->title }}</h5>
                                             <p class="product-price text-success text-center">${{ $product->price }}</p>
                                         </div>
-                                        <a href="{{ route('shopsingle', ['id' => $product->id]) }}" class="btn btn-purple btn-block rounded-pill hover-effect mt-auto" style="background-color:#5A50E5; color: white; border-radius: 30px;">view_details</a>
+                                        <a href="{{ route('shopsingle', ['id' => $product->id]) }}" class="btn btn-purple btn-block rounded-pill hover-effect mt-auto" style="background-color:#5A50E5; color: white; border-radius: 30px;">{{__('new_arrivals.view_details')}}</a>
                                     </div>
                                 </div>
                             </div>
