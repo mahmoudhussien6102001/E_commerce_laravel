@@ -6,7 +6,7 @@
     <div class="col-12 grid-margin">
         <div class="d-flex justify-content-end flex-wrap">
             <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <a href="#" class="btn btn-custom1 my-3 text-light font-weight-bold">
+                <a href="{{ route('users.create') }}" class="btn btn-custom1 my-3 text-light font-weight-bold">
                     <span>{{__('index-dash.Add moderator')}}</span>
                 </a>
             </div>
@@ -59,7 +59,7 @@
         <tr>
             <td colspan="9" class="text-center">
                 <div class="alert alert-danger-custom my-5 w-50 mx-auto">
-                    <span>There are no moderators yet! <a href="{{ route('moderators.create') }}" class="fw-bold text-danger">Add moderators From Here</a></span>
+                    <span>There are no moderators yet! <a href="{{ route('users.create') }}" class="fw-bold text-danger">Add moderators From Here</a></span>
                 </div>
             </td>
         </tr>

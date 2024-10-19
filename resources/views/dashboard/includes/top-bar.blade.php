@@ -130,12 +130,7 @@
                     </li>                     
                     <li><hr class="dropdown-divider"></li>
                     
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="{{ route('profiles.index') }}">
-                            <i class="bi bi-question-circle"></i>
-                            <span>{{ __('top-bar-dash.profile.need_help') }}</span>
-                        </a>
-                    </li>
+                 
                     
                     <li><hr class="dropdown-divider"></li>
 
