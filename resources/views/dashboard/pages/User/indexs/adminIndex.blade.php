@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.master') 
-@section('title', __('index-dash.Index Page'))
+@section('title', __(' Page Admins'))
 @section('main-content')
 
 <div class="row">

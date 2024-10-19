@@ -15,24 +15,8 @@
     @enderror
 </div>
 
-{{-- Name --}}
-<div class="form-group mb-3">
-    <label for="name" class="form-label text-white">
-        Name <span class="text-danger">*</span>
-    </label>
-    <input type="text" name="name" id="name" 
-           value="{{ old('name', $user->name ?? '') }}" 
-           class="form-control @error('name') is-invalid @enderror" 
-           placeholder="Enter Name" 
-           required>
-    @error('name')
-        <span class="invalid-feedback" role="alert">
-            <strong class="text-danger">{{ $message }}</strong>
-        </span>
-    @enderror
-</div>
-
 {{-- Email --}}
+
 <div class="form-group mb-3">
     <label for="email" class="form-label text-white">
         Email

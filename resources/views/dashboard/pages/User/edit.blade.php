@@ -29,7 +29,7 @@
                             </button>
                             <div>
                                 <a href="{{ route('users.index') }}" class="btn btn-lg  btn-custom2-reset">
-                                    {{ __('edit-dash.return_button') }}
+                                    {{ __('Return to users') }}
                                 </a>
                                 <a href="{{ url()->previous() }}" class="btn btn-lg btn-custom2-go">
                                     {{ __('edit-dash.back_button') }}

@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.master') 
-@section('title' , __('create-dash.Card Title'))
+@section('title' , 'Create user')
 
 @inject('user', 'App\Models\User')  
 

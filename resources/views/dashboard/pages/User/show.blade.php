@@ -52,7 +52,7 @@
                         </form>
 
                         <a class="btn btn-primary btn-custom3" href="{{ route('users.index') }}">
-                            <i class="fa-solid fa-arrow-left"></i> {{ __('show-dash.Return to Users') }} 
+                            <i class="fa-solid fa-arrow-left"></i> {{ __('Return To Users') }} 
                         </a>
                     </div>
                 </div>

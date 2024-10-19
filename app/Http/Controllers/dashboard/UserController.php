@@ -88,6 +88,8 @@ class UserController extends Controller
     
         // إنشاء المستخدم الجديد
         User::create($request->all());
+        
+
     
         // إعادة التوجيه مع رسالة نجاح
         return redirect()->route('users.index')->with('Created_Category_Sucessfully', "The user '{$request->username}' has been created successfully.");
@@ -143,17 +145,20 @@ class UserController extends Controller
     ];
 
     // التحقق من صلاحيات المستخدم الحالي
-    if (auth()->user()->user_type === "admin") {
+    if (auth()->user()->user_type === "admin")
+    {
         // إذا كان المستخدم الذي يحاول التحديث هو "admin"، يجب التأكد أنه لا يعدل على حساب آخر من نفس النوع
-        if ($user->user_type === "admin" && auth()->user()->id !== $user->id) {
+        if ($user->user_type === "admin" && auth()->user()->id !== $user->id)
+         {
             return redirect()->route('users.index')->with('error', 'You are not authorized to update another admin user');
           
-        }
+         }
         $rules['user_type'] = 'required|in:customer,moderator,admin';
-    } elseif (auth()->user()->user_type === "moderator") {
+    }
+     elseif (auth()->user()->user_type === "moderator") {
         $rules['user_type'] = 'required|in:customer';
     } else {
-        return abort(404); // إرجاع خطأ 404 لو الشخص مش ليه الصلاحية
+        return abort(404); 
     }
 
     // التحقق من صحة البيانات
