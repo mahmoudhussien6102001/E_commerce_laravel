@@ -23,7 +23,6 @@ class profileController extends Controller
      */
     public function create()
 {
-   
     if (Auth::user()->profile) {
         return redirect()->back()->with('error', "You already have a profile.");
     }

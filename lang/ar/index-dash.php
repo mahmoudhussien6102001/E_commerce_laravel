@@ -44,6 +44,7 @@ return [
      'Bio' => 'السيرة الذاتية',
      'Address' => 'العنوان',
      'Gender' => 'الجنس',
+     
 
     // New translations
     'name' => 'الاسم',

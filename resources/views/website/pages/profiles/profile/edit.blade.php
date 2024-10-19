@@ -17,7 +17,7 @@
         <div class="col-md-8">
             <div class="card mb-4 rounded-lg shadow-lg" style="border: none; border-radius: 20px; background-color: #f8f9fa; padding: 20px;">
                 <div class="card-body">
-                    <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('profile.update',auth()->user()->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
 
@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label for="image" style="color: #7B1FA2; font-weight: bold;">{{ __('profile_admin.Profile Image') }}:</label>
                             <input type="file" name="image" class="form-control">
-                        </div>
+</div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success rounded-pill shadow-sm" style="padding: 8px 15px; font-size: 1rem; border-radius: 15px;">
                                 <i class="fas fa-user-edit"></i> {{ __('profile_admin.Update Profile') }}

@@ -4,6 +4,10 @@
 
 @section('main-content')
 <div class="container mt-5">
+<<<<<<< HEAD
+    <h1 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #7B1FA2;">Change Password</h1>
+@include('website.pages.profiles.profile.mesages_password_error')
+=======
     <h1 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #7B1FA2;">{{ __('profile_admin.Change Password') }}</h1>
 
     @if(session('success'))
@@ -13,20 +17,21 @@
         </div>
     @endif
 
+>>>>>>> e32a4dfb5d9d3266bd8f5420c99708887154dfe6
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mb-4 rounded-lg shadow-lg" style="border: none; border-radius: 20px; background-color: #f8f9fa;">
                 <div class="card-body">
                     <form action="{{ route('profile.updatePassword', ['id' => $user->id]) }}" method="POST">
                         @csrf
-                        @method('PUT') <!-- This is important to indicate the PUT method -->
+                        @method('PATCH') <!-- This is important to indicate the PUT method -->
 
                         <div class="form-group">
-                            <label for="current_password" style="color: #7B1FA2; font-weight: bold;">{{ __('profile_admin.Current Password') }}</label>
+                            <label for="old_password" style="color: #7B1FA2; font-weight: bold;">{{ __('profile_admin.Current Password') }}</label>
                             <div class="input-group">
-                                <input type="password" id="current_password" name="current_password" class="form-control" required>
+                                <input type="password" id="old_password" name="old_password" class="form-control" required>
                                 <div class="input-group-append">
-                                    <span class="input-group-text" onclick="togglePassword('current_password')">
+                                    <span class="input-group-text" onclick="togglePassword('old_password')">
                                         <i id="eye_current" class="fas fa-eye"></i>
                                     </span>
                                 </div>
@@ -46,11 +51,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="confirm_password" style="color: #7B1FA2; font-weight: bold;">{{ __('profile_admin.Confirm New Password') }}</label>
+                            <label for="confirm_new_password" style="color: #7B1FA2; font-weight: bold;">{{ __('profile_admin.Confirm New Password') }}</label>
                             <div class="input-group">
-                                <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+                                <input type="password" id="confirm_new_password" name="confirm_new_password" class="form-control" required>
                                 <div class="input-group-append">
-                                    <span class="input-group-text" onclick="togglePassword('confirm_password')">
+                                    <span class="input-group-text" onclick="togglePassword('confirm_new_password')">
                                         <i id="eye_confirm" class="fas fa-eye"></i>
                                     </span>
                                 </div>
