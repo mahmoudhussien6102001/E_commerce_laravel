@@ -10,7 +10,7 @@ return [
     'View' =>'View',
     'Edit' =>'Edit ',
     'Delete' =>'Delete',
-    ' Date of Birth' =>' Date of Birth',
+    'Date of Birth' =>'Date of Birth',
     'Phone' =>'Phone',
     'Change Password','Change Password',
     'Edit Profile' =>'Edit Profile',

@@ -3,16 +3,12 @@
 @section('content')
 
 <style>
-body {
-    background: linear-gradient(135deg, #f0f2f5 0%, #e8eaf6 100%);
-    font-family: 'Roboto', sans-serif;
-}
-
-.container {
-    margin-top: 100px;
+    .container {
+    margin-top: 50px; /* المسافة بين الحاوية وأعلى الصفحة */
 }
 
 .card {
+    margin-top: 30px; /* المسافة بين الكارد والمحتوى العلوي */
     border: none;
     border-radius: 20px;
     background: #ffffff;
@@ -20,13 +16,8 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
 .card-header {
-    background-color: #ff5722;
+    background-color: #7971EA; /* اللون الموف */
     color: white;
     text-align: center;
     font-size: 2rem;
@@ -37,12 +28,8 @@ body {
     padding: 20px;
 }
 
-.card-body {
-    padding: 3rem;
-}
-
 .btn-primary {
-    background-color: #ff5722;
+    background-color: #7971EA; /* اللون الموف */
     border: none;
     padding: 12px 24px;
     font-size: 1.2rem;
@@ -51,53 +38,30 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #e64a19;
-    box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
-}
-
-.form-control {
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    transition: border-color 0.3s;
-    padding: 12px;
+    background-color: #7b1fa2; /* درجة أغمق من الموف */
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
 }
 
 .form-control:focus {
-    border-color: #ff5722;
-    box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+    border-color: #9c27b0; /* اللون الموف */
+    box-shadow: 0 0 5px rgba(156, 39, 176, 0.5);
 }
 
 .invalid-feedback {
-    color: #e64a19;
+    color: #7b1fa2; /* اللون الموف */
     font-size: 0.9rem;
 }
 
 .btn-link {
-    color: #ff5722;
+    color: #9c27b0; /* اللون الموف */
     font-weight: bold;
     text-decoration: underline;
 }
 
 .btn-link:hover {
-    color: #e64a19;
+    color: #7b1fa2; /* درجة أغمق من الموف */
 }
 
-.form-check-label {
-    font-size: 0.9rem;
-    color: #343a40;
-}
-
-/* Responsive Enhancements */
-@media (max-width: 768px) {
-    .card-body {
-        padding: 2rem;
-    }
-
-    .btn-primary {
-        width: 100%;
-        margin-top: 10px;
-    }
-}
 </style>
 
 <div class="container">

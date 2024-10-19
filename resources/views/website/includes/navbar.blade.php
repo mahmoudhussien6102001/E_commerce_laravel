@@ -112,7 +112,7 @@
         </li>
         <li><a href="{{ route('shop') }}"> {{ __('home.shop') }}</a></li>
         <li><a href="{{route('categories')}}">{{ __('home.category') }}</a></li>
-        <li><a href="#">{{ __('home.newArrivals') }}</a></li>
+        <li><a href="{{route('new_arrivales')}}">{{ __('home.newArrivals') }}</a></li>
         <li><a href="{{ route('contactUs') }}">{{ __('home.Contact') }}</a></li>
 
      

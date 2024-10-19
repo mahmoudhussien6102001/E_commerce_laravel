@@ -4,8 +4,20 @@
 
 @section('main-content')
 <div class="container mt-5">
+<<<<<<< HEAD
     <h1 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #7B1FA2;">Change Password</h1>
 @include('website.pages.profiles.profile.mesages_password_error')
+=======
+    <h1 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold; color: #7B1FA2;">{{ __('profile_admin.Change Password') }}</h1>
+
+    @if(session('success'))
+        <div class="alert alert-success text-center" style="background-color: #E1BEE7; font-weight: bold; font-size: 1.1rem; border-radius: 8px;">
+            <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
+            {{ session('success') }}
+        </div>
+    @endif
+
+>>>>>>> e32a4dfb5d9d3266bd8f5420c99708887154dfe6
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mb-4 rounded-lg shadow-lg" style="border: none; border-radius: 20px; background-color: #f8f9fa;">

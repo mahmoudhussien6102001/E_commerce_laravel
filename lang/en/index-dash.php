@@ -15,6 +15,7 @@ return [
     'Created At' => 'Created At',
     'Updated At' => 'Updated At',
     'Deleted At' => 'Deleted At',
+
     'Action' => 'Action',
     '#' => '#',
     'N/A' => 'N/A',
@@ -22,19 +23,32 @@ return [
     'Show all categories' => 'Show all categories',
     'previous' => '&laquo; Previous',
     'next' => 'Next &raquo;',
-    'Category'=> 'Category',
+    'Category' => 'Category',
     'Add SubCategory' => 'Add SubCategory',
-    'SubCategory Index Page' =>'SubCategory Index Page',
-    'Deleted categories' =>'Deleted categories',
-    'Deleted sub_categories'=>'Deleted sub_categories',
+    'SubCategory Index Page' => 'SubCategory Index Page',
+    'Deleted categories' => 'Deleted categories',
+    'Deleted sub_categories' => 'Deleted sub_categories',
     'Restore' => 'Restore',
-    'Delete' => 'Delete',
     'Products Page' => 'Products Page',
     'Add Product' => 'Add Product',
     'Image' => 'Image',
     'Price' => 'Price',
     'Available Quantity' => 'Available Quantity',
     'Subcategory' => 'Subcategory',
+    'deleted Product' => 'Deleted Product',
+
+    // New translations
+    'name' => 'Name',
+    'username' => 'Username',
+    'email' => 'Email',
+    'type' => 'Type',
+    'phone' => 'Phone',
+    'create_at' => 'Created At',
+    'update_at' => 'Updated At',
+    'Add admin' => 'Add Admin',
+    'Add customer' => 'Add Customer',
+    'Add moderator' => 'Add Moderator',
+
     'deleted Product' => 'deleted Product',
     'index profiles' => 'Index Profiles',
     'Add Profile' => 'Add Profile',
@@ -45,5 +59,7 @@ return [
     'Gender' => 'Gender',
     
 
+
 ];
+
 ?>

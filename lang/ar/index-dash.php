@@ -23,19 +23,20 @@ return [
     'Show all categories' => 'عرض جميع الفئات',
     'previous' => '&laquo; السابق',
     'next' => 'التالي &raquo;',
-    'Category'=>'فئة/صنف',
+    'Category' => 'فئة/صنف',
     'Add SubCategory' => 'إضافة فئة/صنف فرعية',
-    'SubCategory Index Page' =>'صفحة فهرس الفئات الفرعية',
-    'Deleted categories' =>'حذف الفئات ',
-    'Deleted sub_categories'=>'حذف الفئات الفرعيه',
-    'Restore' => ' استعادة',
-    'Delete' => 'حذف',
+    'SubCategory Index Page' => 'صفحة فهرس الفئات الفرعية',
+    'Deleted categories' => 'حذف الفئات',
+    'Deleted sub_categories' => 'حذف الفئات الفرعيه',
+    'Restore' => 'استعادة',
     'Products Page' => 'صفحة المنتجات',
     'Add Product' => 'إضافة منتج',
     'Image' => 'الصورة',
     'Price' => 'السعر',
     'Available Quantity' => 'الكمية المتاحة',
     'Subcategory' => 'الفئة الفرعية',
+    'deleted Product' => 'حذف المنتج',
+
      'deleted Product' => 'حذف المنتج',
      'Add Profile' => 'إضافة ملف تعريف',
      'UserName' => 'اسم المستخدم',
@@ -45,5 +46,17 @@ return [
      'Gender' => 'الجنس',
      
 
+    // New translations
+    'name' => 'الاسم',
+    'username' => 'اسم المستخدم',
+    'email' => 'البريد الإلكتروني',
+    'type' => 'النوع',
+    'phone' => 'الهاتف',
+    'create_at' => 'تاريخ الإنشاء',
+    'update_at' => 'تاريخ التحديث',
+    'Add admin' => 'إضافة مسؤول',
+    'Add customer' => 'إضافة عميل',
+    'Add moderator' => 'إضافة مشرف',
 ];
+
 ?>

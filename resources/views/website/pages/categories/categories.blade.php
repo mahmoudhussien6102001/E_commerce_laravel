@@ -41,11 +41,11 @@ function getCategoryImage($categoryTitle) {
         case 'man':
             return 'assets/images/pngtree-a-fashionable-young-man.jpg'; // مسار صورة الرجال
         case 'women':
-            return 'assets/images/pngtree-businesswoman-multitasks.jpg'; // مسار صورة النساء
+            return 'assets/images/pngtree-businesswoman-multitask.jpg'; // مسار صورة النساء
         case 'children' :
             return 'assets/images/cute-girl-choosing-modern-stylish-children-clothing.avif'; // مسار صورة الأطفال
         default:
-            return 'assets/images/default.jpg'; // صورة افتراضية في حال لم توجد فئة
+            return 'assets/images/pngtree-businesswoman-multitask.jpg'; // صورة افتراضية في حال لم توجد فئة
     }
 }
 @endphp

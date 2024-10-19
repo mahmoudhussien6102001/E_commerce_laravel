@@ -62,6 +62,7 @@ Route::group([
        Route::get('/user/customer',[UserController::class, 'customersIndex'])->name('users.customers');
        Route::get('/user/moderator',[UserController::class, 'moderatorIndex'])->name('users.moderators');
        Route::get('/user/admin',[UserController::class, 'adminIndex'])->name('users.admins');
+       Route::get('/new_arrivales', [MainController::class, 'newArrivals'])->name('new_arrivales');
        
        // profiles
         Route::resource('/profiles', profileController::class);

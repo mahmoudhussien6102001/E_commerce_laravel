@@ -20,7 +20,7 @@ return [
     "Search"=>"Search",
     "big_sale" => "Big Sale!",
     "discount" => "50% off on all items",
-    "Featured_Products" => "Featured Products",
+    "Featured Products" => "Featured Products",
     "Women" => "Women Collection",
     "Men" => "Men Collection",
     "Children" => "Children Collection",
