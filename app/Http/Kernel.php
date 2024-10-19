@@ -74,6 +74,7 @@ class Kernel extends HttpKernel
         'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
         
         //Guest & customer 
+        
         'dashboard'               => \App\Http\Middleware\cutomMiddleware\Dashboard::class,
 
 

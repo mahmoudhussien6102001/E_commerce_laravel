@@ -80,12 +80,15 @@
                     </div>
 
                     <div class="mt-4 d-flex justify-content-around">
-                        <a href="{{ route('profile.edit') }}" class="btn btn-success rounded-pill shadow-sm" style="transition: background-color 0.3s, transform 0.3s; padding: 10px 20px; border-radius: 20px;">
+                        <a href="{{ route('profile.edit',auth()->user()->id) }}" class="btn btn-success rounded-pill shadow-sm" style="transition: background-color 0.3s, transform 0.3s; padding: 10px 20px; border-radius: 20px;">
                             <i class="fas fa-edit"></i> {{ __('profile_admin.Edit') }}
                         </a>
-                        <a href="{{ route('profile.changePassword', ['username' => $user->username]) }}" class="btn btn-warning rounded-pill shadow-sm" style="transition: background-color 0.3s, transform 0.3s; padding: 10px 20px; border-radius: 20px;">
-                            <i class="fas fa-key"></i> {{ __('profile_admin.Change Password') }}
-                        </a>
+                        <a href="{{ route('profile.changePassword', ['username' => $user->username]) }}"
+                            class="btn btn-warning rounded-pill shadow-sm"
+                            style="transition: background-color 0.3s, transform 0.3s; padding: 10px 20px;">
+                            Change Password
+                         </a>
+                         
                     </div>
                 </div>
             </div>

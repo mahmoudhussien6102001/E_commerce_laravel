@@ -26,11 +26,11 @@ Route::group([
     Route::get('/profiles', [MainController::class, 'profileAdmin'])->name('profileAdmin');
 
     // User profile routes
-    Route::get('/profile', [UserProfileController::class, 'show'])->name('profile.show');
-    Route::get('/profile/edit', [UserProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [UserProfileController::class, 'update'])->name('profile.update');
+    Route::get('/profile/{user}/', [UserProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/edit/{user}', [UserProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/{user}', [UserProfileController::class, 'update'])->name('profile.update');
     Route::get('/profile/{username}/change-password', [UserProfileController::class, 'changePassword'])->name('profile.changePassword');
-    Route::put('/profile/{id}/update-password', [UserProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+    Route::patch('/profile/{id}/update-password', [UserProfileController::class, 'updatePassword'])->name('profile.updatePassword');
 });
 
 // Define dashboard routes

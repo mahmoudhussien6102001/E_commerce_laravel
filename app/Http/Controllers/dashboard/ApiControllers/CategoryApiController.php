@@ -12,8 +12,12 @@ class CategoryApiController extends Controller
     
         {
             $categories = Category::get();
-            if($categories->count() <1){
-                return response()->json(['message'=>'No Categories found'], 404);
+            if($categories->count() < 1){
+                return response()->json
+                (
+                    ['message'=>'No Categories found']
+                    , 404
+                );
             }
             else{
                 return response()->json([

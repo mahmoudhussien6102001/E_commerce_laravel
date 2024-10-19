@@ -43,7 +43,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                   @if(auth()->user())
-                  <button class="dropdown-item" type="button" onclick="window.location.href='{{ auth()->user()->user_type === 'admin' ? route('profileAdmin') : route('profile.show') }}'">
+                  <button class="dropdown-item" type="button" onclick="window.location.href='{{ auth()->user()->user_type === 'admin' ? route('profileAdmin') : route('profile.show' ,auth()->user()->id) }}'">
                     <i class="fa-solid fa-user"></i> {{ __('home.Profile Management') }}
                   </button>
                   @if(auth()->user()->user_type === 'admin' || auth()->user()->user_type === 'moderator')
